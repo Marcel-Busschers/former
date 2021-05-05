@@ -265,13 +265,17 @@ def sample_sequence(model, seed, max_context, length=600, temperature=0.5, verbo
     :return: The sampled sequence, including the seed.
     """
 
+    file = open('former/generated_seqs/05-05-2021.txt', 'a')
+    file.write('SEED:\n')
     sequence = seed.detach().clone()
 
     if verbose: # Print the seed, surrounded by square brackets
-        print('[', end='', flush=True)
+        # print('[', end='', flush=True)
         for c in seed:
-            print(str(chr(c)), end='', flush=True)
-        print(']', end='', flush=True)
+            # print(str(chr(c)), end='', flush=True)
+            file.write(str(chr(c)))
+        # print(']', end='', flush=True)
+        file.write('\nGENERATED:\n')
 
     for _ in range(length):
 
@@ -285,9 +289,13 @@ def sample_sequence(model, seed, max_context, length=600, temperature=0.5, verbo
         c = sample(output[0, -1, :], temperature)
 
         if verbose:
-            print(str(chr(max(32, c))), end='', flush=True)
+            # print(str(chr(c)), end='', flush=True)
+            file.write(str(chr(c)))
 
         sequence = torch.cat([sequence, c[None]], dim=0) # Append the sampled token to the sequence
+
+    file.write('\n')
+    file.close()
 
     print()
     return seed
@@ -440,9 +448,26 @@ def go(arg):
             
             sch.step() # Update the learning rate
 
-        print(f'EPOCH {epoch + 1} FINISHED. GENERATING SAMPLE')
+        print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
-        # TODO: Generate Sample
+        # WRITE TO FILE (For logging generated sequence per epoch)
+        file = open('former/generated_seqs/05-05-2021.txt', 'a')
+        file.write('---------------------------------------------------------------------------------------------\n')
+        file.write(f'EPOCH {epoch + 1}:\n')
+        file.close()
+
+        # GENERATE SAMPLE
+        with torch.no_grad():
+
+            randomBatchIndex = random.randint(0, len(testBatches))
+            randomBatch = testBatches[randomBatchIndex]
+            t = pad(randomBatch)
+            seed = t[0]
+
+            if torch.cuda.is_available():
+                seed = seed.cuda()
+
+            sample_sequence(model, seed=seed, max_context=arg.context, verbose=True, length=arg.sample_length)
 
 if __name__ == "__main__":
 
@@ -452,7 +477,7 @@ if __name__ == "__main__":
     parser.add_argument("-e", "--num-epochs",
                         dest="num_epochs",
                         help="Number of epochs.",
-                        default=1, type=int)
+                        default=30, type=int)
 
     parser.add_argument("-N", "--num-batches",
                         dest="num_batches",
@@ -530,7 +555,7 @@ if __name__ == "__main__":
     parser.add_argument("--sample-length",
                         dest="sample_length",
                         help="Number of character to sample.",
-                        default=600, type=int)
+                        default=128, type=int)
 
     parser.add_argument("--attention-type", dest="attention_type",
                         help="Which type of self-attention to use (default, gpt2, wide, narrow)",
@@ -542,8 +567,3 @@ if __name__ == "__main__":
 
     go(options)
 
-    # data = loadCoco('former/data/coco.valannotations.txt')
-    # batches = batchByTokens(data, batchSize=32)
-    # trainBatches, valBatches, testBatches = splitArray(batches)
-    # t = pad(trainBatches[0])
-    # print(t)
