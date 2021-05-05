@@ -15,7 +15,8 @@ import numpy as np
 from argparse import ArgumentParser
 from torch.utils.tensorboard import SummaryWriter
 
-import random, tqdm, sys, math, gzip
+import random, sys, math, gzip
+from tqdm import tqdm
 
 # NB, the enwik8 data contains tokens from 9 to 240, but well round up to the nearest
 # power of two.
@@ -117,6 +118,17 @@ def batchByTokens(array, batchSize = None):
         start = end
 
     return batches
+
+def pad(batch):
+    '''
+    Pad the batch with zero values and return a Tensored batch
+    '''
+    tokenLength = len(batch[-1])
+    for seq in batch:
+        while len(seq) < tokenLength:
+            seq.append(0)
+
+    return torch.Tensor(batch).to(torch.int64)
         
 def splitArray(array, trainSplit = 0.9, valSplit = 0.05, testSplit = 0.05):
     '''
@@ -280,97 +292,97 @@ def sample_sequence(model, seed, max_context, length=600, temperature=0.5, verbo
     print()
     return seed
 
-def go(arg):
+# def go(arg):
 
-    if arg.seed < 0:
-        seed = random.randint(0, 1000000)
-        print('random seed: ', seed)
-    else:
-        torch.manual_seed(arg.seed)
+#     if arg.seed < 0:
+#         seed = random.randint(0, 1000000)
+#         print('random seed: ', seed)
+#     else:
+#         torch.manual_seed(arg.seed)
 
-    tbw = SummaryWriter(log_dir=arg.tb_dir) # Tensorboard logging
+#     tbw = SummaryWriter(log_dir=arg.tb_dir) # Tensorboard logging
 
-    # load the data (validation unless arg.final is true, then test)
-    arg.data = here('data/enwik8.gz') if arg.data is None else arg.data
+#     # load the data (validation unless arg.final is true, then test)
+#     arg.data = here('data/enwik8.gz') if arg.data is None else arg.data
 
-    data_train, data_val, data_test = enwik8(arg.data)
-    data_train, data_test = (torch.cat([data_train, data_val], dim=0), data_test) \
-                            if arg.final else (data_train, data_val)
+#     data_train, data_val, data_test = enwik8(arg.data)
+#     data_train, data_test = (torch.cat([data_train, data_val], dim=0), data_test) \
+#                             if arg.final else (data_train, data_val)
 
-    # create the model
-    model = GTransformer(emb=arg.embedding_size, heads=arg.num_heads, depth=arg.depth, seq_length=arg.context, num_tokens=NUM_TOKENS, attention_type=arg.attention_type)
-    if torch.cuda.is_available():
-        model.cuda()
+#     # create the model
+#     model = GTransformer(emb=arg.embedding_size, heads=arg.num_heads, depth=arg.depth, seq_length=arg.context, num_tokens=NUM_TOKENS, attention_type=arg.attention_type)
+#     if torch.cuda.is_available():
+#         model.cuda()
 
-    opt = torch.optim.Adam(lr=arg.lr, params=model.parameters())
+#     opt = torch.optim.Adam(lr=arg.lr, params=model.parameters())
 
-    # Linear learning rate warmup
-    sch = torch.optim.lr_scheduler.LambdaLR(opt, lambda i: min(i / (arg.lr_warmup / arg.batch_size), 1.0))
+#     # Linear learning rate warmup
+#     sch = torch.optim.lr_scheduler.LambdaLR(opt, lambda i: min(i / (arg.lr_warmup / arg.batch_size), 1.0))
 
-    # Training loop
-    # -- We don't loop over the data, instead we sample a batch of random subsequences each time. This is not strictly
-    #    better or worse as a training method, it's just a little simpler.
-    #
-    instances_seen = 0
-    for i in tqdm.trange(arg.num_batches):
+#     # Training loop
+#     # -- We don't loop over the data, instead we sample a batch of random subsequences each time. This is not strictly
+#     #    better or worse as a training method, it's just a little simpler.
+#     #
+#     instances_seen = 0
+#     for i in tqdm.trange(arg.num_batches):
 
-        opt.zero_grad()
+#         opt.zero_grad()
 
-        source, target = sample_batch(data_train, length=arg.context, batch_size=arg.batch_size)
-        instances_seen += source.size(0)
+#         source, target = sample_batch(data_train, length=arg.context, batch_size=arg.batch_size)
+#         instances_seen += source.size(0)
 
-        if torch.cuda.is_available():
-            source, target = source.cuda(), target.cuda()
+#         if torch.cuda.is_available():
+#             source, target = source.cuda(), target.cuda()
 
-        tic()
-        output = model(source) # forward pass
-        t = toc()
+#         tic()
+#         output = model(source) # forward pass
+#         t = toc()
 
-        # Compute the loss
-        loss = F.nll_loss(output.transpose(2, 1), target, reduction='mean')
+#         # Compute the loss
+#         loss = F.nll_loss(output.transpose(2, 1), target, reduction='mean')
 
-        tbw.add_scalar('transformer/train-loss', float(loss.item()) * LOG2E, i * arg.batch_size, instances_seen)
-        tbw.add_scalar('transformer/time-forward', t, instances_seen)
+#         tbw.add_scalar('transformer/train-loss', float(loss.item()) * LOG2E, i * arg.batch_size, instances_seen)
+#         tbw.add_scalar('transformer/time-forward', t, instances_seen)
 
-        loss.backward() # backward pass
+#         loss.backward() # backward pass
 
-        # clip gradients
-        # -- If the total gradient vector has a length > x, we clip it back down to x.
-        if arg.gradient_clipping > 0.0:
-            nn.utils.clip_grad_norm_(model.parameters(), arg.gradient_clipping)
+#         # clip gradients
+#         # -- If the total gradient vector has a length > x, we clip it back down to x.
+#         if arg.gradient_clipping > 0.0:
+#             nn.utils.clip_grad_norm_(model.parameters(), arg.gradient_clipping)
 
-        opt.step() # stochastic gradient descent step
-        sch.step() # update the learning rate
+#         opt.step() # stochastic gradient descent step
+#         sch.step() # update the learning rate
 
-        # Validate every `arg.test_every` steps. First we compute the
-        # compression on the validation data (or a subset),
-        # then we generate some random text to monitor progress.
-        if i != 0 and (i % arg.test_every == 0 or i == arg.num_batches - 1):
-            with torch.no_grad():
+#         # Validate every `arg.test_every` steps. First we compute the
+#         # compression on the validation data (or a subset),
+#         # then we generate some random text to monitor progress.
+#         if i != 0 and (i % arg.test_every == 0 or i == arg.num_batches - 1):
+#             with torch.no_grad():
 
-                ## Sample and print a random sequence
+#                 ## Sample and print a random sequence
 
-                # Slice a random seed from the test data, and sample a continuation from the model.
-                seedfr = random.randint(0, data_test.size(0) - arg.context)
-                seed = data_test[seedfr:seedfr + arg.context].to(torch.long)
+#                 # Slice a random seed from the test data, and sample a continuation from the model.
+#                 seedfr = random.randint(0, data_test.size(0) - arg.context)
+#                 seed = data_test[seedfr:seedfr + arg.context].to(torch.long)
 
-                if torch.cuda.is_available():
-                    seed = seed.cuda()
+#                 if torch.cuda.is_available():
+#                     seed = seed.cuda()
 
-                sample_sequence(model, seed=seed, max_context=arg.context, verbose=True, length=arg.sample_length)
+#                 sample_sequence(model, seed=seed, max_context=arg.context, verbose=True, length=arg.sample_length)
 
-                ## Compute validation bits per byte
+#                 ## Compute validation bits per byte
 
-                upto = data_test.size(0) if i == arg.num_batches - 1 else arg.test_subset
-                data_sub = data_test[:upto]
+#                 upto = data_test.size(0) if i == arg.num_batches - 1 else arg.test_subset
+#                 data_sub = data_test[:upto]
 
-                bits_per_byte = compute_compression(model, data_sub, context=arg.context, batch_size=arg.test_batchsize)
-                # -- Since we're not computing gradients, we can increase the batch size a little from what we used in
-                #    training.
+#                 bits_per_byte = compute_compression(model, data_sub, context=arg.context, batch_size=arg.test_batchsize)
+#                 # -- Since we're not computing gradients, we can increase the batch size a little from what we used in
+#                 #    training.
 
-                print(f'epoch{i}: {bits_per_byte:.4} bits per byte')
-                tbw.add_scalar(f'transformer/eval-loss', bits_per_byte, i * arg.batch_size, instances_seen)
-                # -- 0.9 bit per byte is around the state of the art.
+#                 print(f'epoch{i}: {bits_per_byte:.4} bits per byte')
+#                 tbw.add_scalar(f'transformer/eval-loss', bits_per_byte, i * arg.batch_size, instances_seen)
+#                 # -- 0.9 bit per byte is around the state of the art.
 
 def go(arg):
     tbw = SummaryWriter(log_dir=arg.tb_dir) # Tensorboard logging
@@ -397,28 +409,40 @@ def go(arg):
     instances_seen = 0
     for epoch in range(arg.num_epochs):
         
-        print(f'EPOCH {epoch} STARTING')
+        print(f'EPOCH {epoch + 1} STARTING')
 
         for batch in tqdm(trainBatches):
             
-            opt.zero_grad()
+            opt.zero_grad() # Set gradients to z0
 
-            # TODO: Pad the Array
-            # TODO: Convert to Tensor as input
+            batch_tensor = pad(batch) # Pad the batch with 0 values
 
-            # TODO: Check if over the limit
+            # Create the input and target
+            inputs = batch_tensor[:, :-1]
+            target = batch_tensor[:, 1:]
 
-            # TODO: Compute the output of the model via the input
-            # TODO: Compute the loss
+            # Check if over the limit, and chop off the anything after the length of NUM_TOKENS
+            if inputs.size(1) > NUM_TOKENS:
+                inputs = inputs[:, :NUM_TOKENS]
+                target = target[:, :NUM_TOKENS]
 
-            # TODO: Add the loss to the Tensorboard
+            output = model(inputs) # Compute the output of the model via the input
+            
+            loss = F.nll_loss(output.transpose(2, 1), target, reduction='mean') # Compute the loss
 
-            # TODO: Backpropagate
+            # Add the loss (logged) to the Tensorboard with instances seen
+            instances_seen += inputs.size(0)
+            tbw.add_scalar('transformer/train-loss', float(loss.item()) * LOG2E, instances_seen)
 
-            # TODO: Do one step of Adam
-            # TODO: Update the learning rate
+            loss.backward() # Backpropagate
 
-        print(f'EPOCH {epoch} FINISHED. GENERATING SAMPLE')
+            opt.step() # Do one step of Adam
+            
+            sch.step() # Update the learning rate
+
+        print(f'EPOCH {epoch + 1} FINISHED. GENERATING SAMPLE')
+
+        # TODO: Generate Sample
 
 if __name__ == "__main__":
 
@@ -428,17 +452,17 @@ if __name__ == "__main__":
     parser.add_argument("-e", "--num-epochs",
                         dest="num_epochs",
                         help="Number of epochs.",
-                        default=80, type=int)
+                        default=1, type=int)
 
     parser.add_argument("-N", "--num-batches",
                         dest="num_batches",
                         help="Number of batches to train on. Each batch contains randomly sampled subsequences of the data.",
-                        default=50, type=int)
+                        default=50, type=int) # No longer needed
 
     parser.add_argument("-b", "--batch-size",
                         dest="batch_size",
                         help="The batch size.",
-                        default=32, type=int)
+                        default=256, type=int)
 
     parser.add_argument("-D", "--data", dest="data",
                         help="Data file. Will be read as a string of 8-bit characters.",
@@ -517,3 +541,9 @@ if __name__ == "__main__":
     print('OPTIONS ', options)
 
     go(options)
+
+    # data = loadCoco('former/data/coco.valannotations.txt')
+    # batches = batchByTokens(data, batchSize=32)
+    # trainBatches, valBatches, testBatches = splitArray(batches)
+    # t = pad(trainBatches[0])
+    # print(t)
