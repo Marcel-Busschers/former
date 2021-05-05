@@ -4,6 +4,7 @@ from former import util, GTransformer
 from util import d, here, tic, toc
 
 import torch
+import math
 from torch import nn
 from torch.autograd import Variable
 import torch.nn.functional as F
@@ -38,6 +39,97 @@ def sample(lnprobs, temperature=1.0):
     cd = dist.Categorical(p)
 
     return cd.sample()
+
+def loadCoco(dir):
+    '''
+    Loads in the coco dataset and returns an array of arrays of characters that have been converted to ints
+    eg. 'Hello there' -> ['H','e','l','l','o', ' ', 't', 'h', 'e', 'r', 'e'] -> [72, 101, 108, 108, 111, 32, 116, 104, 101, 114, 101]
+    '''
+    # First open the file and read every line into an array of sentences
+    file = open(dir, 'r')
+    sentences = [line for line in file]
+
+    # Second, loop through every sentence and create another array of integers
+    converted_sentences = []
+    for sentence in sentences:
+        temp_array = [ord(character) for character in sentence]
+        if len(temp_array) > 1: converted_sentences.append(temp_array)
+
+    # Helper function to sort by length
+    def byLength(array):
+        return(len(array))
+
+    converted_sentences.sort(key = byLength) #sort in acsending order
+    
+    return converted_sentences
+
+class BatchSize(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+class BatchSizeNone(BatchSize):
+    def __init__(self):
+        super().__init__("Please specifiy a batch size")
+
+class BatchSizeNegative(BatchSize):
+    def __init__(self, batch_size):
+        self.batch_size = batch_size
+        super().__init__("cannot be negative")
+
+    def __str__(self):
+        return f'Batch size ({self.batch_size}) {self.message}'
+
+class BatchSizeZero(BatchSize):
+    def __init__(self):
+        super().__init__("Batch Size must be bigger than 0")
+
+def batchByTokens(array, batchSize = None):
+    '''
+    Batch the data by the length of tokens so that each batch has equal length arrays
+    '''
+    if batchSize is None:
+        batchSize = 1
+    else:
+        if batchSize is None:
+            raise BatchSizeNone()
+        elif batchSize < 0:
+            raise BatchSizeNegative(batchSize)
+        elif batchSize == 0:
+            raise BatchSizeZero() 
+
+    batches = []
+    start = 0 
+    while start < len(array):
+        end = start
+        total = 0
+        while total < batchSize and end < len(array):
+            end += 1 
+            total += len(array[end-1])
+
+        # Give warning of sequence skip:
+        if start == end:
+            print('skipping sequence', start, 'of length',  len(array[start]))
+            continue
+
+        batches.append(array[start:end])
+
+        start = end
+
+    return batches
+        
+def splitArray(array, trainSplit = 0.9, valSplit = 0.05, testSplit = 0.05):
+    '''
+    Splits the data into specifies train, validation and test sizes, and returns a 3 Tensors representing them
+    '''
+    trainLength = round(len(array) * trainSplit) 
+    valLength = round(len(array) * valSplit) 
+
+    trainData = array[:trainLength]
+    valData = array[trainLength:trainLength+valLength]
+    testData = array[trainLength+valLength:]
+    
+    return trainData, valData, testData
 
 def enwik8(path, n_train=int(90e6), n_valid=int(5e6), n_test=int(5e6)):
     """
@@ -280,17 +372,68 @@ def go(arg):
                 tbw.add_scalar(f'transformer/eval-loss', bits_per_byte, i * arg.batch_size, instances_seen)
                 # -- 0.9 bit per byte is around the state of the art.
 
+def go(arg):
+    tbw = SummaryWriter(log_dir=arg.tb_dir) # Tensorboard logging
 
+    # load the data (validation unless arg.final is true, then test)
+    data = loadCoco('former/data/coco.valannotations.txt')
+    batches = batchByTokens(data, batchSize=arg.batch_size)
+    trainBatches, valBatches, testBatches = splitArray(batches)
+
+    # create the model
+    model = GTransformer(emb=arg.embedding_size, heads=arg.num_heads, depth=arg.depth, seq_length=arg.context, num_tokens=NUM_TOKENS, attention_type=arg.attention_type)
+    if torch.cuda.is_available():
+        model.cuda()
+
+    opt = torch.optim.Adam(lr=arg.lr, params=model.parameters())
+
+    # Linear learning rate warmup
+    sch = torch.optim.lr_scheduler.LambdaLR(opt, lambda i: min(i / (arg.lr_warmup / arg.batch_size), 1.0))
+
+    # Training loop
+    # -- We don't loop over the data, instead we sample a batch of random subsequences each time. This is not strictly
+    #    better or worse as a training method, it's just a little simpler.
+    #
+    instances_seen = 0
+    for epoch in range(arg.num_epochs):
+        
+        print(f'EPOCH {epoch} STARTING')
+
+        for batch in tqdm(trainBatches):
+            
+            opt.zero_grad()
+
+            # TODO: Pad the Array
+            # TODO: Convert to Tensor as input
+
+            # TODO: Check if over the limit
+
+            # TODO: Compute the output of the model via the input
+            # TODO: Compute the loss
+
+            # TODO: Add the loss to the Tensorboard
+
+            # TODO: Backpropagate
+
+            # TODO: Do one step of Adam
+            # TODO: Update the learning rate
+
+        print(f'EPOCH {epoch} FINISHED. GENERATING SAMPLE')
 
 if __name__ == "__main__":
 
     ## Parse the command line options
     parser = ArgumentParser()
 
+    parser.add_argument("-e", "--num-epochs",
+                        dest="num_epochs",
+                        help="Number of epochs.",
+                        default=80, type=int)
+
     parser.add_argument("-N", "--num-batches",
                         dest="num_batches",
                         help="Number of batches to train on. Each batch contains randomly sampled subsequences of the data.",
-                        default=1_000_000, type=int)
+                        default=50, type=int)
 
     parser.add_argument("-b", "--batch-size",
                         dest="batch_size",
