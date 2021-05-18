@@ -1,0 +1,480 @@
+---------------------------------------------------------------------------------------------
+EPOCH 1:
+SEED:
+A woman standing next to a table covered with plates of most
+GENERATED:
+resses. alle. an  .    . . .     .       i   .           .                                                                      
+---------------------------------------------------------------------------------------------
+EPOCH 2:
+SEED:
+A colorful but blurry street scene at night features a car driving throug
+GENERATED:
+e. l . . a . a   . . .  a      a.  .  .            .                                s                                           
+---------------------------------------------------------------------------------------------
+EPOCH 3:
+SEED:
+A young child holding onto a kite while standing on a green gras
+GENERATED:
+s.   a e  .   .  .  .      .                                                                                                    
+---------------------------------------------------------------------------------------------
+EPOCH 4:
+SEED:
+A man in a wetsuit and red shirt, riding a surfboard at the 
+GENERATED:
+beach.      .                                                                                                                   
+---------------------------------------------------------------------------------------------
+EPOCH 5:
+SEED:
+Microwave and other appliance sitting outdoors on pavement a
+GENERATED:
+rea.   V.   .              .      .                                                                                             
+---------------------------------------------------------------------------------------------
+EPOCH 6:
+SEED:
+A group of giraffes wonder around in a fenced off area with 
+GENERATED:
+a bat.                                                                                                                          
+---------------------------------------------------------------------------------------------
+EPOCH 7:
+SEED:
+A woman holding a milking attachment and standing in front of a cow, with a group of pe
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 8:
+SEED:
+A blond girl holding a baseball bat and smiling with her hand 
+GENERATED:
+by.  0                                                                                                                          
+---------------------------------------------------------------------------------------------
+EPOCH 9:
+SEED:
+Hotel room scene, efficiency, queen bed, sofa, table/desk, TV, in 
+GENERATED:
+ :t                                                                                                                             
+---------------------------------------------------------------------------------------------
+EPOCH 10:
+SEED:
+A woman in a blue dress with no shoes, seated with her legs crossed on a chair in t
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 11:
+SEED:
+A white plate containing sliced ham and cheese sitting on a table next 
+GENERATED:
+ t                                                                                                                              
+---------------------------------------------------------------------------------------------
+EPOCH 12:
+SEED:
+A plate of flambeed bananas are sitting atop brown sugar and
+GENERATED:
+ dog.  V                                                                                                                        
+---------------------------------------------------------------------------------------------
+EPOCH 13:
+SEED:
+An old truck with no passenger door with tires and body painted in d
+GENERATED:
+ow                                                                                                                              
+---------------------------------------------------------------------------------------------
+EPOCH 14:
+SEED:
+A man and woman posing for a photo with pizza on the table they 
+GENERATED:
+in.  .      y                                                                                                                   
+---------------------------------------------------------------------------------------------
+EPOCH 15:
+SEED:
+A nerdy young man in a baseball cap and leopard print bathrobe stand
+GENERATED:
+.                                                                                                                               
+---------------------------------------------------------------------------------------------
+EPOCH 16:
+SEED:
+A computer laying upside down with two hands holding knives prying open a se
+GENERATED:
+a                                                                                                                               
+---------------------------------------------------------------------------------------------
+EPOCH 17:
+SEED:
+A batter swinging a bat at a baseball with the catcher and ump
+GENERATED:
+ire  u.                                                                                                                         
+---------------------------------------------------------------------------------------------
+EPOCH 18:
+SEED:
+Street signs in front of a hree-story grey frame house with bay windows, dor
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 19:
+SEED:
+A gold clock with ornate iron hands keeps time on a large clock with
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 20:
+SEED:
+A cluttered living room with figurines on a display case and photogr
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 21:
+SEED:
+Two planes fly over a bridge in Sydney, Australia, with the Sydney Opera House
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 22:
+SEED:
+A street scene with motorcycles parked along the side of the road with peop
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 23:
+SEED:
+A vintage closeup shows a chair with a toddler with a big smile and a big toy bear seated right  next to a second toddler with a semi-smile, hold
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 24:
+SEED:
+A sandwich, french fries, bowl of ketchup, onion slice, lettuce slice, tomato slice, and knife 
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 25:
+SEED:
+A sign with the word pub sits on a wall and underneath it on a table is a blender and three bottles of variety of
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 26:
+SEED:
+A vintage, colored drawing of people on motorcycles pulled into
+GENERATED:
+ it.   f f                                                                                                                      
+---------------------------------------------------------------------------------------------
+EPOCH 27:
+SEED:
+People watch from a large boat as a smaller boat is lowered 
+GENERATED:
+water.                                                                                                                          
+---------------------------------------------------------------------------------------------
+EPOCH 28:
+SEED:
+Several sheep are in a pen as some kids stand next to it while one boy has his hand on on
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 29:
+SEED:
+Group of teenagers playing with kits in the center of a grou
+GENERATED:
+ch.                                                                                                                             
+---------------------------------------------------------------------------------------------
+EPOCH 30:
+SEED:
+A man in a wet suit holding a surf board with another person in the back ground near the ocean ho
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 31:
+SEED:
+A statue of a boy is holding a kite in his hand and standing next t
+GENERATED:
+off.                                                                                                                            
+---------------------------------------------------------------------------------------------
+EPOCH 32:
+SEED:
+A man with thick sunglasses and multiple piercings sits with 
+GENERATED:
+mult. lips     p                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 33:
+SEED:
+black and white picture with a single red bus and a crowd of people li
+GENERATED:
+ge                                                                                                                              
+---------------------------------------------------------------------------------------------
+EPOCH 34:
+SEED:
+A locomotive train that has train cars attached and parked on a set 
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 35:
+SEED:
+A young boy on a tennis court prepares to hit a tennis ball wi
+GENERATED:
+th  it                                                                                                                          
+---------------------------------------------------------------------------------------------
+EPOCH 36:
+SEED:
+Cars are parked on both sides of the narrow street full of t
+GENERATED:
+raffic.   .                                                                                                                     
+---------------------------------------------------------------------------------------------
+EPOCH 37:
+SEED:
+A group of 20 small photos in a collage together, with each photo containi
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 38:
+SEED:
+An Adidas advertisement depicts a male and a female tennis playe
+GENERATED:
+r. ng       p                                                                                                                   
+---------------------------------------------------------------------------------------------
+EPOCH 39:
+SEED:
+A youth holds a soccer ball while another youth is behind him, looking a
+GENERATED:
+    p p                                                                                                                         
+---------------------------------------------------------------------------------------------
+EPOCH 40:
+SEED:
+Two young men riding skateboards on a street next to a graffit
+GENERATED:
+ly.  h                                                                                                                          
+---------------------------------------------------------------------------------------------
+EPOCH 41:
+SEED:
+Large stuffed animal posed outdoors as if sitting in a chair with beve
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 42:
+SEED:
+two men sitting at a table with one holding a plate with a slice
+GENERATED:
+s. .        p                                                        Y                                        y                 
+---------------------------------------------------------------------------------------------
+EPOCH 43:
+SEED:
+a desk filled with some paperwork, a laptop and a computer wi
+GENERATED:
+to eatt on it in                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 44:
+SEED:
+A tv on with a man holding a knife at a guy's head and a bottle of mineral water
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 45:
+SEED:
+A man with a nametag in a suit and tie and two women holding glasses on 
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 46:
+SEED:
+A woman in a short black dress is holding a champagne flute and standing in fron
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 47:
+SEED:
+A sausage on italian roll sandwich, cut in half, is on a white plate
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 48:
+SEED:
+A desk with various items that include cellphone, mouse and 
+GENERATED:
+lights.  re                                                                                                                     
+---------------------------------------------------------------------------------------------
+EPOCH 49:
+SEED:
+A person with an orange blanket covering them, sleeping on a woo
+GENERATED:
+d.                                                                                                                              
+---------------------------------------------------------------------------------------------
+EPOCH 50:
+SEED:
+Close together group of white, beige, and brown sheep, from the rear, standing in 
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 51:
+SEED:
+two flatbread pieces covered with different ingredients in between a
+GENERATED:
+ nd     2                                                                                                                       
+---------------------------------------------------------------------------------------------
+EPOCH 52:
+SEED:
+A smiling woman stands outside of a brick building in the rain while hol
+GENERATED:
+ll                                                                                                                              
+---------------------------------------------------------------------------------------------
+EPOCH 53:
+SEED:
+A row of various types of chairs and umbrella with a bridge in 
+GENERATED:
+it.   m.                                                                                                                        
+---------------------------------------------------------------------------------------------
+EPOCH 54:
+SEED:
+Teams of children wearing blue and green uniforms playing volleyball ins
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 55:
+SEED:
+A man in a tropical print shirt with glasses and long hair is e
+GENERATED:
+qugh.   .                 m                                                                                                     
+---------------------------------------------------------------------------------------------
+EPOCH 56:
+SEED:
+A person in a snow sporting event  is going rapidly down this show chute-type course as people wa
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 57:
+SEED:
+A couple of dining trucks are in a parking lot while some people stand 
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 58:
+SEED:
+Three women standing near a bus that has the face of a cat paint
+GENERATED:
+.                                                                                                                               
+---------------------------------------------------------------------------------------------
+EPOCH 59:
+SEED:
+Female tennis player in full run on a blue court to complete a b
+GENERATED:
+alll. ,                                                                                                                         
+---------------------------------------------------------------------------------------------
+EPOCH 60:
+SEED:
+A black and tan dog sits in an easy chair near a window with a p
+GENERATED:
+en.  n      n            m       M                                                                                              
+---------------------------------------------------------------------------------------------
+EPOCH 61:
+SEED:
+Child throwing Frisbee on a field with cones and people in t
+GENERATED:
+he air.                                                                                                                         
+---------------------------------------------------------------------------------------------
+EPOCH 62:
+SEED:
+A white boxy birthday cake with red flowers and blue accents on a decorated table with g
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 63:
+SEED:
+Computer desk setup with monitor, wireless keyboard, and other elec
+GENERATED:
+t                                                                                                                               
+---------------------------------------------------------------------------------------------
+EPOCH 64:
+SEED:
+An assortment of items including a miniature boom box, chair, banana
+GENERATED:
+nanas.  s.                                   oow                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 65:
+SEED:
+A soccer game where a girl in white is dribbling ahead of th
+GENERATED:
+e shade         n                                                                                                               
+---------------------------------------------------------------------------------------------
+EPOCH 66:
+SEED:
+A blue bicycle with a puppy in its basket is parked next to the 
+GENERATED:
+bam.                                                                                                                            
+---------------------------------------------------------------------------------------------
+EPOCH 67:
+SEED:
+A picture of a bathroom with a fern plant near the sink and a photo of a city
+GENERATED:
+.                                                                                                                               
+---------------------------------------------------------------------------------------------
+EPOCH 68:
+SEED:
+A bus is going down the street and it has an advertisement on 
+GENERATED:
+it.                                                                                                                             
+---------------------------------------------------------------------------------------------
+EPOCH 69:
+SEED:
+Two black and white zebras standing next to each other while gra
+GENERATED:
+st                                                                                                                              
+---------------------------------------------------------------------------------------------
+EPOCH 70:
+SEED:
+A giant banana is sitting in beach chair which is overlooking t
+GENERATED:
+hem.  ne     nd                                                                                                                 
+---------------------------------------------------------------------------------------------
+EPOCH 71:
+SEED:
+A stop sign has graffiti on that changes the sign to say, don't 
+GENERATED:
+waysit e                                                                                                                        
+---------------------------------------------------------------------------------------------
+EPOCH 72:
+SEED:
+A train on top of an overpass bridge set of train tracks with fiel
+GENERATED:
+d. off.  Fork          b                                                                                                        
+---------------------------------------------------------------------------------------------
+EPOCH 73:
+SEED:
+A man in a white shirt and gray pants walks toward a grassy area as kids in baseball uniforms and
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 74:
+SEED:
+Two people sitting at a table with beverages on it and the woman ho
+GENERATED:
+mead                                                                                                                            
+---------------------------------------------------------------------------------------------
+EPOCH 75:
+SEED:
+A man in a red hat, suit, and blue striped tie walks past two other 
+GENERATED:
+ s.                                                                                                                             
+---------------------------------------------------------------------------------------------
+EPOCH 76:
+SEED:
+a man rides his skateboard on a small ledge while another man lights the spray
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 77:
+SEED:
+This plate consists of rice with sauce and peas and meat patti
+GENERATED:
+ches.           r.                                                                                                              
+---------------------------------------------------------------------------------------------
+EPOCH 78:
+SEED:
+A black and white scene with two couples under umbrellas and rain jackets si
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 79:
+SEED:
+Several motorcycles are parked at a red light in the road in a city wit
+GENERATED:
+                                                                                                                                
+---------------------------------------------------------------------------------------------
+EPOCH 80:
+SEED:
+The living room is spacious and clean with hardwood floors and seating 
+GENERATED:
+                                                                                                                                

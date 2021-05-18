@@ -88,6 +88,7 @@ class BatchSizeZero(BatchSize):
 def batchByTokens(array, batchSize = None):
     '''
     Batch the data by the length of tokens so that each batch has equal length arrays
+    TODO: Square times the longest sequence, sort by largest
     '''
     if batchSize is None:
         batchSize = 1
@@ -106,7 +107,7 @@ def batchByTokens(array, batchSize = None):
         total = 0
         while total < batchSize and end < len(array):
             end += 1 
-            total += len(array[end-1])
+            total += len(array[end-1])**2
 
         # Give warning of sequence skip:
         if start == end:
@@ -265,17 +266,17 @@ def sample_sequence(model, seed, max_context, length=600, temperature=0.5, verbo
     :return: The sampled sequence, including the seed.
     """
 
-    file = open('former/generated_seqs/05-05-2021.txt', 'a')
-    file.write('SEED:\n')
+    # file = open('former/generated_seqs/11-05-2021.txt', 'a')
+    # file.write('SEED:\n')
     sequence = seed.detach().clone()
 
     if verbose: # Print the seed, surrounded by square brackets
-        # print('[', end='', flush=True)
+        print('[', end='', flush=True)
         for c in seed:
-            # print(str(chr(c)), end='', flush=True)
-            file.write(str(chr(c)))
-        # print(']', end='', flush=True)
-        file.write('\nGENERATED:\n')
+            print(str(chr(c)), end='', flush=True)
+            # file.write(str(chr(c)))
+        print(']', end='', flush=True)
+        # file.write('\nGENERATED:\n')
 
     for _ in range(length):
 
@@ -289,13 +290,13 @@ def sample_sequence(model, seed, max_context, length=600, temperature=0.5, verbo
         c = sample(output[0, -1, :], temperature)
 
         if verbose:
-            # print(str(chr(c)), end='', flush=True)
-            file.write(str(chr(c)))
+            print(str(chr(max(32, c))), end='', flush=True)
+            # file.write(str(chr(max(32, c))))
 
         sequence = torch.cat([sequence, c[None]], dim=0) # Append the sampled token to the sequence
 
-    file.write('\n')
-    file.close()
+    # file.write('\n')
+    # file.close()
 
     print()
     return seed
@@ -421,7 +422,7 @@ def go(arg):
 
         for batch in tqdm(trainBatches):
             
-            opt.zero_grad() # Set gradients to z0
+            opt.zero_grad() # Set gradients to 0
 
             batch_tensor = pad(batch) # Pad the batch with 0 values
 
@@ -451,10 +452,10 @@ def go(arg):
         print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
         # WRITE TO FILE (For logging generated sequence per epoch)
-        file = open('former/generated_seqs/05-05-2021.txt', 'a')
-        file.write('---------------------------------------------------------------------------------------------\n')
-        file.write(f'EPOCH {epoch + 1}:\n')
-        file.close()
+        # file = open('former/generated_seqs/11-05-2021.txt', 'a')
+        # file.write('---------------------------------------------------------------------------------------------\n')
+        # file.write(f'EPOCH {epoch + 1}:\n')
+        # file.close()
 
         # GENERATE SAMPLE
         with torch.no_grad():
@@ -463,6 +464,7 @@ def go(arg):
             randomBatch = testBatches[randomBatchIndex]
             t = pad(randomBatch)
             seed = t[0]
+            seed = seed[:int(len(seed) * 0.8)] # To chop off 20% of the sequence (so the model can predict the rest)
 
             if torch.cuda.is_available():
                 seed = seed.cuda()
@@ -477,7 +479,7 @@ if __name__ == "__main__":
     parser.add_argument("-e", "--num-epochs",
                         dest="num_epochs",
                         help="Number of epochs.",
-                        default=30, type=int)
+                        default=80, type=int)
 
     parser.add_argument("-N", "--num-batches",
                         dest="num_batches",
