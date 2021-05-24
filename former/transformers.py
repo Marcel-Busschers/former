@@ -6,9 +6,98 @@ from .modules import TransformerBlock
 
 from .util import d
 
-class GTransformer(nn.Module):
+class TransformerVAE(nn.Module):
+    def __init__(self, emb, heads, depth, seq_length, num_tokens, max_pool=True, attention_type='default'):
+        super().__init__()
+
+        self.emb = emb
+        
+        self.encoder = EncoderTransformer(emb, heads, depth, seq_length, num_tokens, max_pool)
+        self.decoder = DecoderTransformer(emb, heads, depth, seq_length, num_tokens)
+
+        self.toSampledSequence = nn.Linear(20, emb)
+
+    def kl_loss():
+        zmean = self.zmean; zsig = self.zsig
+        return 0.5 * torch.sum(zsig.exp() - zsig + zmean.pow(2) - 1, dim=1)
+
+    def sample(zmean, zsig):
+        b, l = zmean.size()
+
+        # sample epsilon from a standard normal distribution
+        eps = torch.randn(b, l)
+
+        # transform eps to a sample from the given distribution
+        return zmean + eps * (zsig * 0.5).exp()
+
+    def forward(self, x):
+        z = self.encoder(x['output']) # Encoder spits out z vector (already transformed to smaller size for mean and sigma)
+
+        # Split z vector into zmean and zsigma
+        self.zmean = z[:, :20]
+        self.zsig = z[:, 20:]
+
+        zprime = sample(self.zmean, self.zsig) # sample z' using mean and sigma
+
+        sampledSequence = self.toSampledSequence(zprime) # upscale z' to token length
+
+        sampledSequence = sampledSequence[:, None, :] # Creates another dimension (b, 1, emb)
+
+        b, t, e = x['batchSize'], x['timeDimension'], x['embeddingSize']
+
+        expandedSampleSequence = sampledSequence.expand(b, t, e) # Expand to add embedding vector
+
+        decoderInput = x + expandedSampleSequence # Add sampled sequence to original input for decoder
+
+        output = self.decoder(decoderInput)
+
+        return output
+
+class EncoderTransformer(nn.Module):
     """
-    Transformer for generating text (character by character).
+    Encoder for representing the sequence in (compressed) format
+    """
+
+    def __init__(self, emb, heads, depth, seq_length, num_tokens, max_pool=True, attention_type='default'):
+        super().__init__()
+
+        self.max_pool = max_pool
+
+        self.num_tokens = num_tokens
+        self.token_embedding = nn.Embedding(embedding_dim=emb, num_embeddings=num_tokens)
+        self.pos_embedding = nn.Embedding(embedding_dim=emb, num_embeddings=seq_length)
+
+        tblocks = []
+        for i in range(depth):
+            tblocks.append(
+                TransformerBlock(emb=emb, heads=heads, seq_length=seq_length, mask=False, attention_type=attention_type))
+
+        self.tblocks = nn.Sequential(*tblocks)
+
+        self.toZ = nn.Linear(emb, 40)
+
+    def forward(self, x):
+        """
+        :param x: A (batch, sequence length) integer tensor of token indices.
+        :return: predicted log-probability vectors for each token based on the preceding tokens.
+        """
+        tokens = self.token_embedding(x)
+        b, t, e = tokens.size()
+
+        positions = self.pos_embedding(torch.arange(t, device=d()))[None, :, :].expand(b, t, e)
+        x = tokens + positions
+
+        x = self.tblocks(x)
+
+        x = x.max(dim=1)[0] if self.max_pool else x.mean(dim=1) # pool over the time dimension
+
+        x = self.toZ(x)
+
+        return {'output': x, 'batchSize': b, 'timeDimension': t, 'embeddingSize': e}
+
+class DecoderTransformer(nn.Module):
+    """
+    Decoder for generating text (character by character).
     """
 
     def __init__(self, emb, heads, depth, seq_length, num_tokens, attention_type='default'):
@@ -23,7 +112,7 @@ class GTransformer(nn.Module):
             tblocks.append(
                 TransformerBlock(emb=emb, heads=heads, seq_length=seq_length, mask=True, attention_type=attention_type))
 
-        self.tblocks = nn.Sequential(*tblocks)
+        self.tblocks = nn.Sequential(*tblocks) #TODO: Turn into Module list
 
         self.toprobs = nn.Linear(emb, num_tokens)
 
