@@ -14,7 +14,8 @@ import numpy as np
 
 from argparse import ArgumentParser
 from torch.utils.tensorboard import SummaryWriter
-import time
+from datetime import datetime as date
+import os
 
 import random, sys, math, gzip
 from tqdm import tqdm
@@ -254,7 +255,7 @@ def compute_compression(model, data, context, batch_size):
 
     return bits / data.size(0) # bits-per-byte
 
-def sample_sequence(model, seed, max_context, length=600, temperature=0.5, verbose=False):
+def sample_sequence(model, seed, max_context, fileName, log=False, length=600, temperature=0.5):
     """
     Sequentially samples a sequence from the model, token by token.
 
@@ -262,47 +263,52 @@ def sample_sequence(model, seed, max_context, length=600, temperature=0.5, verbo
     :param seed: The sequence to start with.
     :param length: The total number of characters to sample.
     :param temperature: The sampling temperature.
-    :param verbose: If true, the sampled sequence is also printed as it is sampled.
+    :param log: If true, the sampled sequence is also logged.
+    :param fileName: Name of the file to log generations
 
     :return: The sampled sequence, including the seed.
     """
 
-    # file = open('former/generated_seqs/11-05-2021.txt', 'a')
-    # file.write('SEED:\n')
+    if log:
+        file = open(f'former/generated_seqs/{fileName}.txt', 'a')
+        file.write('SEED:\n')
+    
     sequence = seed.detach().clone()
 
-    if verbose: # Print the seed, surrounded by square brackets
-        print('[', end='', flush=True)
-        for c in seed:
-            print(str(chr(c)), end='', flush=True)
-            # file.write(str(chr(c)))
-        print(']', end='', flush=True)
-        # file.write('\nGENERATED:\n')
-    #TODO: Generate Z'
+    print('[', end='', flush=True)
+    for c in seed:
+        print(str(chr(c)), end='', flush=True)
+        if log: file.write(str(chr(c)))
+    print(']', end='', flush=True)
+    if log: file.write('\nGENERATED:\n')
+
+    zprime = model.generate_zprime(sequence) # Generate z'
+
     for _ in range(length):
 
         # Input is the tail end of the sampled sequence (as many tokens as the model can handle)
         input = sequence[-max_context:]
 
-        # Run the current input through the model
-        output = model(input[None, :]) #TODO: Also feed Z' vector as second argument
+        # Run the current input through the decoder
+        output = model.decoder(input[None, :], zprime)
 
         # Sample the next token from the probabilitys at the last position of the output.
         c = sample(output[0, -1, :], temperature)
 
         if verbose:
             print(str(chr(max(32, c))), end='', flush=True)
-            # file.write(str(chr(max(32, c))))
+            if log: file.write(str(chr(max(32, c))))
 
         sequence = torch.cat([sequence, c[None]], dim=0) # Append the sampled token to the sequence
 
-    # file.write('\n')
-    # file.close()
+    if log:
+        file.write('\n')
+        file.close()
 
     print()
     return seed
 
-def go(arg, logGenerations = False):
+def go(arg, logGenerations = False, logName = None):
     tbw = SummaryWriter(log_dir=arg.tb_dir) # Tensorboard logging
 
     # load the data (validation unless arg.final is true, then test)
@@ -311,7 +317,7 @@ def go(arg, logGenerations = False):
     trainBatches, valBatches, testBatches = splitArray(batches)
 
     # create the model
-    model = DecoderTransformer(emb=arg.embedding_size, heads=arg.num_heads, depth=arg.depth, seq_length=arg.context, num_tokens=NUM_TOKENS, attention_type=arg.attention_type)
+    model = TransformerVAE(emb=arg.embedding_size, heads=arg.num_heads, depth=arg.depth, seq_length=arg.context, num_tokens=NUM_TOKENS, attention_type=arg.attention_type)
     if torch.cuda.is_available():
         model.cuda()
 
@@ -335,18 +341,13 @@ def go(arg, logGenerations = False):
 
             batch_tensor = pad(batch) # Pad the batch with 0 values
 
-            # Create the input and target
-            inputs = batch_tensor[:, :-1]
-            target = batch_tensor[:, 1:]
-
             # Check if over the limit, and chop off the anything after the length of NUM_TOKENS
-            if inputs.size(1) > NUM_TOKENS:
-                inputs = inputs[:, :NUM_TOKENS]
-                target = target[:, :NUM_TOKENS]
+            if batch_tensor.size(1) > NUM_TOKENS:
+                batch_tensor = batch_tensor[:, :NUM_TOKENS]
 
-            output = model(inputs) # Compute the output of the model via the input
+            output = model(batch_tensor) # Compute the output of the model via the input (being the batch_tensor)
             
-            loss = F.nll_loss(output.transpose(2, 1), target, reduction='mean') # Compute the loss
+            loss = model.kl_loss() # Compute the Kullback–Leibler divergence for the model's loss
 
             # Add the loss (logged) to the Tensorboard with instances seen
             instances_seen += inputs.size(0)
@@ -361,10 +362,13 @@ def go(arg, logGenerations = False):
         print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
         # WRITE TO FILE (For logging generated sequence per epoch)
-        # file = open('former/generated_seqs/11-05-2021.txt', 'a')
-        # file.write('---------------------------------------------------------------------------------------------\n')
-        # file.write(f'EPOCH {epoch + 1}:\n')
-        # file.close()
+        if logGenerations:
+            assert logName != None, f'To log the generations, it requires a name'
+
+            file = open(f'former/generated_seqs/{logName}', 'a')
+            file.write('---------------------------------------------------------------------------------------------\n')
+            file.write(f'EPOCH {epoch + 1}:\n')
+            file.close()
 
         # GENERATE SAMPLE
         with torch.no_grad():
@@ -378,7 +382,7 @@ def go(arg, logGenerations = False):
             if torch.cuda.is_available():
                 seed = seed.cuda()
 
-            sample_sequence(model, seed=seed, max_context=arg.context, verbose=True, length=arg.sample_length)
+            sample_sequence(model, seed=seed, max_context=arg.context, log=logGenerations, fileName=logName, length=arg.sample_length)
 
 if __name__ == "__main__":
 
@@ -476,5 +480,6 @@ if __name__ == "__main__":
 
     print('OPTIONS ', options)
 
-    go(options)
+    name = date.now()
+    go(options, logGenerations=False, logName=name)
 

@@ -30,14 +30,15 @@ class TransformerVAE(nn.Module):
         # transform eps to a sample from the given distribution
         return zmean + eps * (zsig * 0.5).exp()
 
-    def forward(self, x):
+    def generate_zprime(self, x):
         z = self.encoder(x) # Encoder spits out z vector (already transformed to smaller size for mean and sigma)
+        z_out = z['output']
 
         # Split z vector into zmean and zsigma
-        self.zmean = z[:, :20]
-        self.zsig = z[:, 20:]
+        self.zmean = z_out[:, :20]
+        self.zsig = z_out[:, 20:]
 
-        zprime = sample(self.zmean, self.zsig) # sample z' using mean and sigma
+        zprime = self.sample(self.zmean, self.zsig) # sample z' using mean and sigma
 
         zprime = self.toSampledSequence(zprime) # upscale z' to token length
 
@@ -46,6 +47,11 @@ class TransformerVAE(nn.Module):
         b, t, e = z['batchSize'], z['timeDimension'], z['embeddingSize']
 
         zprime = zprime.expand(b, t, e) # Expand to add embedding vector
+
+        return zprime
+
+    def forward(self, x):
+        zprime = self.generate_zprime(x)
 
         output = self.decoder(x, zprime)
 
@@ -110,7 +116,7 @@ class DecoderTransformer(nn.Module):
             tblocks.append(
                 TransformerBlock(emb=emb, heads=heads, seq_length=seq_length, mask=True, attention_type=attention_type))
 
-        self.tblocks = nn.ModuleList(*tblocks) 
+        self.tblocks = nn.ModuleList(tblocks) 
 
         self.toprobs = nn.Linear(emb, num_tokens)
 
