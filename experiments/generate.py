@@ -282,7 +282,8 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
     print(']', end='', flush=True)
     if log: file.write('\nGENERATED:\n')
 
-    zprime = model.generate_zprime(sequence) # Generate z'
+    zprime = model.generate_zprime(sequence[None, :]) # Generate z'
+    zprime = zprime[:, -1] # remove last character to match size of input, since there is one extra character (end-of-sequence)
 
     for _ in range(length):
 
@@ -295,7 +296,7 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
         # Sample the next token from the probabilitys at the last position of the output.
         c = sample(output[0, -1, :], temperature)
 
-        if verbose:
+        if log:
             print(str(chr(max(32, c))), end='', flush=True)
             if log: file.write(str(chr(max(32, c))))
 
@@ -347,11 +348,12 @@ def go(arg, logGenerations = False, logName = None):
 
             output = model(batch_tensor) # Compute the output of the model via the input (being the batch_tensor)
             
-            loss = model.kl_loss() # Compute the Kullback–Leibler divergence for the model's loss
+            loss = model.kl_loss()[0] # Compute the Kullback–Leibler divergence for the model's loss
+            # loss = F.nll_loss(output.transpose(2, 1), batch, reduction='mean')
 
             # Add the loss (logged) to the Tensorboard with instances seen
-            instances_seen += inputs.size(0)
-            tbw.add_scalar('transformer/train-loss', float(loss.item()) * LOG2E, instances_seen)
+            instances_seen += batch_tensor.size(0)
+            tbw.add_scalar('transformer/train-loss', loss, instances_seen)
 
             loss.backward() # Backpropagate
 
@@ -365,7 +367,7 @@ def go(arg, logGenerations = False, logName = None):
         if logGenerations:
             assert logName != None, f'To log the generations, it requires a name'
 
-            file = open(f'former/generated_seqs/{logName}', 'a')
+            file = open(f'former/generated_seqs/{logName}.txt', 'a')
             file.write('---------------------------------------------------------------------------------------------\n')
             file.write(f'EPOCH {epoch + 1}:\n')
             file.close()
@@ -481,5 +483,5 @@ if __name__ == "__main__":
     print('OPTIONS ', options)
 
     name = date.now()
-    go(options, logGenerations=False, logName=name)
+    go(options, logGenerations=True, logName=name)
 
