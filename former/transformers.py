@@ -31,7 +31,7 @@ class TransformerVAE(nn.Module):
         return zmean + eps * (zsig * 0.5).exp()
 
     def forward(self, x):
-        z = self.encoder(x['output']) # Encoder spits out z vector (already transformed to smaller size for mean and sigma)
+        z = self.encoder(x) # Encoder spits out z vector (already transformed to smaller size for mean and sigma)
 
         # Split z vector into zmean and zsigma
         self.zmean = z[:, :20]
@@ -39,17 +39,15 @@ class TransformerVAE(nn.Module):
 
         zprime = sample(self.zmean, self.zsig) # sample z' using mean and sigma
 
-        sampledSequence = self.toSampledSequence(zprime) # upscale z' to token length
+        zprime = self.toSampledSequence(zprime) # upscale z' to token length
 
-        sampledSequence = sampledSequence[:, None, :] # Creates another dimension (b, 1, emb)
+        zprime = zprime[:, None, :] # Creates another dimension (b, 1, emb)
 
-        b, t, e = x['batchSize'], x['timeDimension'], x['embeddingSize']
+        b, t, e = z['batchSize'], z['timeDimension'], z['embeddingSize']
 
-        expandedSampleSequence = sampledSequence.expand(b, t, e) # Expand to add embedding vector
+        zprime = zprime.expand(b, t, e) # Expand to add embedding vector
 
-        decoderInput = x + expandedSampleSequence # Add sampled sequence to original input for decoder
-
-        output = self.decoder(decoderInput)
+        output = self.decoder(x, zprime)
 
         return output
 
@@ -112,11 +110,11 @@ class DecoderTransformer(nn.Module):
             tblocks.append(
                 TransformerBlock(emb=emb, heads=heads, seq_length=seq_length, mask=True, attention_type=attention_type))
 
-        self.tblocks = nn.Sequential(*tblocks) #TODO: Turn into Module list
+        self.tblocks = nn.ModuleList(*tblocks) 
 
         self.toprobs = nn.Linear(emb, num_tokens)
 
-    def forward(self, x):
+    def forward(self, x, zprime):
         """
         :param x: A (batch, sequence length) integer tensor of token indices.
         :return: predicted log-probability vectors for each token based on the preceding tokens.
@@ -127,7 +125,10 @@ class DecoderTransformer(nn.Module):
         positions = self.pos_embedding(torch.arange(t, device=d()))[None, :, :].expand(b, t, e)
         x = tokens + positions
 
-        x = self.tblocks(x)
+        # Pass output from Encoder through every layer of the the Decoder.
+        #  - This will help the gradients propagate to the encoder, since they don't have to pass through all layers of the decoder first.
+        for block in self.tblocks:
+            x = block(x + zprime)
 
         x = self.toprobs(x.view(b*t, e)).view(b, t, self.num_tokens)
 
