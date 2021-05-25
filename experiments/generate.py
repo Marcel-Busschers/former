@@ -5,6 +5,7 @@ from util import d, here, tic, toc
 
 import torch
 import math
+import string
 from torch import nn
 from torch.autograd import Variable
 import torch.nn.functional as F
@@ -23,6 +24,8 @@ from tqdm import tqdm
 # NB, the enwik8 data contains tokens from 9 to 240, but well round up to the nearest
 # power of two.
 NUM_TOKENS = 256
+START_TOKEN = 169
+END_TOKEN = 174
 # Used for converting between nats and bits
 LOG2E = math.log2(math.e)
 
@@ -55,9 +58,10 @@ def loadCoco(dir):
     # Second, loop through every sentence and create another array of integers
     converted_sentences = []
     for sentence in sentences:
-        temp_array = [ord(character) for character in sentence]
-        temp_array.append(ord('§')) # Append an 'End of Sequence' Character: §
-        if len(temp_array) > 1: converted_sentences.append(temp_array)
+        temp_array = [ord(character) for character in sentence if ord(character) >= 32 and ord(character) <= 126]
+        temp_array.insert(0, START_TOKEN) # Start-of-sequence token
+        temp_array.append(END_TOKEN) # End-of-sequence token
+        if len(temp_array) > 3: converted_sentences.append(temp_array) # bigger than 3 because: START token, END token and New Line character
 
     # Helper function to sort by length
     def byLength(array):
@@ -271,15 +275,9 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
 
     if log:
         file = open(f'former/generated_seqs/{fileName}.txt', 'a')
-        file.write('SEED:\n')
     
     sequence = seed.detach().clone()
 
-    print('[', end='', flush=True)
-    for c in seed:
-        print(str(chr(c)), end='', flush=True)
-        if log: file.write(str(chr(c)))
-    print(']', end='', flush=True)
     if log: file.write('\nGENERATED:\n')
 
     zprime = model.generate_zprime(sequence[None, :]) # Generate z'
@@ -296,9 +294,13 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
         # Sample the next token from the probabilitys at the last position of the output.
         c = sample(output[0, -1, :], temperature)
 
-        if log:
-            print(str(chr(max(32, c))), end='', flush=True)
-            if log: file.write(str(chr(max(32, c))))
+        if c == END_TOKEN: break
+
+        character = chr(c)
+
+        if c >= 32 and c <= 126:
+            print(character, end='', flush=True)
+            if log: file.write(character)
 
         sequence = torch.cat([sequence, c[None]], dim=0) # Append the sampled token to the sequence
 
@@ -306,7 +308,7 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
         file.write('\n')
         file.close()
 
-    print()
+    print('\n')
     return seed
 
 def go(arg, logGenerations = False, logName = None):
@@ -361,6 +363,8 @@ def go(arg, logGenerations = False, logName = None):
             
             sch.step() # Update the learning rate
 
+            break
+
         print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
         # WRITE TO FILE (For logging generated sequence per epoch)
@@ -375,11 +379,7 @@ def go(arg, logGenerations = False, logName = None):
         # GENERATE SAMPLE
         with torch.no_grad():
 
-            randomBatchIndex = random.randint(0, len(testBatches))
-            randomBatch = testBatches[randomBatchIndex]
-            t = pad(randomBatch)
-            seed = t[0]
-            seed = seed[:int(len(seed) * 0.8)] # To chop off 20% of the sequence (so the model can predict the rest)
+            seed = torch.tensor([START_TOKEN])
 
             if torch.cuda.is_available():
                 seed = seed.cuda()
@@ -483,5 +483,5 @@ if __name__ == "__main__":
     print('OPTIONS ', options)
 
     name = date.now()
-    go(options, logGenerations=True, logName=name)
+    go(options, logGenerations=False, logName=name)
 
