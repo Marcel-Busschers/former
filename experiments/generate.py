@@ -312,7 +312,7 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
     return seed
 
 def go(arg, logGenerations = False, logName = None):
-    tbw = SummaryWriter(log_dir=arg.tb_dir) # Tensorboard logging
+    if logGenerations: tbw = SummaryWriter(log_dir=arg.tb_dir) # Tensorboard logging
 
     # load the data (validation unless arg.final is true, then test)
     data = loadCoco('former/data/coco.valannotations.txt')
@@ -359,7 +359,7 @@ def go(arg, logGenerations = False, logName = None):
             if logGenerations: 
                 tbw.add_scalar('VAE/kl-loss', kl, instances_seen)
                 tbw.add_scalar('VAE/reconstruction-loss', rec, instances_seen)
-                twb.add_scalar('VAE/total-loss', loss, instances_seen)
+                tbw.add_scalar('VAE/total-loss', loss, instances_seen)
 
             loss.backward() # Backpropagate
 
@@ -396,7 +396,7 @@ if __name__ == "__main__":
     parser.add_argument("-e", "--num-epochs",
                         dest="num_epochs",
                         help="Number of epochs.",
-                        default=80, type=int)
+                        default=30, type=int)
 
     parser.add_argument("-N", "--num-batches",
                         dest="num_batches",
