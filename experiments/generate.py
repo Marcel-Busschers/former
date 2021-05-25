@@ -349,21 +349,23 @@ def go(arg, logGenerations = False, logName = None):
                 batch_tensor = batch_tensor[:, :NUM_TOKENS]
 
             output = model(batch_tensor) # Compute the output of the model via the input (being the batch_tensor)
-            
-            loss = model.kl_loss()[0] # Compute the Kullback–Leibler divergence for the model's loss
-            # loss = F.nll_loss(output.transpose(2, 1), batch, reduction='mean')
+
+            kl = model.kl_loss()[0] # Compute the Kullback–Leibler divergence for the model's loss
+            rec = F.nll_loss(output.max(dim=2)[0], batch_tensor.max(dim=1)[1], reduction='none') # Reconstruction loss
+            loss = (kl + rec).mean() # Total loss
 
             # Add the loss (logged) to the Tensorboard with instances seen
             instances_seen += batch_tensor.size(0)
-            tbw.add_scalar('transformer/train-loss', loss, instances_seen)
+            if logGenerations: 
+                tbw.add_scalar('VAE/kl-loss', kl, instances_seen)
+                tbw.add_scalar('VAE/reconstruction-loss', rec, instances_seen)
+                twb.add_scalar('VAE/total-loss', loss, instances_seen)
 
             loss.backward() # Backpropagate
 
             opt.step() # Do one step of Adam
             
             sch.step() # Update the learning rate
-
-            break
 
         print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
@@ -483,5 +485,5 @@ if __name__ == "__main__":
     print('OPTIONS ', options)
 
     name = date.now()
-    go(options, logGenerations=False, logName=name)
+    go(options, logGenerations=True, logName=name)
 
