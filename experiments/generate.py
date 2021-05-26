@@ -274,7 +274,7 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
     """
 
     if log:
-        file = open(f'former/generated_seqs/{fileName}.txt', 'a')
+        file = open(fileName, 'a')
     
     sequence = seed.detach().clone()
 
@@ -311,8 +311,8 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
     print('\n')
     return seed
 
-def go(arg, logGenerations = False, logName = None):
-    if logGenerations: tbw = SummaryWriter(log_dir=arg.tb_dir) # Tensorboard logging
+def go(arg):
+    if arg.logGenerations: tbw = SummaryWriter(log_dir=arg.tb_dir) # Tensorboard logging
 
     # load the data (validation unless arg.final is true, then test)
     data = loadCoco('former/data/coco.valannotations.txt')
@@ -358,7 +358,7 @@ def go(arg, logGenerations = False, logName = None):
 
             # Log to tensorboard
             instances_seen += batch_tensor.size(0)
-            if logGenerations: 
+            if arg.logGenerations: 
                 # Record the Model Losses
                 tbw.add_scalar('VAE/kl-loss', kl, instances_seen)
                 tbw.add_scalar('VAE/reconstruction-loss', rec, instances_seen)
@@ -385,13 +385,15 @@ def go(arg, logGenerations = False, logName = None):
             
             sch.step() # Update the learning rate
 
+            break
+
         print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
         # WRITE TO FILE (For logging generated sequence per epoch)
-        if logGenerations:
-            assert logName != None, f'To log the generations, it requires a name'
+        if arg.logGenerations:
+            assert arg.logName != None, f'To log the generations, it requires a name'
 
-            file = open(f'former/generated_seqs/{logName}.txt', 'a')
+            file = open(arg.logName, 'a')
             file.write('---------------------------------------------------------------------------------------------\n')
             file.write(f'EPOCH {epoch + 1}:\n')
             file.close()
@@ -404,7 +406,7 @@ def go(arg, logGenerations = False, logName = None):
             if torch.cuda.is_available():
                 seed = seed.cuda()
 
-            sample_sequence(model, seed=seed, max_context=arg.context, log=logGenerations, fileName=logName, length=arg.sample_length)
+            sample_sequence(model, seed=seed, max_context=arg.context, log=arg.logGenerations, fileName=arg.logName, length=arg.sample_length)
 
 if __name__ == "__main__":
 
@@ -437,7 +439,7 @@ if __name__ == "__main__":
 
     parser.add_argument("-T", "--tb-dir", dest="tb_dir",
                         help="Tensorboard logging directory",
-                        default='./runs')
+                        default='./former/runs')
 
     parser.add_argument("-f", "--final", dest="final",
                         help="Whether to run on the real test set (if not included, the validation set is used).",
@@ -498,10 +500,17 @@ if __name__ == "__main__":
                         help="Which type of self-attention to use (default, gpt2, wide, narrow)",
                         default="gpt2", type=str)
 
+    parser.add_argument("--log", dest="logGenerations",
+                        help="Log to tensorboard (also writes generations to file)",
+                        default=False, type=bool)
+
+    parser.add_argument("--log-dir", dest="logName",
+                        help="Generation txt directory",
+                        default=f'./former/generated_seqs/{date.now()}.txt')
+
     options = parser.parse_args()
 
     print('OPTIONS ', options)
 
-    name = date.now()
-    go(options, logGenerations=True, logName=name)
+    go(options)
 
