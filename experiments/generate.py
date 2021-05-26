@@ -385,8 +385,6 @@ def go(arg):
             
             sch.step() # Update the learning rate
 
-            break
-
         print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
         # WRITE TO FILE (For logging generated sequence per epoch)
