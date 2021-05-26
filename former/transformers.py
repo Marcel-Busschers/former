@@ -49,7 +49,11 @@ class TransformerVAE(nn.Module):
         return zprime
 
     def forward(self, x):
-        zprime = self.generate_zprime(x)
+        encoderInput = x[:, 1:] # Encoder excludes the <END> token
+
+        zprime = self.generate_zprime(encoderInput)
+
+        x = x[:, :-1] # Shift the decoder input to the right, includes <END> token but not <START> token
 
         output = self.decoder(x, zprime)
 

@@ -351,7 +351,7 @@ def go(arg):
             output = model(batch_tensor) # Compute the output of the model via the input (being the batch_tensor)
 
             kl = model.kl_loss()[0] # Compute the Kullback–Leibler divergence for the model's loss
-            rec = F.nll_loss(output.transpose(2,1), batch_tensor, reduction='mean') # Reconstruction loss
+            rec = F.nll_loss(output.transpose(2,1), batch_tensor[:,1:], reduction='mean') # Reconstruction loss (target is clipped to match encoder input)
             loss = (kl + rec).mean() # Total loss
 
             loss.backward() # Backpropagate
