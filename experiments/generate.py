@@ -351,17 +351,35 @@ def go(arg, logGenerations = False, logName = None):
             output = model(batch_tensor) # Compute the output of the model via the input (being the batch_tensor)
 
             kl = model.kl_loss()[0] # Compute the Kullback–Leibler divergence for the model's loss
-            rec = F.nll_loss(output.max(dim=2)[0], batch_tensor.max(dim=1)[1], reduction='none') # Reconstruction loss
+            rec = F.nll_loss(output.transpose(2,1), batch_tensor, reduction='mean') # Reconstruction loss
             loss = (kl + rec).mean() # Total loss
 
-            # Add the loss (logged) to the Tensorboard with instances seen
+            loss.backward() # Backpropagate
+
+            # Log to tensorboard
             instances_seen += batch_tensor.size(0)
             if logGenerations: 
+                # Record the Model Losses
                 tbw.add_scalar('VAE/kl-loss', kl, instances_seen)
                 tbw.add_scalar('VAE/reconstruction-loss', rec, instances_seen)
                 tbw.add_scalar('VAE/total-loss', loss, instances_seen)
 
-            loss.backward() # Backpropagate
+                # Record the Gradient Norms            
+                # ENCODER
+                total_norm = 0
+                for p in model.encoder.parameters():
+                    param_norm = p.grad.data.pow(2).sum()
+                    total_norm += param_norm
+                total_norm = total_norm ** (1. / 2)
+                tbw.add_scalar('VAE/encoder-gradient-norm', total_norm, instances_seen)
+
+                # DECODER
+                total_norm = 0
+                for p in model.decoder.parameters():
+                    param_norm = p.grad.data.pow(2).sum()
+                    total_norm += param_norm
+                total_norm = total_norm ** (1. / 2)
+                tbw.add_scalar('VAE/decoder-gradient-norm', total_norm, instances_seen)
 
             opt.step() # Do one step of Adam
             
@@ -396,7 +414,7 @@ if __name__ == "__main__":
     parser.add_argument("-e", "--num-epochs",
                         dest="num_epochs",
                         help="Number of epochs.",
-                        default=30, type=int)
+                        default=80, type=int)
 
     parser.add_argument("-N", "--num-batches",
                         dest="num_batches",
@@ -415,7 +433,7 @@ if __name__ == "__main__":
     parser.add_argument("-l", "--learn-rate",
                         dest="lr",
                         help="Learning rate",
-                        default=0.0001, type=float)
+                        default=0.0003, type=float)
 
     parser.add_argument("-T", "--tb-dir", dest="tb_dir",
                         help="Tensorboard logging directory",
