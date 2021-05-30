@@ -400,18 +400,18 @@ def go(arg):
             
             sch.step() # Update the learning rate
 
-            # Model Checkpoint
-            if arg.logGenerations:
-                epoch_path = checkpoint_path + f'/epoch_{epoch+1}.pt'
-                torch.save({
-                    'epoch': epoch,
-                    'model_state_dict': model.state_dict(),
-                    'optimiser_state_dict': opt.state_dict(),
-                    'lr_state_dict': sch.state_dict(),
-                    'kl_loss': kl,
-                    'reconstruction_loss': rec,
-                    'total_loss': loss
-                }, epoch_path)
+        # Model Checkpoint
+        if arg.logGenerations:
+            epoch_path = checkpoint_path + f'/epoch_{epoch+1}.pt'
+            torch.save({
+                'epoch': epoch,
+                'model_state_dict': model.state_dict(),
+                'optimiser_state_dict': opt.state_dict(),
+                'lr_state_dict': sch.state_dict(),
+                'kl_loss': kl,
+                'reconstruction_loss': rec,
+                'total_loss': loss
+            }, epoch_path)
 
         print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
