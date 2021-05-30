@@ -68,7 +68,7 @@ def loadCoco(dir):
         return(len(array))
 
     converted_sentences.sort(key = byLength) #sort in acsending order
-    
+
     return converted_sentences
 
 class BatchSize(Exception):
@@ -273,22 +273,30 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
     :return: The sampled sequence, including the seed.
     """
 
-    if log:
-        file = open(fileName, 'a')
+    if log: file = open(fileName, 'a')
     
     sequence = seed.detach().clone()
 
+    if log: file.write('\nSEED:\n')
+    for c in sequence:
+        character = chr(c)
+        print(character, end='', flush=True)
+        if log: file.write(character)
+
+    print()
     if log: file.write('\nGENERATED:\n')
 
     zprime = model.generate_zprime(sequence[None, :]) # Generate z'
     zprime = zprime[:, -1] # remove last character to match size of input, since there is one extra character (end-of-sequence)
 
+    sequence = torch.tensor([START_TOKEN])
+
     for _ in range(length):
 
-        # Input is the tail end of the sampled sequence (as many tokens as the model can handle)
+        # Input is the START token
         input = sequence[-max_context:]
 
-        # Run the current input through the decoder
+        # Run the START token along with z' through the decoder
         output = model.decoder(input[None, :], zprime)
 
         # Sample the next token from the probabilitys at the last position of the output.
@@ -408,6 +416,7 @@ def go(arg):
         print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
         # WRITE TO FILE (For logging generated sequence per epoch)
+        logName = None
         if arg.logGenerations:
             logName = path + '/generated.txt'
             file = open(logName, 'a')
@@ -418,8 +427,11 @@ def go(arg):
         # GENERATE SAMPLE
         with torch.no_grad():
 
-            seed = torch.tensor([START_TOKEN])
-
+            # Get a random sequence for generation
+            randomBatchIndex = random.randint(0, len(testBatches))
+            randomBatch = testBatches[randomBatchIndex]
+            t = pad(randomBatch)
+            seed = t[-1]
             if torch.cuda.is_available():
                 seed = seed.cuda()
 
