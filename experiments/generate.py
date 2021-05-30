@@ -312,7 +312,14 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
     return seed
 
 def go(arg):
-    if arg.logGenerations: tbw = SummaryWriter(log_dir=arg.tb_dir) # Tensorboard logging
+    path = arg.runDirectory + arg.currentDateDir
+    tensorboard_path = path + arg.tb_dir
+    checkpoint_path = path + arg.checkpointName
+    if arg.logGenerations: 
+        os.mkdir(path)
+        os.mkdir(tensorboard_path)
+        os.mkdir(checkpoint_path)
+        tbw = SummaryWriter(log_dir=tensorboard_path) # Tensorboard logging
 
     # load the data (validation unless arg.final is true, then test)
     data = loadCoco('former/data/coco.valannotations.txt')
@@ -385,13 +392,25 @@ def go(arg):
             
             sch.step() # Update the learning rate
 
+            # Model Checkpoint
+            if arg.logGenerations:
+                epoch_path = checkpoint_path + f'/epoch_{epoch+1}.pt'
+                torch.save({
+                    'epoch': epoch,
+                    'model_state_dict': model.state_dict(),
+                    'optimiser_state_dict': opt.state_dict(),
+                    'lr_state_dict': sch.state_dict(),
+                    'kl_loss': kl,
+                    'reconstruction_loss': rec,
+                    'total_loss': loss
+                }, epoch_path)
+
         print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
         # WRITE TO FILE (For logging generated sequence per epoch)
         if arg.logGenerations:
-            assert arg.logName != None, f'To log the generations, it requires a name'
-
-            file = open(arg.logName, 'a')
+            logName = path + '/generated.txt'
+            file = open(logName, 'a')
             file.write('---------------------------------------------------------------------------------------------\n')
             file.write(f'EPOCH {epoch + 1}:\n')
             file.close()
@@ -404,12 +423,13 @@ def go(arg):
             if torch.cuda.is_available():
                 seed = seed.cuda()
 
-            sample_sequence(model, seed=seed, max_context=arg.context, log=arg.logGenerations, fileName=arg.logName, length=arg.sample_length)
+            sample_sequence(model, seed=seed, max_context=arg.context, log=arg.logGenerations, fileName=logName, length=arg.sample_length)
 
 if __name__ == "__main__":
 
     ## Parse the command line options
     parser = ArgumentParser()
+    currentDate = date.now()
 
     parser.add_argument("-e", "--num-epochs",
                         dest="num_epochs",
@@ -437,7 +457,7 @@ if __name__ == "__main__":
 
     parser.add_argument("-T", "--tb-dir", dest="tb_dir",
                         help="Tensorboard logging directory",
-                        default='./former/runs')
+                        default='/tensorboard_log')
 
     parser.add_argument("-f", "--final", dest="final",
                         help="Whether to run on the real test set (if not included, the validation set is used).",
@@ -502,9 +522,17 @@ if __name__ == "__main__":
                         help="Log to tensorboard (also writes generations to file)",
                         default=False, type=bool)
 
-    parser.add_argument("--log-dir", dest="logName",
-                        help="Generation txt directory",
-                        default=f'./former/generated_seqs/{date.now()}.txt')
+    parser.add_argument("--date-dir", dest="currentDateDir",
+                        help="The current date (used for directory naming",
+                        default=f'/{currentDate}')
+
+    parser.add_argument("--checkpoint-dir", dest="checkpointName",
+                        help="the directory where the model gets saved",
+                        default='/checkpoint_saves')
+    
+    parser.add_argument("--run-dir", dest="runDirectory",
+                        help="The directory where the model runs are",
+                        default='./former/runs')
 
     options = parser.parse_args()
 
