@@ -441,7 +441,7 @@ if __name__ == "__main__":
 
     ## Parse the command line options
     parser = ArgumentParser()
-    currentDate = date.now()
+    currentDate = date.now().strftime('%Y-%m-%d_%H:%M')
 
     parser.add_argument("-e", "--num-epochs",
                         dest="num_epochs",
