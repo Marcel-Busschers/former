@@ -15,9 +15,10 @@ class TransformerVAE(nn.Module):
 
         self.toSampledSequence = nn.Linear(20, emb)
 
-    def kl_loss(self):
+    def kl_loss(self, beta):
         zmean = self.zmean; zsig = self.zsig
-        return 0.5 * torch.sum(zsig.exp() - zsig + zmean.pow(2) - 1, dim=1)
+        kl = 0.5 * torch.sum(zsig.exp() - zsig + zmean.pow(2) - 1, dim=1)
+        return beta * kl
 
     def sample(self, zmean, zsig):
         b, l = zmean.size()

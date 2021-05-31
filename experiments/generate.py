@@ -344,6 +344,16 @@ def go(arg):
     # Linear learning rate warmup
     sch = torch.optim.lr_scheduler.LambdaLR(opt, lambda i: min(i / (arg.lr_warmup / arg.batch_size), 1.0))
 
+    # Load Model
+    if arg.modelDirectory is not None:
+        checkpoint = torch.load(arg.modelDirectory)
+        model.load_state_dict(checkpoint['model_state_dict'])
+        opt.load_state_dict(checkpoint['optimiser_state_dict'])
+        sch.load_state_dict(checkpoint['lr_state_dict'])
+        kl = checkpoint['kl_loss']
+        rec = checkpoint['reconstruction_loss']
+        loss = checkpoint['total_loss']
+
     # Training loop
     # -- We don't loop over the data, instead we sample a batch of random subsequences each time. This is not strictly
     #    better or worse as a training method, it's just a little simpler.
@@ -365,7 +375,7 @@ def go(arg):
 
             output = model(batch_tensor) # Compute the output of the model via the input (being the batch_tensor)
 
-            kl = model.kl_loss()[0] # Compute the Kullback–Leibler divergence for the model's loss
+            kl = model.kl_loss(arg.betaValue)[0] # Compute the Kullback–Leibler divergence for the model's loss
             rec = F.nll_loss(output.transpose(2,1), batch_tensor[:,1:], reduction='mean') # Reconstruction loss (target is clipped to match encoder input)
             loss = (kl + rec).mean() # Total loss
 
@@ -400,8 +410,8 @@ def go(arg):
             
             sch.step() # Update the learning rate
 
-        # Model Checkpoint
-        if arg.logGenerations:
+        # Model Checkpoint (Only save model on last epoch)
+        if arg.logGenerations and epoch == range(arg.num_epochs)[-1]:
             epoch_path = checkpoint_path + f'/epoch_{epoch+1}.pt'
             torch.save({
                 'epoch': epoch,
@@ -544,6 +554,14 @@ if __name__ == "__main__":
     parser.add_argument("--run-dir", dest="runDirectory",
                         help="The directory where the model runs are",
                         default='./former/runs')
+
+    parser.add_argument("--beta", dest="betaValue",
+                        help="Beta Annealing perameter used to clip the KL loss (helps Decoder Collapse)",
+                        default=1, type=int)
+
+    parser.add_argument("--load-model", dest="modelDirectory",
+                        help="The path to the .pt model save file (To continue training on that model)",
+                        default=None, type=str)
 
     options = parser.parse_args()
 
