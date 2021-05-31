@@ -416,9 +416,8 @@ def go(arg):
         print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
         # WRITE TO FILE (For logging generated sequence per epoch)
-        logName = None
+        logName = path + '/generated.txt'
         if arg.logGenerations and (epoch+1) % 10 == 0:
-            logName = path + '/generated.txt'
             file = open(logName, 'a')
             file.write('---------------------------------------------------------------------------------------------\n')
             file.write(f'EPOCH {epoch + 1}:\n')

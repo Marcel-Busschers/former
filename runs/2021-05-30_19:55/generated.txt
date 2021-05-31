@@ -1,0 +1,624 @@
+
+SEED:
+©Two sets of hands are each holding a cell phone while another hand in the background is holding a glass.®
+GENERATED:
+The elet is standing in the some with tennis are to gread plors 
+
+SEED:
+©A man taking a picture of items for sale through the front window of a store.®
+GENERATED:
+A white birds with a computer next to a couch one of a bite alale.
+
+SEED:
+©A zebra standing on land and eating grass near a body of water that is behind it.®
+GENERATED:
+A man is and a parked on a couch and cars white sitting a to sit. 
+
+SEED:
+©A dark colored cat that is looking up at a television that is on and has a program playing on it.®
+GENERATED:
+A man in a cat in front of a pizza on the air sitting on a tablealloande
+
+SEED:
+©A wrap served with a container of bacon and another container of vegetables.®
+GENERATED:
+A desk with a bear catchis displayer is for in a littenserthemby k. sisth shore widesininge fe 
+
+SEED:
+©There are two stuffed animals of which one appears to be a lamb and the other a bear.®
+GENERATED:
+A table with a self pizza control on the beach other inding bowam.
+
+SEED:
+©The woman holding an umbrella smiles on the narrow street beside the sidewalk.®
+GENERATED:
+A man holding a children sitting on a bench in a bathroom wit ite.
+
+SEED:
+©A young man balances himself as he tilts his skateboard up at the edge of an obstacle.®
+GENERATED:
+A woman with a street light near a table with a store and a couck.
+
+SEED:
+©A man holding a white frisbee walking on top of a green grass covered field.®
+GENERATED:
+A woman is sitting next to a stile and a toilet with a buildingsh.
+---------------------------------------------------------------------------------------------
+EPOCH 10:
+
+SEED:
+©A player swings at a baseball while the catcher is ready to catch the ball.®
+GENERATED:
+A close look with a city street in a stop sitting on a bench wind.
+
+SEED:
+©a small group of giraffes walking across a field with dried grass and trees ®
+GENERATED:
+A store of cake sitting on a parked on top of a couch in the cand.
+
+SEED:
+©A purple bathroom with three sinks and a purple countertop with a mirror surrounded with light bulbs.®
+GENERATED:
+A white plate of a white plate of a cell phone sitting on a tennin
+
+SEED:
+©A colorful chain with a note attached is wrapped around a parking meter's post.®
+GENERATED:
+A white dog is sitting on a chair and umbrellas and a counter car.
+
+SEED:
+©The elephants think they are hiding behind those trees, but I can still see them.®
+GENERATED:
+A person standing on a plate and a dog with a street of a cariote
+
+SEED:
+©There is a fireplug at the corner of this intersection in the residential section of town.®
+GENERATED:
+A couple of carrots wearing a table with a black cat on top of it.
+
+SEED:
+©A woman wearing a yellow top and a jean skirt standing next to a yellow fire hydrant. ®
+GENERATED:
+A person is playing on a laptop sign with a clock on a race parel.
+
+SEED:
+©veggies and dip in a red tray, a sandwich and fries in a red tray and a pizza®
+GENERATED:
+A counter is standing next to a white couch and a cat is teethers.
+
+SEED:
+©The reflection of  a clock and traffic is seen through a window with an "ATM INSIDE" sticker.®
+GENERATED:
+A woman in a baseball bat and white playing a shopping for a blan.
+
+SEED:
+©Four people trying to get a black horse into the back of a blue and white truck.®
+GENERATED:
+A white plate of bikers playing tennis on a black of an and a set.
+---------------------------------------------------------------------------------------------
+EPOCH 20:
+
+SEED:
+©A street light attached to a pole next to a street and a sidewalk railing.®
+GENERATED:
+A man in a black racket sign in a plate of a sheep and blue sheet.
+
+SEED:
+©An old fire hydrant with a bicycle tire on the ground around it, on the side of a road.®
+GENERATED:
+A man is standing on a court with the batter has a lid items side.
+
+SEED:
+©A girl sits on the bed and photographs herself in the mirror with her tripod.®
+GENERATED:
+A man with a dog sitting on a desk with a tennis racket and chair.
+
+SEED:
+©French bread on a plate with eggs, bacon and banana slices atop the bread.®
+GENERATED:
+A young man in a baseball field next to a bathroom with a pizza. 
+
+SEED:
+©A man in a black hat, white shirt and black pants jumping a skateboard off a bench. ®
+GENERATED:
+A pizza with a sandwich of bananas and a sink and white car frond.
+
+SEED:
+©Some people in high visibility jackets putting suitcases onto a conveyer belt from a container®
+GENERATED:
+A person is covered with a street sign his bowlsing over her cat. 
+
+SEED:
+©The neon purple toilet with lid lifted is in the bathroom with brown tile. ®
+GENERATED:
+A white bear is a vase of food on a table with a crowd on a white.
+
+SEED:
+©a car and a bus at an intersection in front of a historical looking building®
+GENERATED:
+A person is sitting on a street is station with a bad building sk.
+
+SEED:
+©A woman is standing and smiling as she holds a wine glass in front of a refrigerator.®
+GENERATED:
+A couple of stuffed and a book, lice and a station with a bathroominenealiles throreatore melo ge in imatendenen shemal s s t te
+
+SEED:
+©a large crowd of people walking through town near a large clock display with a christmas tree in the background®
+GENERATED:
+A person is going table with a sidewalk next to a side of a plane.
+---------------------------------------------------------------------------------------------
+EPOCH 30:
+
+SEED:
+©A woman wearing a dark colored dress stands curbside near a large building.®
+GENERATED:
+A man is sitting on a sidewalk and a red couches in the oce 
+
+SEED:
+©Two toilets sit outside on the pavement next to a yard with many decorations.®
+GENERATED:
+A statue of a person sitting in a grassy field area with a storal.
+
+SEED:
+©A large blue swimming pool sitting next to a hotel surrounded by palm trees.®
+GENERATED:
+The pictures are playing with a bathroom with a bathtub and white.
+
+SEED:
+©Two sandwiches with toasted bread set on a baking sheet that has tinfoil over it.®
+GENERATED:
+A street cat sitting with a couch, laptop and a thim a picture is.
+
+SEED:
+©This is a commercial bathroom with orange and gray mosaic tiles and three sinks.®
+GENERATED:
+A man is standing in a large with a plates of food on a computers.
+
+SEED:
+©A group of 20 small photos in a collage together, with each photo containing a carrot in it.®
+GENERATED:
+A group of people standing next to a bike sitting on a bed couch lithedonsind bokinicorons ieseakindicyoucher ar a esedovamas at
+
+SEED:
+©A photo of a busy intersection with a bus, several cars and a clock tower.®
+GENERATED:
+A baseball player with a couch a counter topped to the beach othes
+
+SEED:
+©A picture of a bathroom with a fern plant near the sink and a photo of a city above the toilet. ®
+GENERATED:
+A herd of cattle girl that is laying the shorts on a street signs.
+
+SEED:
+©A toaster has been decorated with other kitchen items and googly eyes to look like a person. ®
+GENERATED:
+A batter with a laptop next to a black of a bus the curb teet cak.
+
+SEED:
+©A group of three people standing next to each other in front of a doorway.®
+GENERATED:
+A person in a blue extern the window with a street and a counter 
+---------------------------------------------------------------------------------------------
+EPOCH 40:
+
+SEED:
+©A batter swinging a bat at a baseball with the catcher and umpire behind him.®
+GENERATED:
+A bunch of butter and toilet sitting near a black counter photogiv s a s oo f toness acamelide onesididinerineded arilinsmes s t
+
+SEED:
+©Girl holding up two fingers while sitting in front of plate with pizza slide on it®
+GENERATED:
+A person holding a hat has a man with a baseball playing to compum
+
+SEED:
+©A grilled chicken sandwich sits beside french fries made with real potatoes. ®
+GENERATED:
+A couple of pizza sitting on a plate with a selfie of a stovertis.
+
+SEED:
+©A table with a plate that has a pizza on it along with fresh vegetable and meat toppings.®
+GENERATED:
+A man is sitting on a brick while with a coll of white computerti.
+
+SEED:
+©School boys sit cross legged in front of a chalkboard sign in a vintage black and white photo.®
+GENERATED:
+A girl wearing a tree in front of a couch and a skateboard sheep. 
+
+SEED:
+©A man covering his eyes while standing next to multiple boxes filled with bananas.®
+GENERATED:
+A cat laying in a store that and a cake board standing in a field.
+
+SEED:
+©A man with a nametag in a suit and tie and two women holding glasses on each side of him.®
+GENERATED:
+A person sitting on a brick counter and couch with a counter a but
+
+SEED:
+©A yellow BMW touring motorcycle parked in the street as people look on from behind a steel rail on the sidewalk.®
+GENERATED:
+A couple of people sitting next to a white couch with a streeting.
+
+SEED:
+©Skate boarder hang time with young man appearing to streak though the air.®
+GENERATED:
+A street with a conce of a sandwich and straw near a cross a ramp.
+
+SEED:
+©A white and gray kitten pokes its paw at a mirror and looks at its reflection.®
+GENERATED:
+A man is riding a microwave on a surfboard and a fence in the sky.
+---------------------------------------------------------------------------------------------
+EPOCH 50:
+
+SEED:
+©A bunch of people are holding kites and the wind is blowing them on a grassy field.®
+GENERATED:
+A man with a skateboard with a tennis court in a chair on a plate.
+
+SEED:
+©A well-lit and well-decorated living room shows a glimpse of a glass front door through the corridor. ®
+GENERATED:
+The person is standing in a bathroom with a mirror and a counter 
+
+SEED:
+©A man holding a camera reflected in a bathroom mirror that sits above a sink and next to a door.®
+GENERATED:
+A smiling and a purple cross a ball uniforms on the street ligs. 
+
+SEED:
+©A black and white photos of a man leaning on a street sign in a neighborhood. ®
+GENERATED:
+A man wearing a shirt and a chair with a couch intersected slices.
+
+SEED:
+©A rusted red fire hydrant encircled by an old tire stands in the bare earth beside a chain link fence.®
+GENERATED:
+A stop sign sitting on the side of a bed ready to sitting on a bable foferitwopinexeatrovedines gesinetory toron a wined ca ines
+
+SEED:
+©A living room with wood floors, a couch, wooden chair bookshelves and coffee table.®
+GENERATED:
+A plate of food is sitting on a stop sign and a toilet and bananas
+
+SEED:
+©A glass with a lady bunched up holding her legs and head tilted with a with candle on the side and lights in the background.®
+GENERATED:
+A group of people sitting on a surfboard is down the backgrounder.
+
+SEED:
+©A red double decker bus headed to Victoria is parked on the side of the street.®
+GENERATED:
+A person on a street in a station with a street in a parking lots.
+
+SEED:
+©A huge, crashing wave with lots of spray is carrying a kneeling wet-suited surfer to shore.®
+GENERATED:
+A street sign with a station of a clock with a car in a sun balls.
+
+SEED:
+©Assorted vegetables are displayed at a fruit stand including bananas, oranges, apples, and cherries.®
+GENERATED:
+A street sign in the group of people watching on a sidewalk byead.
+---------------------------------------------------------------------------------------------
+EPOCH 60:
+
+SEED:
+©A man on a skateboard wearing a helmet and safety pads while riding in an empty swimming pool.®
+GENERATED:
+A white plate of food and that has a walkway in front of a tabler.
+
+SEED:
+©an intersection with different poles filled with street lights and a camera®
+GENERATED:
+A large standing in front of a counter side of a green and a lapt.
+
+SEED:
+©A bunch of people are looking over a tennis volley net while a young boy wearing glasses is bouncing a tennis ball ®
+GENERATED:
+A group of people sitting on a tennis court holding a fireplaces. 
+
+SEED:
+©Two men standing next to one another, and both are smiling and wearing neckties.®
+GENERATED:
+A street sign is parked in front of a couch with a side a picture.
+
+SEED:
+©A flat bed cart with three large bunches of bananas and a tied lidded basket.®
+GENERATED:
+A bathroom sink, boarder and white couch and a parking a street in
+
+SEED:
+©A black and white cow stands in a paddock with firewood in the background.®
+GENERATED:
+A woman standing on a couch a sidewalk next to a sign on a man. V.
+
+SEED:
+©An office view shows cubicles and overhead lights in the background, and to the front ,  a serious looking man with a beard, vest and colorful tie. ®
+GENERATED:
+A young work standing on a bench while standing on top of a build.
+
+SEED:
+©A woman standing at a kitchen counter pouring something from a measuring cup.®
+GENERATED:
+A bathroom with a statue of food with a cake the street with cars.
+
+SEED:
+©a car and a bus at an intersection in front of a historical looking building®
+GENERATED:
+A couple of men riding a look and black of a woman with a blanket.
+
+SEED:
+©A red bicycle leaned against a red stucco building with a graffiti covered door. ®
+GENERATED:
+A group of people walking across a frisbee on the centersectives. 
+---------------------------------------------------------------------------------------------
+EPOCH 70:
+
+SEED:
+©A kitchen has light wooden colored cabinetry, beige countertops, and stainless steel appliances in an open concept house.®
+GENERATED:
+A family of food on a field and upside for a plate with a bananas.
+
+SEED:
+©A group photo of men and boys from the Goodmayes Boys School dated April 1929.®
+GENERATED:
+A black bear with a lamp, snowboarding a bench a chair about it.  
+
+SEED:
+©A male tennis player jumping in the air while swinging his tennis racket, on a hard surface court, with a scoreboard behind him.®
+GENERATED:
+A man is riding a bat with a laptop and a shirt sitting on a come.
+
+SEED:
+©some kind of chicken, rice, and vegetable dish on a pizza tray being served to a man.®
+GENERATED:
+A little girl player has been clock on a car on a close everge rak
+
+SEED:
+©Two young people are skateboarding on the ramp, trying to pull off tricks.®
+GENERATED:
+A street sign is sitting on a field with a stares on a tennis cour
+
+SEED:
+©A grilled chicken sandwich sits beside french fries made with real potatoes. ®
+GENERATED:
+A man in a black shirt and some with a dog windows full of a man. 
+
+SEED:
+©A couple of young adults walking along a little path carrying a couple umbrellas. ®
+GENERATED:
+A group of people sitting on a surfboards on a motorcycle windows.
+
+SEED:
+©Frisbee in the air, a dog squatting looking up at it, and a man standing behind the dog watching it, on the grass with a tree.®
+GENERATED:
+A passenger jet is ready to hit the side of a busy to background. 
+
+SEED:
+©Two very small yellow bananas on top of a wooden table next to a Malaysian coin. ®
+GENERATED:
+A man eating a tennis racket standing next to a table on a snowy. 
+
+SEED:
+©A person holds a smartphone taking a picture of a bottle and glasses on the table®
+GENERATED:
+A table with a dog with a small glass of a bathroom with a toilet.
+---------------------------------------------------------------------------------------------
+EPOCH 80:
+
+SEED:
+©A skier on skies and a snowboarder carrying a snowboard on a mountain slope.®
+GENERATED:
+A man on a sidewalk with two slice of light with a lake a bathtub.
+
+SEED:
+©A dark colored cat that is looking up at a television that is on and has a program playing on it.®
+GENERATED:
+A pair of giraffes walking along the window large fire hydrant mat
+
+SEED:
+©A woman tennis player in a black army shirt and tennis skirt, swinging a tennis racket.®
+GENERATED:
+A cat sitting on a bench next to a standing in the sky at a banan.
+
+SEED:
+©A baseball player is waiting for the pitch while standing in the batters box.®
+GENERATED:
+A large group of people sitting on a bench near a large building. 
+
+SEED:
+©Someone has crawled under the plane to check that everything is operational.®
+GENERATED:
+A store walking on a bench is setting ready to the ground it it. 
+
+SEED:
+©The caramel-colored kitten is  lying on the small blanket on top of the unmade bed.®
+GENERATED:
+a laptop sitting on a bench white parked next to a cell phone in. 
+
+SEED:
+©A black cat meanders up the walkway in front of a motorcycle in front of a house.®
+GENERATED:
+A large and grey colorful central cars near a frisbee in a storud.
+
+SEED:
+©A tall building with glass and lots of people walking in front of it and there is a green banner that says Spring in the city.®
+GENERATED:
+A head fire hydrant sitting on a rain and a tomatoes on the water.
+
+SEED:
+©An audience is looking at an film of a man taking that is projected onto a wall. ®
+GENERATED:
+A person is sitting on a striped with a computer next to a moothes
+
+SEED:
+©A person covered with an orange sleeping bag rests his head on a blue back pack as he sleeps on a park bench. ®
+GENERATED:
+A store in a black and white shore light times on a blue and desilonellede atwa laneaban s silinetwa sanendeerdco aspevitinethel
+---------------------------------------------------------------------------------------------
+EPOCH 90:
+
+SEED:
+©A desk with several monitors under it and two computers and a laptop on top of the desk. ®
+GENERATED:
+A table with a batter next to a white cars and a piece of a rock. 
+
+SEED:
+©A jet fighter style airplane parked near a crowd of people who are walking about. ®
+GENERATED:
+A man is standing on a plate of from a bathroom with cheesest reas
+
+SEED:
+©The person holds a plate with two red apples near pedestrians holding umbrellas. ®
+GENERATED:
+A beautiful woman sitting on top of a fire hydrants and a counter.
+
+SEED:
+©A box contains a breakfast with an omelet, tomato slices, a sausage, and some toast.®
+GENERATED:
+A bathroom with a toilet with a piece of a large past in a field. 
+
+SEED:
+©A large gun, a jeep, a motorcycle, and a warplane are in front of a war backdrop. ®
+GENERATED:
+A boy is sitting on a stone of a grassy posing on a skateboarders.
+
+SEED:
+©An old clock tower stands near a bridge and other large old, medieval type structures.®
+GENERATED:
+A bus traveling down a coffee curtain going the side of a stovewa.
+
+SEED:
+©A white boxy birthday cake with red flowers and blue accents on a decorated table with gray cover and candles.®
+GENERATED:
+A bunch of people are sitting on a cake with a baseball buildings.
+
+SEED:
+©A dog jumping through the air above a pool of water that has been marked for distance, with people watching in the distance.®
+GENERATED:
+A street sign and bright the side of a boatle on a skateboarding t.searin ilea ckanemppe ch otisirthestoldesiestads gema ine dol
+
+SEED:
+©Japanese airliner just taking off with snow capped mountains in the background.®
+GENERATED:
+A young man playing on a standing next to a bunch of it's standic
+
+SEED:
+©A rusty and old looking fire hydrant sits on the concrete in front of a mural.®
+GENERATED:
+A group of people sitting on a pair of a computer on a sunny day. 
+---------------------------------------------------------------------------------------------
+EPOCH 100:
+
+SEED:
+©The blender is being used to liquify vegetables  for sauces during dinner preparation.®
+GENERATED:
+A group of people sitting at a table and a spoon in a microwaves. 
+
+SEED:
+©Salad, rolls and entrees are served on a stainless steel cafeteria counter. ®
+GENERATED:
+A street sign is playing a game with a flowers in a tennis courtop.snenut peres agreleaturonet canelineainerureanes,eagulistelin
+
+SEED:
+©A colorful umbrella in the center of a black and white picture of a busy city side walk.®
+GENERATED:
+a small teddy bear sitting next to a bite of baseball bat at the r
+
+SEED:
+©Two cats in front of a woman holding something in her hand, one of the cats is reaching for it with its paws. ®
+GENERATED:
+A bathroom with a sink, and a spoon with a two pieces of the herd.
+
+SEED:
+©a desk filled with some paperwork, a laptop and a computer with two monitors®
+GENERATED:
+A laptop computer sitting in front of a tennis racket on a table 
+
+SEED:
+©A baseball game is going with children playing a runner is about to hit the base.®
+GENERATED:
+A colorful cat sitting on a bottle and a building a large room wa.
+
+SEED:
+©An old advertisement shows a large kitchen with white cabinets and appliances and yellow walls.®
+GENERATED:
+A small bathroom with a statue with a striped around a tennis ract
+
+SEED:
+©A single bed sits on a wood floor surrounded by partially-filled bottles of colored liquid.®
+GENERATED:
+A black and white photo of a bench of a bathroom items on a cardby walinlivexicon ntrure  doran sithoupinoubasinets monesiners l
+
+SEED:
+©A counter topped with a large white frosted cake sitting next to small pastry.®
+GENERATED:
+A couple of people sitting in a baseball towels on a sidewalk bow.
+
+SEED:
+©A crowd of people wearing winter cloths are outside in the snow as some people carry snowboards.®
+GENERATED:
+A man in a green table standing on the fruit is the ball building.
+---------------------------------------------------------------------------------------------
+EPOCH 110:
+
+SEED:
+©The goalkeeper in orange grabs the ball among a group of children playing soccer.®
+GENERATED:
+A bathroom with a tennis racket and a monitor the side of a plate.
+
+SEED:
+©A table with a plate that has a pizza on it along with fresh vegetable and meat toppings.®
+GENERATED:
+A shirtless behind a fence that is laying on a sidewalk with food
+
+SEED:
+©A blue train traveling past a train station next to a lush green mountain.®
+GENERATED:
+A couple of people are sitting next to a white and a Christmashs. 
+
+SEED:
+©A traffic light on the intersection of a city, with a large building and a bicyclist in the background.®
+GENERATED:
+A man is standing next to a plate with a table next to the sidewar
+
+SEED:
+©A person riding a horse in a horse park while another horse wonders in nearby grass. ®
+GENERATED:
+A woman with a mounter a table with a bat and chicken flying kite.
+
+SEED:
+©Two plates, one with a sandwich and fries, the other with just a sandwich and a pickle.®
+GENERATED:
+A black and white photo of a woman holding a group of a cell phone
+
+SEED:
+©Several children watch while a girl in a pink sweatshirt plays with a Wii remote while another person with a little girl on their lap snuggle in a chair in the background.®
+GENERATED:
+A man holding a bicycle with a chair with a base on top of a bus. 
+
+SEED:
+©An open-mouthed, leashed dog has its head outside of an unlocked car door window as a blurry park-like vista rushes by.®
+GENERATED:
+A man is sitting on a bed with a snow covered in front of a lapto.
+
+SEED:
+©A fire hydrant is painted red, white and blue and sits on a sidewalk in front of a brick wall that shows graffiti.®
+GENERATED:
+The bathroom with a black that is in the ocean with a bat and gat.
+
+SEED:
+©A row of motorcycles parked together on a grass yard area with a house in the background.®
+GENERATED:
+A woman wearing a light with busys's in the side of the stree is. 
+---------------------------------------------------------------------------------------------
+EPOCH 120:
+
+SEED:
+©A view of the street signs "W 122 St.", "Seminary Row", and "Broadway" in front of an old red brick building. ®
+GENERATED:
+A man holding a motorcycle parked on a white players near a party.

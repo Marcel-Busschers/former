@@ -1,0 +1,140 @@
+---------------------------------------------------------------------------------------------
+EPOCH 1:
+
+SEED:
+©A boy baseball player running to steal a base while another boy stops him.®
+GENERATED:
+A man is a restaure are the tennis with a fend a clookers streter.
+---------------------------------------------------------------------------------------------
+EPOCH 2:
+
+SEED:
+©A kitchen that has a tile floor, a refrigerator, a microwave, and a toaster.®
+GENERATED:
+A man in a blue of child and a sidewalk on the backet on a cofore.
+---------------------------------------------------------------------------------------------
+EPOCH 3:
+
+SEED:
+©a man holding his face next to a picture on a television screen while holding a game controller.®
+GENERATED:
+A man in an a baseball player and a store hotdog people sitting. 
+---------------------------------------------------------------------------------------------
+EPOCH 4:
+
+SEED:
+©Several cows laying down, grazing and walking on a farm with birds flying around. ®
+GENERATED:
+Several people are looking at a cat in a shopping for the middle.
+---------------------------------------------------------------------------------------------
+EPOCH 5:
+
+SEED:
+©An Elvis look-alike is seated on the  back of a statue of what appears to be a bull, or water buffalo, against a backdrop of green foliage. ®
+GENERATED:
+A person standing on a skateboard in front of a baseball of field.
+---------------------------------------------------------------------------------------------
+EPOCH 6:
+
+SEED:
+©A desk with a vase containing flowers, a sculpture of a man's head and shelves behind it.®
+GENERATED:
+A boy is his doll have with a cell phone by in a sidewalk in a don
+---------------------------------------------------------------------------------------------
+EPOCH 7:
+
+SEED:
+©A large truck on a city street with two works sitting on top and one worker climbing in through door.®
+GENERATED:
+A person with a man sitting at a computer on a black with a cake. 
+---------------------------------------------------------------------------------------------
+EPOCH 8:
+
+SEED:
+©A dinner plate that has white steamed rice with stir fry vegetables and chicken.®
+GENERATED:
+A man is riding a horse on a street next to a chicken in a rushad.
+---------------------------------------------------------------------------------------------
+EPOCH 9:
+
+SEED:
+©A child holds a toothbrush halfway out of their mouth while brushing their teeth.®
+GENERATED:
+A counter with a surfboard train travels with a scene in the snow.
+---------------------------------------------------------------------------------------------
+EPOCH 10:
+
+SEED:
+©A man is taking a picture of himself in the bathroom using the mirror for a reflection.®
+GENERATED:
+A school bus with a street sign sitting on a leassictly carries. 
+---------------------------------------------------------------------------------------------
+EPOCH 11:
+
+SEED:
+©A number of young people are enjoying themselves around a fountain, not far from a fire hydrant.®
+GENERATED:
+A close up of a street sign is standing at a street sign and milerop, opalicine, llin, s
+---------------------------------------------------------------------------------------------
+EPOCH 12:
+
+SEED:
+©A living room with a couch, coffee table, TV on a stand and a chair with ottoman®
+GENERATED:
+A large jetled bus down a city sign with a clock with an indoorse.
+---------------------------------------------------------------------------------------------
+EPOCH 13:
+
+SEED:
+©Baseball scene with player sliding in and a catcher jumping up in mid air.®
+GENERATED:
+A group of people are standing in a corner on a black structure.  
+---------------------------------------------------------------------------------------------
+EPOCH 14:
+
+SEED:
+©A zebra eating hay scattered on the ground while another zebra lays in the shade.®
+GENERATED:
+A woman with a street in bathroom, chairs and white pillow window.
+---------------------------------------------------------------------------------------------
+EPOCH 15:
+
+SEED:
+©Several lambs leaning up and over a wooden post towards a red cup held by a man.®
+GENERATED:
+A man standing in a counterton with a fence and a big tomatoe of 
+---------------------------------------------------------------------------------------------
+EPOCH 16:
+
+SEED:
+©A person setting in a chair in a living room with a fireplace and windows.®
+GENERATED:
+A red and white bed golds and but on a side with a light sitting. 
+---------------------------------------------------------------------------------------------
+EPOCH 17:
+
+SEED:
+©A dog sticks its head out of the car and is reflected in the side mirror. ®
+GENERATED:
+A large old toilet sitting next to a bathroom with a laptop on it.
+---------------------------------------------------------------------------------------------
+EPOCH 18:
+
+SEED:
+©A man is standing up, taking a shot of the water, while a pigeon looks on. ®
+GENERATED:
+A living room with a cornude standing in the middle of a chair st.
+---------------------------------------------------------------------------------------------
+EPOCH 19:
+
+SEED:
+©A desk with various items that include cellphone, mouse and pocket change.®
+GENERATED:
+A group of people are leans and a black and white string and monil. st ageageantonston, on by
+---------------------------------------------------------------------------------------------
+EPOCH 20:
+
+SEED:
+©A black cat sitting next to a couple of monitors sitting on top of a table.®
+GENERATED:
+A pizza with a street sign sitting on a couch next to a metal pol.
