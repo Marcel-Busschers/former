@@ -427,8 +427,10 @@ def go(arg):
 
         # WRITE TO FILE (For logging generated sequence per epoch)
         logName = path + '/generated.txt'
-        if arg.logGenerations and (epoch+1) % 10 == 0:
+        if arg.logGenerations:
             file = open(logName, 'a')
+            if arg.infoMessage is not None: file.write(f'{arg.infoMessage}\n')
+            file.write(f'\n{arg}\n')
             file.write('---------------------------------------------------------------------------------------------\n')
             file.write(f'EPOCH {epoch + 1}:\n')
             file.close()
@@ -557,10 +559,14 @@ if __name__ == "__main__":
 
     parser.add_argument("--beta", dest="betaValue",
                         help="Beta Annealing perameter used to clip the KL loss (helps Decoder Collapse)",
-                        default=1, type=int)
+                        default=1.0, type=float)
 
     parser.add_argument("--load-model", dest="modelDirectory",
                         help="The path to the .pt model save file (To continue training on that model)",
+                        default=None, type=str)
+
+    parser.add_argument("-m", "--message", dest="infoMessage",
+                        help="A message prepended to the Generated txt (To give more context)",
                         default=None, type=str)
 
     options = parser.parse_args()
