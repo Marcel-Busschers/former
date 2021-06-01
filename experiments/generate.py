@@ -323,11 +323,16 @@ def go(arg):
     path = arg.runDirectory + arg.currentDateDir
     tensorboard_path = path + arg.tb_dir
     checkpoint_path = path + arg.checkpointName
+    logName = path + '/generated.txt'
     if arg.logGenerations: 
         os.mkdir(path)
         os.mkdir(tensorboard_path)
         os.mkdir(checkpoint_path)
         tbw = SummaryWriter(log_dir=tensorboard_path) # Tensorboard logging
+
+        file = open(logName, 'a')
+        if arg.infoMessage is not None: file.write(f'{arg.infoMessage}\n')
+        file.write(f'\n{arg}\n')
 
     # load the data (validation unless arg.final is true, then test)
     data = loadCoco('former/data/coco.valannotations.txt')
@@ -426,11 +431,8 @@ def go(arg):
         print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
 
         # WRITE TO FILE (For logging generated sequence per epoch)
-        logName = path + '/generated.txt'
         if arg.logGenerations:
             file = open(logName, 'a')
-            if arg.infoMessage is not None: file.write(f'{arg.infoMessage}\n')
-            file.write(f'\n{arg}\n')
             file.write('---------------------------------------------------------------------------------------------\n')
             file.write(f'EPOCH {epoch + 1}:\n')
             file.close()
