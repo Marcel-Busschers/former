@@ -389,8 +389,8 @@ def go(arg):
             output = model(batch_tensor) # Compute the output of the model via the input (being the batch_tensor)
 
             kl = model.kl_loss(arg.betaValue)[0] # Compute the Kullback–Leibler divergence for the model's loss
-            rec = F.nll_loss(output.transpose(2,1), batch_tensor[:,1:], reduction='mean') # Reconstruction loss (target is clipped to match encoder input)
-            loss = (kl + rec).mean() # Total loss
+            rec = F.nll_loss(output.transpose(2,1), batch_tensor[:,1:], reduction='none').sum(dim=1) # Reconstruction loss (target is clipped to match encoder input)
+            loss = (torch.maximum(kl, torch.tensor(arg.lambdaValue)) + rec).mean() # Total loss
 
             loss.backward() # Backpropagate
 
@@ -586,6 +586,10 @@ if __name__ == "__main__":
     parser.add_argument("--dropout-prob", dest="dropoutProbability",
                         help="Probability value for Word Dropout (see --word-dropout)",
                         default=0.5, type=int)
+
+    parser.add_argument("--free-bits", dest="lambdaValue",
+                        help="Sets a constraint on the KL Loss (Helps decoder collapse)",
+                        default=0.0, type=int)
 
     options = parser.parse_args()
 
