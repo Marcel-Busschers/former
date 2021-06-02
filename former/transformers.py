@@ -7,8 +7,11 @@ from .modules import TransformerBlock
 from .util import d
 
 class TransformerVAE(nn.Module):
-    def __init__(self, emb, heads, depth, seq_length, num_tokens, max_pool=True, attention_type='default'):
+    def __init__(self, emb, heads, depth, seq_length, num_tokens, dropoutProb, wordDropout=False, max_pool=True, attention_type='default'):
         super().__init__()
+
+        self.dropout_probability = dropoutProb
+        self.apply_dropout = wordDropout
         
         self.encoder = EncoderTransformer(emb, heads, depth, seq_length, num_tokens, max_pool)
         self.decoder = DecoderTransformer(emb, heads, depth, seq_length, num_tokens)
@@ -56,7 +59,7 @@ class TransformerVAE(nn.Module):
 
         x = x[:, :-1] # Shift the decoder input to the right, includes <END> token but not <START> token
 
-        output = self.decoder(x, zprime)
+        output = self.decoder(x, zprime, dropout=self.apply_dropout, dropoutProb=self.dropout_probability)
 
         return output
 
@@ -123,7 +126,7 @@ class DecoderTransformer(nn.Module):
 
         self.toprobs = nn.Linear(emb, num_tokens)
 
-    def forward(self, x, zprime):
+    def forward(self, x, zprime, dropout=False, dropoutProb=0.5):
         """
         :param x: A (batch, sequence length) integer tensor of token indices.
         :return: predicted log-probability vectors for each token based on the preceding tokens.

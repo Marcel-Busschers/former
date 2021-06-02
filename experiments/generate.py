@@ -297,7 +297,7 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
         input = sequence[-max_context:]
 
         # Run the START token along with z' through the decoder
-        output = model.decoder(input[None, :], zprime)
+        output = model.decoder(input[None, :], zprime, dropout=False)
 
         # Sample the next token from the probabilitys at the last position of the output.
         c = sample(output[0, -1, :], temperature)
@@ -340,7 +340,15 @@ def go(arg):
     trainBatches, valBatches, testBatches = splitArray(batches)
 
     # create the model
-    model = TransformerVAE(emb=arg.embedding_size, heads=arg.num_heads, depth=arg.depth, seq_length=arg.context, num_tokens=NUM_TOKENS, attention_type=arg.attention_type)
+    model = TransformerVAE(
+        emb=arg.embedding_size, 
+        heads=arg.num_heads, 
+        depth=arg.depth, 
+        seq_length=arg.context, 
+        num_tokens=NUM_TOKENS, 
+        attention_type=arg.attention_type,
+        dropoutProb=arg.dropoutProbability,
+        wordDropout=arg.implementWordDropout)
     if torch.cuda.is_available():
         model.cuda()
 
@@ -570,6 +578,14 @@ if __name__ == "__main__":
     parser.add_argument("-m", "--message", dest="infoMessage",
                         help="A message prepended to the Generated txt (To give more context)",
                         default=None, type=str)
+
+    parser.add_argument("--word-dropout", dest="implementWordDropout",
+                        help="TRUE/FALSE parameter to implement word drop out (Helps with decoder collapse)",
+                        default=False, type=bool)
+
+    parser.add_argument("--dropout-prob", dest="dropoutProbability",
+                        help="Probability value for Word Dropout (see --word-dropout)",
+                        default=0.5, type=int)
 
     options = parser.parse_args()
 
