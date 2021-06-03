@@ -126,7 +126,7 @@ class DecoderTransformer(nn.Module):
 
         self.toprobs = nn.Linear(emb, num_tokens)
 
-    def forward(self, x, zprime, dropout=False, dropoutProb=0.5):
+    def forward(self, x, zprime, dropout=True, dropoutProb=0.5):
         """
         :param x: A (batch, sequence length) integer tensor of token indices.
         :return: predicted log-probability vectors for each token based on the preceding tokens.
@@ -136,6 +136,8 @@ class DecoderTransformer(nn.Module):
 
         positions = self.pos_embedding(torch.arange(t, device=d()))[None, :, :].expand(b, t, e)
         x = tokens + positions
+
+        x = F.dropout2d(x, p=dropoutProb, training=dropout) # Word Dropout
 
         # Pass output from Encoder through every layer of the the Decoder.
         #  - This will help the gradients propagate to the encoder, since they don't have to pass through all layers of the decoder first.
