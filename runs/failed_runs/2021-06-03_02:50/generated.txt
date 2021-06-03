@@ -1,5 +1,7 @@
 Experiment to see generation of words with higher depth using word dropout
 
+NOTE: FAILED RUN. DROPOUT WAS NOT IMPLEMENTED WHEN RUNNING THIS.
+
 Namespace(attention_type='gpt2', batch_size=256, betaValue=1.0, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-06-03_02:50', data=None, depth=6, dropoutProbability=0.75, embedding_size=128, final=False, gradient_clipping=1.0, implementWordDropout=True, infoMessage='Experiment to see generation of words with higher depth using word dropout', lambdaValue=0.0, logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=22, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
 ---------------------------------------------------------------------------------------------
 EPOCH 1:
