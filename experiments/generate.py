@@ -449,7 +449,7 @@ def go(arg):
         with torch.no_grad():
 
             # Get a random sequence for generation
-            randomBatchIndex = random.randint(0, len(testBatches))
+            randomBatchIndex = random.randint(0, len(testBatches)-1)
             randomBatch = testBatches[randomBatchIndex]
             t = pad(randomBatch)
             seed = t[-1]
@@ -585,11 +585,11 @@ if __name__ == "__main__":
 
     parser.add_argument("--dropout-prob", dest="dropoutProbability",
                         help="Probability value for Word Dropout (see --word-dropout)",
-                        default=0.5, type=int)
+                        default=0.5, type=float)
 
     parser.add_argument("--free-bits", dest="lambdaValue",
                         help="Sets a constraint on the KL Loss (Helps decoder collapse)",
-                        default=0.0, type=int)
+                        default=0.0, type=float)
 
     options = parser.parse_args()
 

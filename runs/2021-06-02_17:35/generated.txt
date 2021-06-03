@@ -1,0 +1,73 @@
+Another attempt to solve Decoder collapse using word dropout (this time prob=0.75)
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=1.0, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-06-02_17:35', data=None, depth=1, dropoutProbability=0.75, embedding_size=128, final=False, gradient_clipping=1.0, implementWordDropout=True, infoMessage='Another attempt to solve Decoder collapse using word dropout (this time prob=0.75)', lambdaValue=0.0, logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=10, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 1:
+
+SEED:
+©A man in a wetsuit and red shirt, riding a surfboard at the edge of a wave.®
+GENERATED:
+A white pant is light the computer and a light the to andy blates.
+---------------------------------------------------------------------------------------------
+EPOCH 2:
+
+SEED:
+©A tall building with four double decker buses driving along a parking lot.®
+GENERATED:
+A person is sitting on the sidew of a man standing a backge lande.
+---------------------------------------------------------------------------------------------
+EPOCH 3:
+
+SEED:
+©Black and white picture of an object laying on a bed with sun coming through the window.®
+GENERATED:
+A large sitting in a ball photo a table with a cat sits ridewallle
+---------------------------------------------------------------------------------------------
+EPOCH 4:
+
+SEED:
+©This is a still life, slightly blurry, with a tea kettle and a floral arrangement.®
+GENERATED:
+A street sitting on a black with a field with a playing nextrices.
+---------------------------------------------------------------------------------------------
+EPOCH 5:
+
+SEED:
+©A motorcycle is parked on a dirt road in front of an old farm truck selling produce.®
+GENERATED:
+A close up of a bikes sitting next to a black with a blue a batie.
+---------------------------------------------------------------------------------------------
+EPOCH 6:
+
+SEED:
+©Lifesaving devices are stowed along a beach while a lifeguard is elsewhere.®
+GENERATED:
+A group of pizza sits on a table on a side of a white enclosuress.
+---------------------------------------------------------------------------------------------
+EPOCH 7:
+
+SEED:
+©A man holding a camera reflected in a bathroom mirror that sits above a sink and next to a door.®
+GENERATED:
+A white toilet and statues his market and a street with a ball it.
+---------------------------------------------------------------------------------------------
+EPOCH 8:
+
+SEED:
+©a man holding his face next to a picture on a television screen while holding a game controller.®
+GENERATED:
+A person is standing in the ball on a display cake on a partmente.
+---------------------------------------------------------------------------------------------
+EPOCH 9:
+
+SEED:
+©An elephant looks very much like the elephant in the sign outside his enclosure, that is also directly in front of him, that tells visitors about him.   ®
+GENERATED:
+A parking meter destrian and some with a laptop and a motorcycles.
+---------------------------------------------------------------------------------------------
+EPOCH 10:
+
+SEED:
+©An airplane flies high above in the sky with telephone lines in the picture as well. ®
+GENERATED:
+A plate of baseball player computer and a bourd is on some cartie.

@@ -1,0 +1,80 @@
+Experiment to see generation of words with higher depth using word dropout
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=1.0, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-06-03_02:50', data=None, depth=6, dropoutProbability=0.75, embedding_size=128, final=False, gradient_clipping=1.0, implementWordDropout=True, infoMessage='Experiment to see generation of words with higher depth using word dropout', lambdaValue=0.0, logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=22, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 1:
+
+SEED:
+©Young children sharing a laptop in a messy room with several laptops, books, and papers.®
+GENERATED:
+A man is riding on a varie train and a cholders on a sidewalkalke.
+---------------------------------------------------------------------------------------------
+EPOCH 2:
+
+SEED:
+©A number of young people are enjoying themselves around a fountain, not far from a fire hydrant.®
+GENERATED:
+A man is is sitting on a chair in a bed and a beach and greeeeede.
+---------------------------------------------------------------------------------------------
+EPOCH 3:
+
+SEED:
+©A group of men playing baseball, one is running, while another is throwing a ball to another player.®
+GENERATED:
+A group of people sitting on a counter with a sidewalk in the mil.
+---------------------------------------------------------------------------------------------
+EPOCH 4:
+
+SEED:
+©A man at bat waiting for a pitch with a catcher and umpire behind him and players from the opposing team in the dugout.®
+GENERATED:
+A man in a shirt shirt holding a tennis racket and a racque ball.
+---------------------------------------------------------------------------------------------
+EPOCH 5:
+
+SEED:
+©A pizza topped with cheese, tomato sauce, and mushrooms being sliced on a plate.®
+GENERATED:
+A shelf of a young child sitting on top of a blue chair and a bed.
+---------------------------------------------------------------------------------------------
+EPOCH 6:
+
+SEED:
+©Pans of potatoes and a  person wearing a red apron in a commercial kitchen.®
+GENERATED:
+A large dog is sitting next to a storage with a residential toilet.
+---------------------------------------------------------------------------------------------
+EPOCH 7:
+
+SEED:
+©Three zebra standing side by side on a dirt field next to a flowery forest.®
+GENERATED:
+A person is on a baseball uniform sitting on a baseball bat bat. 
+---------------------------------------------------------------------------------------------
+EPOCH 8:
+
+SEED:
+©A woman is sitting on a kid's horse ride at a store holding a cake with candles.®
+GENERATED:
+A man sitting on a laptop next to a dog in a blurry umbrella an imale
+---------------------------------------------------------------------------------------------
+EPOCH 9:
+
+SEED:
+©A picture of an unfinished back splash in the kitchen with a microwave and other small kitchen appliances.®
+GENERATED:
+A person holding a baseball bat attached next to a baseball bat t.
+---------------------------------------------------------------------------------------------
+EPOCH 10:
+
+SEED:
+©A white room with a large window and a glass dining table and white chairs.®
+GENERATED:
+A man standing in front of a bathroom with a luggage and a sink.  
+---------------------------------------------------------------------------------------------
+EPOCH 11:
+
+SEED:
+©There are two stuffed animals of which one appears to be a lamb and the other a bear.®
+GENERATED:
+A group of people walking down a sidewalk near a tall building.  

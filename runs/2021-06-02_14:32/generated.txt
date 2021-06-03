@@ -1,0 +1,73 @@
+An attempt to fix Decoder collapse with free-bits
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=1.0, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-06-02_14:32', data=None, depth=1, dropoutProbability=0.5, embedding_size=128, final=False, gradient_clipping=1.0, implementWordDropout=False, infoMessage='An attempt to fix Decoder collapse with free-bits', lambdaValue=0.25, logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=10, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 1:
+
+SEED:
+©Many motorcycles are parked in the ground.A middle aged person standing near a bike.®
+GENERATED:
+A stuffed a blackes sitting a childing on a move and ounden isere.
+---------------------------------------------------------------------------------------------
+EPOCH 2:
+
+SEED:
+©An intersection with a stoplight on a roadway that has no vehicles traveling on it.®
+GENERATED:
+A man is standing a dessed on a beach other to a park on and itead
+---------------------------------------------------------------------------------------------
+EPOCH 3:
+
+SEED:
+©People eating a meal at a long table covered with umbrellas outside a restaurant ®
+GENERATED:
+A man and a green sitting at and sitting at a chair in the groung.
+---------------------------------------------------------------------------------------------
+EPOCH 4:
+
+SEED:
+©A dog on a leash looks out the rear window while sitting next to a male passenger.®
+GENERATED:
+A group of people sitting at a bag across sitting on a sligned cun.
+---------------------------------------------------------------------------------------------
+EPOCH 5:
+
+SEED:
+©A dark colored cat that has a collar on it, sitting o the top of a blue refrigerator.®
+GENERATED:
+a bathroom with a black and with a building a baseball and a cits.
+---------------------------------------------------------------------------------------------
+EPOCH 6:
+
+SEED:
+©A close up of bark on a tree with a young man on a cell phone in the background®
+GENERATED:
+A man is sitting on a counter near a notel flying a baseball ball.
+---------------------------------------------------------------------------------------------
+EPOCH 7:
+
+SEED:
+©Salad, rolls and entrees are served on a stainless steel cafeteria counter. ®
+GENERATED:
+A brown and man sitting on a chair near side of a sandwich curtar.
+---------------------------------------------------------------------------------------------
+EPOCH 8:
+
+SEED:
+©some people sitting on top of a green truck as another man tries to get in it ®
+GENERATED:
+A group of people sitting on a bench next to a flowers on a bence.
+---------------------------------------------------------------------------------------------
+EPOCH 9:
+
+SEED:
+©A woman is attempting to ski on flat ground while others in the background are playing around.®
+GENERATED:
+A black building with a side lit and shelf on a sidewalk and a coboumeshin sitallooune fligrondeneteshin ie horet 
+---------------------------------------------------------------------------------------------
+EPOCH 10:
+
+SEED:
+©A quite cluttered desk with a lap and many other office material, plus a cat. ®
+GENERATED:
+A person on a black and white standing in a field near a bathroom.
