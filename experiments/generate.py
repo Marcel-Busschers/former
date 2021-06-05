@@ -585,7 +585,7 @@ if __name__ == "__main__":
 
     parser.add_argument("--dropout-prob", dest="dropoutProbability",
                         help="Probability value for Word Dropout (see --word-dropout)",
-                        default=0.5, type=float)
+                        default=1.0, type=float)
 
     parser.add_argument("--free-bits", dest="lambdaValue",
                         help="Sets a constraint on the KL Loss (Helps decoder collapse)",

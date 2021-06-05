@@ -126,7 +126,7 @@ class DecoderTransformer(nn.Module):
 
         self.toprobs = nn.Linear(emb, num_tokens)
 
-    def forward(self, x, zprime, dropout=True, dropoutProb=0.5):
+    def forward(self, x, zprime, dropout=False, dropoutProb=1.0):
         """
         :param x: A (batch, sequence length) integer tensor of token indices.
         :return: predicted log-probability vectors for each token based on the preceding tokens.
