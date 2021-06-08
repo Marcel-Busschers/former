@@ -13,10 +13,10 @@ class TransformerVAE(nn.Module):
         self.dropout_probability = dropoutProb
         self.apply_dropout = wordDropout
         
-        self.encoder = EncoderTransformer(emb, heads, depth, seq_length, num_tokens, max_pool)
-        self.decoder = DecoderTransformer(emb, heads, depth, seq_length, num_tokens)
+        self.encoder = EncoderTransformer(emb, heads, depth, seq_length, num_tokens, max_pool, attention_type)
+        self.decoder = DecoderTransformer(emb, heads, depth, seq_length, num_tokens, attention_type)
 
-        self.toSampledSequence = nn.Linear(20, emb)
+        self.toSampledSequence = nn.Linear(28, emb)
 
     def kl_loss(self, beta):
         zmean = self.zmean; zsig = self.zsig
@@ -37,8 +37,8 @@ class TransformerVAE(nn.Module):
         z_out = z['output']
 
         # Split z vector into zmean and zsigma
-        self.zmean = z_out[:, :20]
-        self.zsig = z_out[:, 20:]
+        self.zmean = z_out[:, :28]
+        self.zsig = z_out[:, 28:]
 
         zprime = self.sample(self.zmean, self.zsig) # sample z' using mean and sigma
 
@@ -74,7 +74,8 @@ class EncoderTransformer(nn.Module):
         self.max_pool = max_pool
 
         self.num_tokens = num_tokens
-        self.token_embedding = nn.Embedding(embedding_dim=emb, num_embeddings=num_tokens)
+        # self.token_embedding = nn.Embedding(embedding_dim=emb, num_embeddings=num_tokens)
+        self.linear_embedding = nn.Linear(1, emb)
         self.pos_embedding = nn.Embedding(embedding_dim=emb, num_embeddings=seq_length)
 
         tblocks = []
@@ -84,14 +85,15 @@ class EncoderTransformer(nn.Module):
 
         self.tblocks = nn.Sequential(*tblocks)
 
-        self.toZ = nn.Linear(emb, 40)
+        self.toZ = nn.Linear(emb, 56)
 
     def forward(self, x):
         """
         :param x: A (batch, sequence length) integer tensor of token indices.
         :return: predicted log-probability vectors for each token based on the preceding tokens.
         """
-        tokens = self.token_embedding(x)
+        # tokens = self.token_embedding(x)
+        tokens = self.linear_embedding(x[:, :, None])
         b, t, e = tokens.size()
 
         positions = self.pos_embedding(torch.arange(t, device=d()))[None, :, :].expand(b, t, e)
@@ -99,7 +101,7 @@ class EncoderTransformer(nn.Module):
 
         x = self.tblocks(x)
 
-        x = x.max(dim=1)[0] if self.max_pool else x.mean(dim=1) # pool over the time dimension
+        x = x.max(dim=1)[0] if self.max_pool else x.mean(dim=1)[0] # pool over the time dimension
 
         x = self.toZ(x)
 
@@ -114,7 +116,8 @@ class DecoderTransformer(nn.Module):
         super().__init__()
 
         self.num_tokens = num_tokens
-        self.token_embedding = nn.Embedding(embedding_dim=emb, num_embeddings=num_tokens)
+        # self.token_embedding = nn.Embedding(embedding_dim=emb, num_embeddings=num_tokens)
+        self.linear_embedding = nn.Linear(1, emb)
         self.pos_embedding = nn.Embedding(embedding_dim=emb, num_embeddings=seq_length)
 
         tblocks = []
@@ -124,14 +127,16 @@ class DecoderTransformer(nn.Module):
 
         self.tblocks = nn.ModuleList(tblocks) 
 
-        self.toprobs = nn.Linear(emb, num_tokens)
+        # self.toprobs = nn.Linear(emb, num_tokens)
+        self.linear_projection = nn.Linear(emb, 2)  # To project back down to
 
     def forward(self, x, zprime, dropout=False, dropoutProb=1.0):
         """
         :param x: A (batch, sequence length) integer tensor of token indices.
         :return: predicted log-probability vectors for each token based on the preceding tokens.
         """
-        tokens = self.token_embedding(x)
+        # tokens = self.token_embedding(x)
+        tokens = self.linear_embedding(x[:, :, None]) # create dim and pass through Linear Layer (1 -> e)
         b, t, e = tokens.size()
 
         positions = self.pos_embedding(torch.arange(t, device=d()))[None, :, :].expand(b, t, e)
@@ -144,9 +149,13 @@ class DecoderTransformer(nn.Module):
         for block in self.tblocks:
             x = block(x + zprime)
 
-        x = self.toprobs(x.view(b*t, e)).view(b, t, self.num_tokens)
+        # x = self.toprobs(x.view(b*t, e)).view(b, t, self.num_tokens)
 
-        return F.log_softmax(x, dim=2)
+        # return F.log_softmax(x, dim=2)
+
+        x = self.linear_projection(x)
+
+        return {'mean': x[:,:,0], 'variance': x[:,:,1]}
 
 class CTransformer(nn.Module):
     """

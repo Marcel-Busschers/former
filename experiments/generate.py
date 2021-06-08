@@ -12,6 +12,7 @@ import torch.nn.functional as F
 import torch.distributions as dist
 
 import numpy as np
+import pandas as pd
 
 from argparse import ArgumentParser
 from torch.utils.tensorboard import SummaryWriter
@@ -71,6 +72,17 @@ def loadCoco(dir):
 
     return converted_sentences
 
+def load_financial_data(dir):
+  df = pd.read_csv(dir, names=['Date', 'Open', 'High', 'Low', 'Close', 'Volume'], sep='\t')
+
+  close_list = df['Close'].values.tolist()
+
+  # close_list = [x*100_000 for x in close_list]
+
+  chunks = [close_list[x:x+64] for x in range(0, len(close_list), 64)]
+
+  return chunks
+
 class BatchSize(Exception):
     def __init__(self, message):
         self.message = message
@@ -113,7 +125,7 @@ def batchByTokens(array, batchSize = None):
         total = 0
         while total < batchSize and end < len(array):
             end += 1 
-            total += len(array[end-1])**2
+            total += len(array[end-1])#**2
 
         # Give warning of sequence skip:
         if start == end:
@@ -135,7 +147,7 @@ def pad(batch):
         while len(seq) < tokenLength:
             seq.append(0)
 
-    return torch.Tensor(batch).to(torch.int64)
+    return torch.Tensor(batch).to(torch.float)
         
 def splitArray(array, trainSplit = 0.9, valSplit = 0.05, testSplit = 0.05):
     '''
@@ -319,6 +331,13 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
     print('\n')
     return seed
 
+def calculate_rec_loss(mean, variance, target):
+    log = torch.log(variance)
+    target_diff = (target - mean).pow(2)
+    var_squared = 2 * variance.pow(2)
+    total = log + (target_diff / var_squared)
+    return -torch.sum(total,dim=1)
+
 def go(arg):
     path = arg.runDirectory + arg.currentDateDir
     tensorboard_path = path + arg.tb_dir
@@ -335,7 +354,8 @@ def go(arg):
         file.write(f'\n{arg}\n')
 
     # load the data (validation unless arg.final is true, then test)
-    data = loadCoco('former/data/coco.valannotations.txt')
+    # data = loadCoco('former/data/coco.valannotations.txt')
+    data = load_financial_data('former/data/EURUSD240.csv')
     batches = batchByTokens(data, batchSize=arg.batch_size)
     trainBatches, valBatches, testBatches = splitArray(batches)
 
@@ -377,7 +397,7 @@ def go(arg):
         print(f'EPOCH {epoch + 1} STARTING')
 
         for batch in tqdm(trainBatches):
-            
+
             opt.zero_grad() # Set gradients to 0
 
             batch_tensor = pad(batch) # Pad the batch with 0 values
@@ -389,7 +409,8 @@ def go(arg):
             output = model(batch_tensor) # Compute the output of the model via the input (being the batch_tensor)
 
             kl = model.kl_loss(arg.betaValue)[0] # Compute the Kullback–Leibler divergence for the model's loss
-            rec = F.nll_loss(output.transpose(2,1), batch_tensor[:,1:], reduction='none').sum(dim=1) # Reconstruction loss (target is clipped to match encoder input)
+            # rec = F.nll_loss(output.transpose(2,1), batch_tensor[:,1:], reduction='none').sum(dim=1) # Reconstruction loss (target is clipped to match encoder input)
+            rec = calculate_rec_loss(output['mean'], output['variance'], batch_tensor[:,1:])
             loss = (torch.maximum(kl, torch.tensor(arg.lambdaValue)) + rec).mean() # Total loss
 
             loss.backward() # Backpropagate
@@ -423,6 +444,8 @@ def go(arg):
             
             sch.step() # Update the learning rate
 
+            break
+
         # Model Checkpoint (Only save model on last epoch)
         if arg.logGenerations and epoch == range(arg.num_epochs)[-1]:
             epoch_path = checkpoint_path + f'/epoch_{epoch+1}.pt'
@@ -446,17 +469,17 @@ def go(arg):
             file.close()
 
         # GENERATE SAMPLE
-        with torch.no_grad():
-
-            # Get a random sequence for generation
-            randomBatchIndex = random.randint(0, len(testBatches)-1)
-            randomBatch = testBatches[randomBatchIndex]
-            t = pad(randomBatch)
-            seed = t[-1]
-            if torch.cuda.is_available():
-                seed = seed.cuda()
-
-            sample_sequence(model, seed=seed, max_context=arg.context, log=arg.logGenerations, fileName=logName, length=arg.sample_length)
+        # with torch.no_grad():
+        #
+        #     # Get a random sequence for generation
+        #     randomBatchIndex = random.randint(0, len(testBatches)-1)
+        #     randomBatch = testBatches[randomBatchIndex]
+        #     t = pad(randomBatch)
+        #     seed = t[-1]
+        #     if torch.cuda.is_available():
+        #         seed = seed.cuda()
+        #
+        #     sample_sequence(model, seed=seed, max_context=arg.context, log=arg.logGenerations, fileName=logName, length=arg.sample_length)
 
 if __name__ == "__main__":
 
