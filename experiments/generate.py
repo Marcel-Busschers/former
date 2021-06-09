@@ -18,6 +18,8 @@ from argparse import ArgumentParser
 from torch.utils.tensorboard import SummaryWriter
 from datetime import datetime as date
 import os
+import seaborn as sns
+from fpdf import FPDF
 
 import random, sys, math, gzip
 from tqdm import tqdm
@@ -331,30 +333,19 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
     print('\n')
     return seed
 
-def calculate_rec_loss(mean, variance, target):
-    log = torch.log(variance).sum(dim=1)
-    if True in torch.isnan(log): log = torch.zeros(len(log))
-
-    target_diff = (target - mean).pow(2)
-    target_diff = target_diff / (2 * variance.pow(2))
-    target_diff = target_diff.sum(dim=1)
-
-    return torch.min( log + target_diff )
-
 def go(arg):
     path = arg.runDirectory + arg.currentDateDir
     tensorboard_path = path + arg.tb_dir
     checkpoint_path = path + arg.checkpointName
-    logName = path + '/generated.txt'
+
     if arg.logGenerations: 
         os.mkdir(path)
         os.mkdir(tensorboard_path)
         os.mkdir(checkpoint_path)
         tbw = SummaryWriter(log_dir=tensorboard_path) # Tensorboard logging
 
-        file = open(logName, 'a')
-        if arg.infoMessage is not None: file.write(f'{arg.infoMessage}\n')
-        file.write(f'\n{arg}\n')
+        pdf = FPDF()
+        pngs = []
 
     # load the data (validation unless arg.final is true, then test)
     # data = loadCoco('former/data/coco.valannotations.txt')
@@ -412,8 +403,7 @@ def go(arg):
             output = model(batch_tensor) # Compute the output of the model via the input (being the batch_tensor)
 
             kl = model.kl_loss(arg.betaValue)[0] # Compute the Kullback–Leibler divergence for the model's loss
-            # rec = F.nll_loss(output.transpose(2,1), batch_tensor[:,1:], reduction='none').sum(dim=1) # Reconstruction loss (target is clipped to match encoder input)
-            rec = calculate_rec_loss(output['mean'], output['variance'], batch_tensor[:,1:])
+            rec = nn.GaussianNLLLoss()(output['mean'], batch_tensor[:,1:], output['variance'].pow(2))
             loss = (torch.maximum(kl, torch.tensor(arg.lambdaValue)) + rec).mean() # Total loss
 
             loss.backward() # Backpropagate
@@ -447,6 +437,8 @@ def go(arg):
             
             sch.step() # Update the learning rate
 
+            break
+
         # Model Checkpoint (Only save model on last epoch)
         if arg.logGenerations and epoch == range(arg.num_epochs)[-1]:
             epoch_path = checkpoint_path + f'/epoch_{epoch+1}.pt'
@@ -462,12 +454,60 @@ def go(arg):
 
         print(f'EPOCH {epoch + 1} FINISHED. \n')
 
-        # WRITE TO FILE (For logging generated sequence per epoch)
-        if arg.logGenerations:
-            file = open(logName, 'a')
-            file.write('---------------------------------------------------------------------------------------------\n')
-            file.write(f'EPOCH {epoch + 1}:\n')
-            file.close()
+        # WRITE TO FILE (For logging reconstructed sequence per epoch)
+        if arg.logGenerations and (epoch+1) % 10 == 0:
+            # Get random Seed
+            randomBatchIndex = random.randint(0, len(testBatches)-2)
+            randomBatch = testBatches[randomBatchIndex]
+            seed = pad(randomBatch)
+            if torch.cuda.is_available():
+                seed = seed.cuda()
+
+            # Pass through model
+            out = model(seed)
+            
+            # Record Reconstruction
+            input_data = seed[0,1:]
+            output_data = out['mean'][0,:].detach()
+
+            pdf.add_page()
+
+            if (epoch+1) == 10 and arg.infoMessage is not None:
+                pdf.set_font('Arial', '', 12)
+                pdf.multi_cell(0, 5, f'{arg.infoMessage}')
+                pdf.set_font('Arial', 'B', 16)
+                pdf.ln(5)
+
+            # Write Epoch number and Rec Loss
+            pdf.set_font('Arial', 'B', 16)
+            pdf.cell(40, 10, f'Epoch {epoch+1}')
+            pdf.ln(10)
+            pdf.set_font('Arial', '', 14)
+            pdf.multi_cell(0, 5, f'Reconstruction Loss: {rec}')
+            pdf.ln(10)
+
+            # Plot Input
+            plot = sns.lineplot(data=input_data).set_title('INPUT').figure
+            png_path = f'{path}/input{epoch}.png'
+            plot.savefig(png_path)
+            pngs.append(png_path)
+            pdf.image(png_path, w=150)
+            plot.clf()
+
+            # Plot Output
+            plot = sns.lineplot(data=np.around(output_data, decimals=5)).set_title('OUTPUT').figure
+            png_path = f'{path}/output{epoch}.png'
+            plot.savefig(png_path)
+            pngs.append(png_path)
+            pdf.image(png_path, w=150)
+            plot.clf()
+            
+    if arg.logGenerations:
+        pdf.output(f"{path}/generated.pdf", "F") # Save File
+
+        # Delete left overs
+        for path in pngs:
+            os.remove(path)
 
         # GENERATE SAMPLE
         # with torch.no_grad():
