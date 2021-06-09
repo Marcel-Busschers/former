@@ -332,11 +332,14 @@ def sample_sequence(model, seed, max_context, fileName, log=False, length=600, t
     return seed
 
 def calculate_rec_loss(mean, variance, target):
-    log = torch.log(variance)
+    log = torch.log(variance).sum(dim=1)
+    if True in torch.isnan(log): log = torch.zeros(len(log))
+
     target_diff = (target - mean).pow(2)
-    var_squared = 2 * variance.pow(2)
-    total = log + (target_diff / var_squared)
-    return -torch.sum(total,dim=1)
+    target_diff = target_diff / (2 * variance.pow(2))
+    target_diff = target_diff.sum(dim=1)
+
+    return torch.min( log + target_diff )
 
 def go(arg):
     path = arg.runDirectory + arg.currentDateDir
@@ -444,8 +447,6 @@ def go(arg):
             
             sch.step() # Update the learning rate
 
-            break
-
         # Model Checkpoint (Only save model on last epoch)
         if arg.logGenerations and epoch == range(arg.num_epochs)[-1]:
             epoch_path = checkpoint_path + f'/epoch_{epoch+1}.pt'
@@ -459,7 +460,7 @@ def go(arg):
                 'total_loss': loss
             }, epoch_path)
 
-        print(f'EPOCH {epoch + 1} FINISHED. \nGENERATING SAMPLE')
+        print(f'EPOCH {epoch + 1} FINISHED. \n')
 
         # WRITE TO FILE (For logging generated sequence per epoch)
         if arg.logGenerations:
