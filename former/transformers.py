@@ -7,16 +7,19 @@ from .modules import TransformerBlock
 from .util import d
 
 class TransformerVAE(nn.Module):
-    def __init__(self, emb, heads, depth, seq_length, num_tokens, dropoutProb, wordDropout=False, max_pool=True, attention_type='default'):
+    def __init__(self, emb, heads, depth, seq_length, num_tokens, dropoutProb, latentSize, wordDropout=False, max_pool=True, attention_type='default'):
         super().__init__()
 
+        zSize = latentSize * 2 # for Mean and Sigma
+
+        self.latentSize = latentSize
         self.dropout_probability = dropoutProb
         self.apply_dropout = wordDropout
         
-        self.encoder = EncoderTransformer(emb, heads, depth, seq_length, num_tokens, max_pool, attention_type)
+        self.encoder = EncoderTransformer(emb, heads, depth, seq_length, num_tokens, zSize, max_pool, attention_type)
         self.decoder = DecoderTransformer(emb, heads, depth, seq_length, num_tokens, attention_type)
 
-        self.toSampledSequence = nn.Linear(28, emb)
+        self.toSampledSequence = nn.Linear(latentSize, emb)
 
     def kl_loss(self, beta):
         zmean = self.zmean; zsig = self.zsig
@@ -37,8 +40,8 @@ class TransformerVAE(nn.Module):
         z_out = z['output']
 
         # Split z vector into zmean and zsigma
-        self.zmean = z_out[:, :28]
-        self.zsig = z_out[:, 28:]
+        self.zmean = z_out[:, :self.latentSize]
+        self.zsig = z_out[:, self.latentSize:]
 
         zprime = self.sample(self.zmean, self.zsig) # sample z' using mean and sigma
 
@@ -68,7 +71,7 @@ class EncoderTransformer(nn.Module):
     Encoder for representing the sequence in (compressed) format
     """
 
-    def __init__(self, emb, heads, depth, seq_length, num_tokens, max_pool=True, attention_type='default'):
+    def __init__(self, emb, heads, depth, seq_length, num_tokens, zSize, max_pool=True, attention_type='default'):
         super().__init__()
 
         self.max_pool = max_pool
@@ -85,7 +88,7 @@ class EncoderTransformer(nn.Module):
 
         self.tblocks = nn.Sequential(*tblocks)
 
-        self.toZ = nn.Linear(emb, 56)
+        self.toZ = nn.Linear(emb, zSize)
 
     def forward(self, x):
         """
@@ -155,7 +158,7 @@ class DecoderTransformer(nn.Module):
 
         x = self.linear_projection(x)
 
-        return {'mean': x[:,:,0], 'variance': x[:,:,1]}
+        return {'mean': x[:,:,0], 'variance': x[:,:,1].exp()}
 
 class CTransformer(nn.Module):
     """

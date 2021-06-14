@@ -353,6 +353,11 @@ def go(arg):
     batches = batchByTokens(data, batchSize=arg.batch_size)
     trainBatches, valBatches, testBatches = splitArray(batches)
 
+    # We train on single batch to overfit (if set to true)
+    if arg.trainOnSingleBatch:
+        trainBatches = [trainBatches[0]]
+        testBatches = [trainBatches[0]]
+
     # create the model
     model = TransformerVAE(
         emb=arg.embedding_size, 
@@ -362,6 +367,7 @@ def go(arg):
         num_tokens=NUM_TOKENS, 
         attention_type=arg.attention_type,
         dropoutProb=arg.dropoutProbability,
+        latentSize=arg.latentSize,
         wordDropout=arg.implementWordDropout)
     if torch.cuda.is_available():
         model.cuda()
@@ -403,7 +409,7 @@ def go(arg):
             output = model(batch_tensor) # Compute the output of the model via the input (being the batch_tensor)
 
             kl = model.kl_loss(arg.betaValue)[0] # Compute the Kullback–Leibler divergence for the model's loss
-            rec = nn.GaussianNLLLoss()(output['mean'], batch_tensor[:,1:], output['variance'].pow(2))
+            rec = nn.GaussianNLLLoss()(output['mean'], batch_tensor[:,1:], output['variance']) #output, target, var
             loss = (torch.maximum(kl, torch.tensor(arg.lambdaValue)) + rec).mean() # Total loss
 
             loss.backward() # Backpropagate
@@ -454,11 +460,24 @@ def go(arg):
 
         print(f'EPOCH {epoch + 1} FINISHED. \n')
 
+        if arg.num_epochs <= 10: perEpoch = 1
+        elif arg.num_epochs <= 100: perEpoch = 10
+        elif arg.num_epochs <= 1000: perEpoch = 100
+        else: perEpoch = 1000
+
         # WRITE TO FILE (For logging reconstructed sequence per epoch)
-        if arg.logGenerations and (epoch+1) % 10 == 0:
+        if arg.logGenerations and (epoch+1) % perEpoch == 0:
+            # Write info to txt
+            with open(f'{path}/info.txt', 'a') as file:
+                if arg.infoMessage is not None: file.write(f'{arg.infoMessage}\n')
+                if (epoch+1) == perEpoch: file.write(f'\n{arg}')
+
             # Get random Seed
-            randomBatchIndex = random.randint(0, len(testBatches)-2)
-            randomBatch = testBatches[randomBatchIndex]
+            if arg.trainOnSingleBatch: 
+                randomBatch = testBatches[0]
+            else:
+                randomBatchIndex = random.randint(0, len(testBatches)-2)
+                randomBatch = testBatches[randomBatchIndex]
             seed = pad(randomBatch)
             if torch.cuda.is_available():
                 seed = seed.cuda()
@@ -472,7 +491,7 @@ def go(arg):
 
             pdf.add_page()
 
-            if (epoch+1) == 10 and arg.infoMessage is not None:
+            if (epoch+1) == perEpoch and arg.infoMessage is not None:
                 pdf.set_font('Arial', '', 12)
                 pdf.multi_cell(0, 5, f'{arg.infoMessage}')
                 pdf.set_font('Arial', 'B', 16)
@@ -503,7 +522,7 @@ def go(arg):
             plot.clf()
             
     if arg.logGenerations:
-        pdf.output(f"{path}/generated.pdf", "F") # Save File
+        pdf.output(f"{path}/reconstructed.pdf", "F") # Save File
 
         # Delete left overs
         for path in pngs:
@@ -654,6 +673,14 @@ if __name__ == "__main__":
     parser.add_argument("--free-bits", dest="lambdaValue",
                         help="Sets a constraint on the KL Loss (Helps decoder collapse)",
                         default=0.0, type=float)
+
+    parser.add_argument("-L", "--latent-size", dest="latentSize",
+                        help="Length of the embedded Latent Vector",
+                        default=28, type=int)
+
+    parser.add_argument("--single-batch", dest="trainOnSingleBatch",
+                        help="TRUE/FALSE parameter for training on single batch (to overfit)",
+                        default=False, type=bool)
 
     options = parser.parse_args()
 
