@@ -1,0 +1,3 @@
+Continuation of run from 2021-06-14 13:16
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=1.0, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-06-14_13:26', data=None, depth=2, dropoutProbability=1.0, embedding_size=128, final=False, gradient_clipping=1.0, implementWordDropout=False, infoMessage='Continuation of run from 2021-06-14 13:16', lambdaValue=0.0, latentSize=32, logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory='former/runs/2021-06-14_13:16/checkpoint_saves/epoch_10000.pt', num_batches=50, num_epochs=10000, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000, trainOnSingleBatch=True)
