@@ -463,7 +463,8 @@ def go(arg):
         if arg.num_epochs <= 10: perEpoch = 1
         elif arg.num_epochs <= 100: perEpoch = 10
         elif arg.num_epochs <= 1000: perEpoch = 100
-        else: perEpoch = 1000
+        elif arg.num_epochs <= 10000: perEpoch = 1000
+        else: perEpoch = 10000
 
         # WRITE TO FILE (For logging reconstructed sequence per epoch)
         if arg.logGenerations and (epoch+1) % perEpoch == 0:
