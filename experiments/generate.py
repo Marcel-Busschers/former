@@ -469,8 +469,9 @@ def go(arg):
         if arg.logGenerations and (epoch+1) % perEpoch == 0:
             # Write info to txt
             with open(f'{path}/info.txt', 'a') as file:
-                if arg.infoMessage is not None: file.write(f'{arg.infoMessage}\n')
-                if (epoch+1) == perEpoch: file.write(f'\n{arg}')
+                if (epoch+1) == perEpoch: 
+                    if arg.infoMessage is not None: file.write(f'{arg.infoMessage}\n')
+                    file.write(f'\n{arg}')
 
             # Get random Seed
             if arg.trainOnSingleBatch: 
