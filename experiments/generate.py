@@ -443,8 +443,6 @@ def go(arg):
             
             sch.step() # Update the learning rate
 
-            break
-
         # Model Checkpoint (Only save model on last epoch)
         if arg.logGenerations and epoch == range(arg.num_epochs)[-1]:
             epoch_path = checkpoint_path + f'/epoch_{epoch+1}.pt'
