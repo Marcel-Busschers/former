@@ -453,7 +453,17 @@ def go(arg):
                 'lr_state_dict': sch.state_dict(),
                 'kl_loss': kl,
                 'reconstruction_loss': rec,
-                'total_loss': loss
+                'total_loss': loss,
+                ########## Model Info ##########
+                'emb': arg.embedding_size, 
+                'heads': arg.num_heads, 
+                'depth': arg.depth, 
+                'seq_length': arg.context, 
+                'num_tokens': NUM_TOKENS, 
+                'attention_type': arg.attention_type,
+                'dropoutProb': arg.dropoutProbability,
+                'latentSize': arg.latentSize,
+                'wordDropout': arg.implementWordDropout
             }, epoch_path)
 
         print(f'EPOCH {epoch + 1} FINISHED. \n')
@@ -461,7 +471,7 @@ def go(arg):
         if arg.num_epochs <= 10: perEpoch = 1
         elif arg.num_epochs <= 100: perEpoch = 10
         elif arg.num_epochs <= 1000: perEpoch = 100
-        elif arg.num_epochs <= 10000: perEpoch = 1000
+        elif arg.num_epochs <= 50000: perEpoch = 1000
         else: perEpoch = 10000
 
         # WRITE TO FILE (For logging reconstructed sequence per epoch)
