@@ -144,7 +144,7 @@ def pad(batch):
     '''
     Pad the batch with zero values and return a Tensored batch
     '''
-    tokenLength = len(batch[-1])
+    tokenLength = len(batch[0])
     for seq in batch:
         while len(seq) < tokenLength:
             seq.append(0)

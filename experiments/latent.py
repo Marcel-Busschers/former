@@ -9,6 +9,7 @@ from sklearn.manifold import TSNE
 import torch
 import os
 import seaborn as sns
+import pandas as pd
 from fpdf import FPDF
 
 def go(arg):
@@ -32,25 +33,18 @@ def go(arg):
 
     # Load in data
     data = load_financial_data('former/data/EURUSD240.csv')
-    batches = batchByTokens(data, batchSize=256)
-    trainBatches, valBatches, testBatches = splitArray(batches)
+    data = batchByTokens(data, batchSize=256)
 
-    # Pass into model
-    batch_index = arg.batch -1
-    seq_index = arg.sequence -1
+    emb = model_pt['latentSize']
 
-    if arg.takeFromValData:
-        batch = valBatches[batch_index]
-    else:
-        batch = testBatches[batch_index]
-
-    batch = pad(batch) # Pad the batch to get Tensor
-
-    # Generate Z
-    z = model.generate_zprime(batch)
-
-    # Take certain sequence
-    z = z[seq_index].detach()
+    with torch.no_grad():
+        outputs = []
+        for index, batch in enumerate(data):
+            input = pad(batch)
+            output = model.encoder(input)['output']
+            output = output[:, :emb] # mean
+            outputs.append(output)
+        z = torch.cat(outputs, dim=0)
 
     # Visualise
     tsne = TSNE()
@@ -59,13 +53,28 @@ def go(arg):
     # Make pdf with plot
     pdf = FPDF()
     pdf.add_page()
-    plot = sns.scatterplot(x=z_2d[:,0], y=z_2d[:,1]).figure
+
+    d = {'x': z_2d[:,0], 'y': z_2d[:,1]}
+    df = pd.DataFrame(d)
+    if arg.sequence > 0: 
+        seq = df.iloc[arg.sequence-1]
+        seq = pd.DataFrame({'x': [seq['x']], 'y': [seq['y']]})
+        df = df.drop(arg.sequence-1)
+
+    # plot = sns.scatterplot(x=z_2d[:,0], y=z_2d[:,1]).figure
+    plot = sns.scatterplot(x='x', y='y', data=df, alpha=.5).figure
+    plot = sns.scatterplot(x='x', y='y', data=seq, palette='red').figure
     png_path = f'former/latent_representations/latent.png'
     plot.savefig(png_path)
     pdf.image(png_path, w=150)
 
     # Save pdf
-    pdf.output(f"former/latent_representations/{arg.model_path.split('/')[2]}_batch-{arg.batch}_seq-{arg.sequence}.pdf", "F") # Save File
+    i = 0
+    path = f"former/latent_representations/{arg.model_path.split('/')[2]}_sequence-{arg.sequence}_#{i}.pdf"
+    while os.path.exists(path):
+        i+=1
+        path = f"former/latent_representations/{arg.model_path.split('/')[2]}_sequence-{arg.sequence}_#{i}.pdf"
+    pdf.output(path, "F") # Save File
     os.remove(png_path)
 
 
@@ -77,20 +86,10 @@ if __name__ == '__main__':
                         help="Relative Directory Path where the .pt file is stored",
                         default=None, type=str)
 
-    parser.add_argument("--from-batch",
-                        dest="batch",
-                        help="Which batch to pass in the model",
-                        default=1, type=int)
-
     parser.add_argument("--from-sequence",
                         dest="sequence",
-                        help="Which sequence of the batch to get a latent representation of",
-                        default=1, type=int)
-
-    parser.add_argument("--from-val",
-                        dest="takeFromValData",
-                        help="Take from Validation data (otherwise it takes from Test)",
-                        default=False, type=bool)
+                        help="The sequence you want highlighted in the plot",
+                        default=0, type=int)
 
     options = parser.parse_args()
 
