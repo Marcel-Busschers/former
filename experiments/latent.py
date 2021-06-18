@@ -13,8 +13,12 @@ import pandas as pd
 from fpdf import FPDF
 
 def go(arg):
+    if arg.sequence is None: exit()
     assert arg.model_path is not None, 'Need a path to the model (.pt file)'
     model_pt = torch.load(arg.model_path)
+    date_path = f'former/runs/{arg.model_path.split("/")[2]}/latent_representations'
+    if not os.path.exists(date_path):
+        os.mkdir(date_path)
 
     # Create model
     model = TransformerVAE(
@@ -52,30 +56,61 @@ def go(arg):
 
     # Make pdf with plot
     pdf = FPDF()
-    pdf.add_page()
+    pngs = []
 
-    d = {'x': z_2d[:,0], 'y': z_2d[:,1]}
-    df = pd.DataFrame(d)
-    if arg.sequence > 0: 
-        seq = df.iloc[arg.sequence-1]
+    if arg.sequence[0] == 0:
+        seq = range(1,365,1)
+        description = 'all'
+    else:
+        seq = arg.sequence
+        description = arg.description
+        assert description is not None, 'Please give a description using argument -d'
+
+    for sequence in seq:
+        assert sequence > 0, 'Sequence number must be greater than 0'
+        pdf.add_page()
+
+        d = {'x': z_2d[:,0], 'y': z_2d[:,1]}
+        df = pd.DataFrame(d)
+        seq = df.iloc[sequence-1]
         seq = pd.DataFrame({'x': [seq['x']], 'y': [seq['y']]})
-        df = df.drop(arg.sequence-1)
+        df = df.drop(sequence-1)
 
-    # plot = sns.scatterplot(x=z_2d[:,0], y=z_2d[:,1]).figure
-    plot = sns.scatterplot(x='x', y='y', data=df, alpha=.5).figure
-    plot = sns.scatterplot(x='x', y='y', data=seq, palette='red').figure
-    png_path = f'former/latent_representations/latent.png'
-    plot.savefig(png_path)
-    pdf.image(png_path, w=150)
+        # plot = sns.scatterplot(x=z_2d[:,0], y=z_2d[:,1]).figure
+        plot = sns.scatterplot(x='x', y='y', data=df, alpha=.5).figure
+        plot = sns.scatterplot(x='x', y='y', data=seq, palette='red').set_title(f'Sequence {sequence}').figure
+        png_path = f'{date_path}/latent{sequence}.png'
+        pngs.append(png_path)
+        plot.savefig(png_path)
+        pdf.image(png_path, w=150)
+        plot.clf()
+
+        index = 0
+        s = None
+        for batch in data:
+            for seq in batch:
+                index += 1
+                if index == sequence: 
+                    s = seq
+                    break
+        
+        plot = sns.lineplot(x=range(len(s)), y=s).set_title(f'Sequence {sequence} market').figure
+        png_path = f'{date_path}/market{sequence}.png'
+        pngs.append(png_path)
+        plot.savefig(png_path)
+        pdf.image(png_path, w=150)
+        plot.clf()
+
 
     # Save pdf
     i = 0
-    path = f"former/latent_representations/{arg.model_path.split('/')[2]}_sequence-{arg.sequence}_#{i}.pdf"
+    path = f"{date_path}/{description}.pdf"
     while os.path.exists(path):
         i+=1
-        path = f"former/latent_representations/{arg.model_path.split('/')[2]}_sequence-{arg.sequence}_#{i}.pdf"
+        path = f"{date_path}/{description}-{i}.pdf"
     pdf.output(path, "F") # Save File
-    os.remove(png_path)
+    for path in pngs:
+        os.remove(path)
 
 
 if __name__ == '__main__':
@@ -89,7 +124,12 @@ if __name__ == '__main__':
     parser.add_argument("--from-sequence",
                         dest="sequence",
                         help="The sequence you want highlighted in the plot",
-                        default=0, type=int)
+                        default=None, nargs='+', type=int)
+
+    parser.add_argument("-d",
+                        dest="description",
+                        help="What type of sequence it is (Uptrend, etc)",
+                        default=None, type=str)
 
     options = parser.parse_args()
 
