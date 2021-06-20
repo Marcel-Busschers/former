@@ -51,7 +51,7 @@ def go(arg):
         z = torch.cat(outputs, dim=0)
 
     # Visualise
-    tsne = TSNE()
+    tsne = TSNE(learning_rate=10)
     z_2d = tsne.fit_transform(z)
 
     # Make pdf with plot
