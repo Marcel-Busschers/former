@@ -16,7 +16,7 @@ class TransformerVAE(nn.Module):
         self.encoder = EncoderTransformer(emb, heads, depth, seq_length, num_tokens, max_pool)
         self.decoder = DecoderTransformer(emb, heads, depth, seq_length, num_tokens)
 
-        self.toSampledSequence = nn.Linear(20, emb)
+        self.toSampledSequence = nn.Linear(32, emb)
 
     def kl_loss(self, beta):
         zmean = self.zmean; zsig = self.zsig
@@ -37,8 +37,8 @@ class TransformerVAE(nn.Module):
         z_out = z['output']
 
         # Split z vector into zmean and zsigma
-        self.zmean = z_out[:, :20]
-        self.zsig = z_out[:, 20:]
+        self.zmean = z_out[:, :32]
+        self.zsig = z_out[:, 32:]
 
         zprime = self.sample(self.zmean, self.zsig) # sample z' using mean and sigma
 
@@ -84,7 +84,7 @@ class EncoderTransformer(nn.Module):
 
         self.tblocks = nn.Sequential(*tblocks)
 
-        self.toZ = nn.Linear(emb, 40)
+        self.toZ = nn.Linear(emb, 64)
 
     def forward(self, x):
         """
