@@ -1,0 +1,1400 @@
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 1:
+
+SEED:
+©Green, yellow, and pink teddy bears sitting on top of a table on display. ®
+GENERATED:
+A strice of sitting next to a computer in a stre down a toleleace.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 2:
+
+SEED:
+©A baseball player with a bat in his hand as the pitcher gets ready to throw the ball. ®
+GENERATED:
+a dog with a table with a statue with a suitcase cars on the late.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 3:
+
+SEED:
+©A dark colored cat that has a collar on it, sitting o the top of a blue refrigerator.®
+GENERATED:
+A small table with a couch and a chairs and bear and a red an ers.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 4:
+
+SEED:
+© a woman smoking a cigarette near a girl sitting inside of a refridgerator.®
+GENERATED:
+A statue of a parked in a laptop and shore photo of a some parke. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 5:
+
+SEED:
+©Two very small yellow bananas on top of a wooden table next to a Malaysian coin. ®
+GENERATED:
+A group of people standing around a coffee and a baseball in hids.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 6:
+
+SEED:
+©A man wearing a helmet while holding a banana next to a woman wearing a helmet.®
+GENERATED:
+A statue of a sign sitting on a table with a city next to a plate.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 7:
+
+SEED:
+©A small black and orange bird is perched on a table with banana peels in it.®
+GENERATED:
+A tennis player poses for a tennis racket and people and counterse.opante. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 8:
+
+SEED:
+©A street pole with one ways, except deliveries, street and no walking signs.®
+GENERATED:
+A man is sitting on a wooden baseball field on a table on a table.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 9:
+
+SEED:
+©A person sitting on bed behind an open laptop computer and a cat sitting beside and looking at the laptop screen area.®
+GENERATED:
+An older black couple of a building on a sidewalk with heads on in.on 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 10:
+
+SEED:
+©The opened  laptop is sitting on the table along with other technological tools.®
+GENERATED:
+A woman is sitting on a table with a piece of computer and a cake.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 11:
+
+SEED:
+©A woman is standing and smiling as she holds a wine glass in front of a refrigerator.®
+GENERATED:
+An umbrella sitting on a sidewalk with a clock and a baseball bat.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 12:
+
+SEED:
+©A cluttered collection of various items including a wig, shoes, umbrella and a photo.®
+GENERATED:
+A couple of cars parked in a cloths, station near a person stread.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 13:
+
+SEED:
+©An upward view of a building and several signs, including a one way sign. ®
+GENERATED:
+A bathroom with a sink and a sink, window and a cat sitting on it.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 14:
+
+SEED:
+©A man, his arm across the woman next to him, stands in a blandly colored kitchen area,  in front of a black-rimmed  window, next to a counter with a microwave, plates, with and without food, and wine bottles.  ®
+GENERATED:
+A white stove and blue cat with a slice of pizza on a refrigeratoritin 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 15:
+
+SEED:
+©Japanese airliner just taking off with snow capped mountains in the background.®
+GENERATED:
+A group of people standing on a sidewalk with a cloth with a sign.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 16:
+
+SEED:
+©A white train traveling down the tracks with expo center on a sign on the front. ®
+GENERATED:
+A couple of people are standing in front of a bathroom and a toile
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 17:
+
+SEED:
+©An elephant looks very much like the elephant in the sign outside his enclosure, that is also directly in front of him, that tells visitors about him.   ®
+GENERATED:
+A cat sitting on a black sits on a chair in front of a colorful b.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 18:
+
+SEED:
+©A little child sitting in front of a laptop watching whats is on the screen.®
+GENERATED:
+A couple of men standing next to each other and a cross behind himeames.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 19:
+
+SEED:
+©A bathroom with a toilet, shower and an hanging chain to flush the toilet. ®
+GENERATED:
+A large chicker is playing a video game in a parking lot in a bow.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 20:
+
+SEED:
+©An airplane with wheels wheels barely off ground tilted slightly upward from the pavement to the blue sky.®
+GENERATED:
+A colorful bus parked in a line and statuets next to the counter 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 21:
+
+SEED:
+©Someone has crawled under the plane to check that everything is operational.®
+GENERATED:
+A group of people sitting on a bench with a stonl building nearba 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 22:
+
+SEED:
+©an intersection with different poles filled with street lights and a camera®
+GENERATED:
+A bathroom with a sink, mirror, and shower, shower and a toilet. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 23:
+
+SEED:
+©Bunches of bananas are piled up at a market with some shoppers looking around.®
+GENERATED:
+A red and white plate with a bat while sits talking on a bench in.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 24:
+
+SEED:
+©A black cat sitting next to a couple of monitors sitting on top of a table.®
+GENERATED:
+A table topped with a laptop with a boot and a lot of stuffed bage.erusescakindeesinanalesingeanuldesteshinar amandelleacathinat
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 25:
+
+SEED:
+©A beach dock area lined with boats, and a small shack with a scooter and small cart near it.®
+GENERATED:
+A person wearing a tennis desert takes a self picture of the came.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 26:
+
+SEED:
+©A person holding a phone in each hand and wearing a head set in front  of a Christmas tree.®
+GENERATED:
+A man ball in a bathroom seel on a toilet in a bathroom counter. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 27:
+
+SEED:
+©three men out on the ocean water two of the men watching their friend surf waves blue oceans water a man wearing a green shirt and yellow shorts®
+GENERATED:
+A group of people standing around a table talking to the sidewalk.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 28:
+
+SEED:
+©A player swings at a baseball while the catcher is ready to catch the ball.®
+GENERATED:
+A ball wall with a large bird is station with a bicycle on a bed. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 29:
+
+SEED:
+©This is a painting of a skateboarder in the midst of a jump, and his  surroundings.®
+GENERATED:
+A group of people sitting on top of an airplane with a man waters.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 30:
+
+SEED:
+©A man rides with a child on a motorcycle down a busy street with other pedestrians and bicyclists®
+GENERATED:
+A little girl standing in front of a man posing for the camerake. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 31:
+
+SEED:
+©Four vases with purple flower in it. There are two different shapes and sizes.®
+GENERATED:
+A black and white photo of a building in a living room counter.   
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 32:
+
+SEED:
+©A traffic light with a frowning face on the red light and a city street and buildings behind it.®
+GENERATED:
+A man with a red bottle of a large left up of people watching tv. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 33:
+
+SEED:
+©A woman holds a cake with candles while riding a mechanical horse in a store.®
+GENERATED:
+A boy wearing a shirt is surfing on a surfboard in a body of wave.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 34:
+
+SEED:
+©a blue and yellow fire hydrant sitting on the sidewalk next to a quiet street®
+GENERATED:
+A man riding a wave in the ocean with a sun in the background way.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 35:
+
+SEED:
+©A living room with wood floors, a couch, wooden chair bookshelves and coffee table.®
+GENERATED:
+A group of people standing in the street at the cameras on table. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 36:
+
+SEED:
+©A waterway under a bridge with people sitting down and a woman taking a photo.®
+GENERATED:
+A person standing in the water near a body of water with his ligh.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 37:
+
+SEED:
+©The caramel-colored kitten is  lying on the small blanket on top of the unmade bed.®
+GENERATED:
+A large group of people standing around a teddy bear standing on .
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 38:
+
+SEED:
+©The elephants think they are hiding behind those trees, but I can still see them.®
+GENERATED:
+A person sitting on a skateboard in front of a store flight cake. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 39:
+
+SEED:
+©A skateboarder on a rail in a  building with another man using a spray can as a blow torch.®
+GENERATED:
+A street sign with a sky bus with a silverware sitting on a table.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 40:
+
+SEED:
+©A person holds a smartphone taking a picture of a bottle and glasses on the table®
+GENERATED:
+A group of people standing on the side of a street sign at night. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 41:
+
+SEED:
+©This is a painting of a cross country skier traveling up a slope at sunrise.®
+GENERATED:
+A woman in a straw with a snowy field of different food and meat. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 42:
+
+SEED:
+©A woman lying on her back with knees bent on a beach towel under a multicolored, striped beach umbrella, surrounded by sand, and with clear blue sky above.®
+GENERATED:
+A young man is standing next to a bottle of soccer ball on a tran.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 43:
+
+SEED:
+©A fire hydrant is painted red, white and blue and sits on a sidewalk in front of a brick wall that shows graffiti.®
+GENERATED:
+A statue of a storage carrot and shaped cars on a plate of the . 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 44:
+
+SEED:
+©Truck viewed from the back with vans and trucks visible in the background of the image.®
+GENERATED:
+A train passing that is poses sitting on a track next to a street.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 45:
+
+SEED:
+©A bus traveling down the street in front of a large building with a clock tower.®
+GENERATED:
+A cat is sitting on a bench sitting on a computer desk in a keyboy
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 46:
+
+SEED:
+©A fancy metal cloth is seen against huge barred windows at a stone train station.®
+GENERATED:
+A man on a bed and a striped white reflection in the ball of a dut
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 47:
+
+SEED:
+©A kite surfer gets high in the air while his kite is out of the picture frame.®
+GENERATED:
+A cat playing with a bowl with a bowl of fruit and two side rugons
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 48:
+
+SEED:
+©A electric trolly bus driving in the middle of a street with a building behind it.®
+GENERATED:
+A cardinal is parking lots of the side of a man is sitting in it. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 49:
+
+SEED:
+©A girl in a floral dress sitting next to a boy in a blue shirt eating food. ®
+GENERATED:
+A woman in a suit water is walking with a tennis tourt hitdged up.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 50:
+
+SEED:
+©A tennis player looks up with his leg in the air as photographers snap photos.®
+GENERATED:
+A bathroom with a sink, toilet and shower sink and a toilet plane.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 51:
+
+SEED:
+©A dozen doughnuts sits in a doughnut box and two are chocolate, three are glazed and one is a raised pink iced.®
+GENERATED:
+A person is holding a tennis racket in his laptop side on a butit.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 52:
+
+SEED:
+©A woman is sitting on a kid's horse ride at a store holding a cake with candles.®
+GENERATED:
+A stop sign in a street next to a building with a long bus on it. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 53:
+
+SEED:
+©The person holds a plate with two red apples near pedestrians holding umbrellas. ®
+GENERATED:
+A man in an oven sits on a counter top and white both and dogs. z 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 54:
+
+SEED:
+©A stop sign has graffiti on that changes the sign to say, don't stop believing.®
+GENERATED:
+A bathroom with a toilet and a toilet standing on a side of wall. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 55:
+
+SEED:
+©A boy wearing an orange t-shirt playing a video game while sitting on a couch.®
+GENERATED:
+A stop sign sitting beside a street painted while eaching frisbee.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 56:
+
+SEED:
+©This is a man working behind the counter of a bar with a lot of oranges and lemons.®
+GENERATED:
+A person is standing next to a building with a clock on it's back.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 57:
+
+SEED:
+©A mother and child fly a kite in a grassy field, with a tower in the background.®
+GENERATED:
+A bathroom with a toilet, sink and a mirror, sink, and a clear day
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 58:
+
+SEED:
+©Duffel bag, plastic travel bag, and suitcase sit on carpet in front of drapes.®
+GENERATED:
+An orange and white cat is sitting on a top of a bathroom mirrood.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 59:
+
+SEED:
+©The zebra is standing in the field with another zebra laying down in the background. ®
+GENERATED:
+A person getting ready to the shore floor sitting on a cement blo.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 60:
+
+SEED:
+©The opened  laptop is sitting on the table along with other technological tools.®
+GENERATED:
+A couple of park benches with a side of a street in front of a bow
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 61:
+
+SEED:
+©Many motorcycles are displayed in the store with descriptive signs posted near them. ®
+GENERATED:
+A couple of giraffes standing in a field near a few onto homewings
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 62:
+
+SEED:
+©Several lambs leaning up and over a wooden post towards a red cup held by a man.®
+GENERATED:
+A colorful toddly car stopped with a stone sign on the side of it.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 63:
+
+SEED:
+©A stop sign leans beside street signs and a light post across from buildings.®
+GENERATED:
+A large white bus parked on a street next to a red table is fige. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 64:
+
+SEED:
+©There are two rolls of toilet paper and a hand dispenser on the bathroom wall.®
+GENERATED:
+A cat standing next to a bead in a little grasses of tennis court.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 65:
+
+SEED:
+©Two men are posing for a photo, one man is holding a slice of pizza on a plate, and they are surrounded by other people sitting at tables.®
+GENERATED:
+a group of people are haves down a hill with a parked beer encheam
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 66:
+
+SEED:
+©Man wearing a blue shirt and pink tie posing for a picture sitting by a window.®
+GENERATED:
+A couple of stove and sink streamihibit.name to top on the street.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 67:
+
+SEED:
+© A small area containing a refrigerator and a microwave positioned on a shelf®
+GENERATED:
+A boy with a ball painted up to the ball of a modern beach finger.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 68:
+
+SEED:
+©Breakfast on a tray consisting of coffee, crepe, and artistically sliced fruit.®
+GENERATED:
+A person is sitting on a beach next to each other in a backornatit
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 69:
+
+SEED:
+©A gold colored pair of scissors cutting into a piece of bejeweled fabric with other bejeweled items in the background.®
+GENERATED:
+A stove top sign sitting next to a colorful woman on a stortiment.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 70:
+
+SEED:
+©This is a man working behind the counter of a bar with a lot of oranges and lemons.®
+GENERATED:
+A short of shots of a bathroom, a toilet and a sink nexbanas bus. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 71:
+
+SEED:
+©Woman on a motorcycle with a sidecar in front of scenic backdrop in a showroom.®
+GENERATED:
+A bathroom with a toilet, tub, danco may area and toilet seat on. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 72:
+
+SEED:
+©A large display of fruit: applies, grapes, oranges, lemons, limes and grapefruit®
+GENERATED:
+A stop sign has a street with a striped clock tower on a sidewalk.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 73:
+
+SEED:
+©Motorcycle sitting on a dirt road in front of a farm house advertising produce.®
+GENERATED:
+A group of people standing in the middle of a small steps on a sit
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 74:
+
+SEED:
+©Television showing a movie with one man threatening another with a razor blade.®
+GENERATED:
+A black and white photo of a bathroom with a chair with tube ligh.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 75:
+
+SEED:
+©A three frame photo combination showcases two types of pie on the right and left side with a coffee in the middle.  ®
+GENERATED:
+A man holding a small board with a person in white boat and a dog.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 76:
+
+SEED:
+©A zebra standing up next to a chain linked fence and eating grass that is on the ground.®
+GENERATED:
+A couple of people sitting in a chair with a lined back of window.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 77:
+
+SEED:
+©A yellow BMW touring motorcycle parked in the street as people look on from behind a steel rail on the sidewalk.®
+GENERATED:
+A bunch of people sitting at a table with two windowsils and ones.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 78:
+
+SEED:
+©A bathroom with a shower curtain that has four palm trees on it and a white tile floor.®
+GENERATED:
+A white cat sitting in a living room with a book convertion hair. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 79:
+
+SEED:
+©A woman tennis player in a black army shirt and tennis skirt, swinging a tennis racket.®
+GENERATED:
+A couple of people walking around a boat with a red busy street. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 80:
+
+SEED:
+©A man standing next to a motorcycle talking to several other men wearing yellow vests. ®
+GENERATED:
+A man with a ball pizza with a little of chips in a bathroom sink.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 81:
+
+SEED:
+©A building near the sidewalk with a yellow curb and a no parking sign next to it®
+GENERATED:
+A batter sitting on the floor with a motorcycle and a glass trees.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 82:
+
+SEED:
+©A living room with white walls, rectangular windows, and grey and red furniture. ®
+GENERATED:
+A large silver reflection in a blue shirt and silverway cabinets. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 83:
+
+SEED:
+©A girl brushing her teeth holding up her other hand trying to shield from the camera.®
+GENERATED:
+A large group of people walking along a sign that is on a city sk.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 84:
+
+SEED:
+©A contemporary light-rail train seen from the front is stopped in a station.®
+GENERATED:
+A woman in a white shirt ripes in a sidewalk near a parking meter.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 85:
+
+SEED:
+©A baseball game is going with children playing a runner is about to hit the base.®
+GENERATED:
+A baseball player wearing a helmet stands between two bowl of frun
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 86:
+
+SEED:
+©A flooded street with just the top of a parking meter, a bench and  couple of poles visible.®
+GENERATED:
+A person is sitting on a street next to a bottle of a bunch of bo.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 87:
+
+SEED:
+©United States President Barack Obama gives a speech in front of American and Russian flags.®
+GENERATED:
+A person standing in a field with a child at a ski racket liewinge. ingres. hestineongeronarearo bly. fly hangeronagangamineanin
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 88:
+
+SEED:
+©A container with a sausage, egg, and tomato slices and another container with bread.®
+GENERATED:
+A woman riding her bike in a red shirt and a short and brown head.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 89:
+
+SEED:
+©a person lifting a little stool with their feet and a person holding a cell phone ®
+GENERATED:
+A couple of cars are sitting on the side of a sidewalk near a bus.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 90:
+
+SEED:
+©An audience is looking at an film of a man taking that is projected onto a wall. ®
+GENERATED:
+A person holding a cell phone standing on a sidewalk in a rivery.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 91:
+
+SEED:
+©people ride their motorcycles beside some cars, passing by an empty street with stores and apartment buildings®
+GENERATED:
+A pole with a clock tower with a building and a black baby house.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 92:
+
+SEED:
+©A brown wooden table with a block of cheese with a carrot and two onion balls.®
+GENERATED:
+A man is sitting at a table with a concrete towel in the top of i.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 93:
+
+SEED:
+©A pair of yellow and green motorcylces with flame designs running down them.®
+GENERATED:
+A person is standing on a sidewalk with a few wine with a toilet .
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 94:
+
+SEED:
+©A toaster has been decorated with other kitchen items and googly eyes to look like a person. ®
+GENERATED:
+A little girl holding a chair and other guides in front of a tall.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 95:
+
+SEED:
+©A blue and yellow train is traveling down the tracks near some water and boats.®
+GENERATED:
+A person on a surfboard riding a wave in a living room with a lot.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 96:
+
+SEED:
+©A person taking a picture inside a bathroom with a blue sink and a brown door®
+GENERATED:
+A couple of men riding motorcycles near a street with a person it.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 97:
+
+SEED:
+©A living room set is displayed next to a large window with a view of a wooded area.®
+GENERATED:
+A woman with a back statue with a stove sign and other in the air.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 98:
+
+SEED:
+©A couple of guys cooking in a restaruant kitchen that is open to the restaurant.®
+GENERATED:
+A bathroom with a toilet, sink and toilet with a lot of dones on .
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 99:
+
+SEED:
+©Three decorated, carved jack-o-lanterns, one with pink flowers and a vase inside it®
+GENERATED:
+A little girl wearing a helmet and a laptop computer keyboard cat.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 100:
+
+SEED:
+©Black and white photo of a sidewalk with a person holding a Subway sign in the foreground.®
+GENERATED:
+A person sitting on a surfboard in a body of water with a window.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 101:
+
+SEED:
+©A group of Halloween Jack o' lantern sitting on a floor with flowers and paper cut outs. ®
+GENERATED:
+A small pizza with the standing on a plate on a white platform War
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 102:
+
+SEED:
+©a red and white passenger bus with a 'final destination 5' billboard on the side of it®
+GENERATED:
+A person is sitting on a bed with a storing sign on a building bo.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 103:
+
+SEED:
+©some frosted cakes with little decorations on top in a display case for sale®
+GENERATED:
+A man with a black cat and a white plate with a sandwich and drid.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 104:
+
+SEED:
+©A woman of Asian heritage eating a sandwich at a table with two cups of hot beverages.®
+GENERATED:
+A man is sitting on a surfboard with a lot of boozing on a cloudd.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 105:
+
+SEED:
+©The opened  laptop is sitting on the table along with other technological tools.®
+GENERATED:
+A person riding a skateboard down a street next to some bus signs.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 106:
+
+SEED:
+©A picture of a woman sitting outside with a laptop and ciggorets while talking on phone.®
+GENERATED:
+A large bed engin played on a grassy area with a chair case on it.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 107:
+
+SEED:
+©Three people sitting side by side in a canoe with tow paddling and the middle person holding up an umbrella.®
+GENERATED:
+A parking meter sitting next to a bike on the back of an antelone.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 108:
+
+SEED:
+©The street signs for Gladys and Detroit streets are attached to a wooden pole.®
+GENERATED:
+A woman sitting on a parking meter red with a black spoon in head.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 109:
+
+SEED:
+©A man standing behind a truck with a red trailer sitting in front of a building.®
+GENERATED:
+A bicycle and a street sign with a street sign and a park and org.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 110:
+
+SEED:
+©A group of people are standing next to an elephant emerging from the water.®
+GENERATED:
+A group of men playing with a game of baseball in the bathroom it.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 111:
+
+SEED:
+©a city scene of a sidewalk with a red fire hydrant on a sidewalk next to an ATM®
+GENERATED:
+A bathroom with a toilet and sink a toilet in a shallow roof phon.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 112:
+
+SEED:
+©Child throwing Frisbee on a field with cones and people in the background. ®
+GENERATED:
+A small white bathroom with a toilet and wall, while laying in a .
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 113:
+
+SEED:
+©A black and tan dog sits in an easy chair near a window with a polka dot shade.®
+GENERATED:
+A large middle is standing on top of a group of table and firest,.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 114:
+
+SEED:
+©The tiny kitten looks sad sitting in the bathroom sink with a scrub brush on the rim.®
+GENERATED:
+A boy in a satwith a piece of while standing next to a gate toget.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 115:
+
+SEED:
+©a metal bench resting on a sidewalk with cars on a street in the background®
+GENERATED:
+A person sits on a chair with tan on display of computer monitors.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 116:
+
+SEED:
+©Two halves of an onion and a carrot positioned to represent either a goofy face or male genetalia.®
+GENERATED:
+A group of people sitting around a table with a plate of food on .
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 117:
+
+SEED:
+©A man and a woman on a blue motorbike are picking up a piece of luggage from a man.®
+GENERATED:
+A cat laying on top of a wooden floor next to a baseball in a bat.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 118:
+
+SEED:
+©A contemporary light-rail train seen from the front is stopped in a station.®
+GENERATED:
+A bathroom with a toilet and chair above the sink and a toilet wan
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 119:
+
+SEED:
+©A tennis player on an indoor court pauses to raise three fingers in the air.®
+GENERATED:
+A group of people are gathered around a constroll in a coffee an .
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 120:
+
+SEED:
+©a woman is giving a baby a bottle while others are congregated in the kitchen®
+GENERATED:
+A bathroom with a window and a sink and white counter top of a to.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 121:
+
+SEED:
+©A man and a woman riding on a motorcycle are getting ready to hit the road.®
+GENERATED:
+A baseball player on the field with a bat on top of the frisbees. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 122:
+
+SEED:
+©A black and white picture of a busy street, only red is in color, a red double decker bus drives down the road. ®
+GENERATED:
+A train traveling through a train station in front of a corner at.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 123:
+
+SEED:
+©In the Asian market, one can find residents, tourists, and domestic animals. ®
+GENERATED:
+A large bird is sitting on top of a branch next to a bar and fanc.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 124:
+
+SEED:
+©Giant dolls sitting in giant beds next to a man wearing an orange safety vest.®
+GENERATED:
+A large chair with a building and a clock at a clock tower in frot
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 125:
+
+SEED:
+©Two headless mannequins display fashionable clothing in front of a pink background.®
+GENERATED:
+A boy is sitting on a bench with a black clock on top of a chair. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 126:
+
+SEED:
+©Giraffes in a zoo, standing with their heads peeking over the fence, looking at people.®
+GENERATED:
+A dog sitting in a car with a car and a street sign in front of ir
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 127:
+
+SEED:
+©Two people are out skiing in the cold. One appears to have possibly crashed. ®
+GENERATED:
+A counter with two storage boards and a striped colored pair card.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 128:
+
+SEED:
+©The bathroom is painted a light blue and has pink ceramic tile that adorns the shower wall along with a maple color vanity and door.®
+GENERATED:
+A parked motorcycle sitting on the side of a sidewalk in a city.  
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 129:
+
+SEED:
+©This is two birds pecking at the remnants of a burger at an outdoor restaurant.®
+GENERATED:
+A woman in a red standing on a couch table with dishway cantovers.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 130:
+
+SEED:
+©An unbaked pizza with cheese and herbs on one half and broccoli on the second.®
+GENERATED:
+A bathroom with a toilet, toilet and a toilet with a ball mitroom.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 131:
+
+SEED:
+©A crowded city street with cars a bus and a couple riding on a motorcycle. ®
+GENERATED:
+A baseball player holding a bat while standing next to each other.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 132:
+
+SEED:
+©A counter topped with a large white frosted cake sitting next to small pastry.®
+GENERATED:
+The street sign is an arms street in shallow watter and a parail.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 133:
+
+SEED:
+©A young man balances himself as he tilts his skateboard up at the edge of an obstacle.®
+GENERATED:
+A young man in a strawboard perched on a surfboard in a watering. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 134:
+
+SEED:
+©Someone ordered a piece of pizza for dinner that does not have much cheese on it®
+GENERATED:
+An elephant pair of saucephed strange in a sidewalk near barning. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 135:
+
+SEED:
+©The goalkeeper in orange grabs the ball among a group of children playing soccer.®
+GENERATED:
+A baseball pitcher speed rist and a large us bananas and computer.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 136:
+
+SEED:
+©A woman is attempting to ski on flat ground while others in the background are playing around.®
+GENERATED:
+A bathroom with a toilet, with a sink and a light plane on taped. 
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 137:
+
+SEED:
+©an intersection with different poles filled with street lights and a camera®
+GENERATED:
+Two people sitting at a table with a cup one silh a cell phone se.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 138:
+
+SEED:
+©A flock of birds flying over water and sand with a volley ball net on the sand.®
+GENERATED:
+A black bear holding a baseball glider in front of a gardenter sw.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 139:
+
+SEED:
+©An area outside a dwelling that has been flooded with standing water and trash piled up.®
+GENERATED:
+A group of sheep grazing on a plate with a frisbee near the beach.
+An attempt to solve decoder collapse with beta annealing
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=0.2, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-05-31_14:30', data=None, depth=2, embedding_size=128, final=False, gradient_clipping=1.0, infoMessage='An attempt to solve decoder collapse with beta annealing', logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=140, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 140:
+
+SEED:
+©A desk with several monitors under it and two computers and a laptop on top of the desk. ®
+GENERATED:
+A man is sitting on a bench with a backs and a short playing skys.
