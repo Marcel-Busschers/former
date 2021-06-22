@@ -1,0 +1,703 @@
+Freebits run, cap 0.125, depth 2, latent size 32
+
+Namespace(attention_type='gpt2', batch_size=256, betaValue=1.0, checkpointName='/checkpoint_saves', context=256, currentDateDir='/2021-06-21_20:25', data=None, depth=2, dropoutProbability=1.0, embedding_size=128, final=False, gradient_clipping=1.0, implementWordDropout=False, infoMessage='Freebits run, cap 0.125, depth 2, latent size 32', lambdaValue=0.125, logGenerations=True, lr=0.0003, lr_warmup=5000, modelDirectory=None, num_batches=50, num_epochs=100, num_heads=8, runDirectory='./former/runs', sample_length=128, seed=1, tb_dir='/tensorboard_log', test_batchsize=64, test_every=1500, test_subset=100000)
+---------------------------------------------------------------------------------------------
+EPOCH 1:
+
+SEED:
+©A bathroom with a toilet, a plant, a stand and several footwear on the floor. ®
+GENERATED:
+A peree of rowhold sthen anded a with a an and a athowomoover a wins a d be.
+---------------------------------------------------------------------------------------------
+EPOCH 2:
+
+SEED:
+©A curve in a city road with a bus following a car and people walking on the side.®
+GENERATED:
+A lith of rof plowon the omer alea withe fith a a she the arer.
+---------------------------------------------------------------------------------------------
+EPOCH 3:
+
+SEED:
+©A piece of pizza with thousand island dressing and a Coke Zero on the side.®
+GENERATED:
+A here sing rof and cat on cholle the a bain a a bea a tharore.
+---------------------------------------------------------------------------------------------
+EPOCH 4:
+
+SEED:
+©A little boy standing in the grass with a kite in the sky in the background.®
+GENERATED:
+A person of a manger with barte shall with wh of a a bela bare.
+---------------------------------------------------------------------------------------------
+EPOCH 5:
+
+SEED:
+©A bowl full of food sitting on a table next to a fork that rests on top of a circular disk.®
+GENERATED:
+A close up bed with a his bersich an with cool of a t in a therthela velllowofound towe ithero boulle on bllate owoode as adin t
+---------------------------------------------------------------------------------------------
+EPOCH 6:
+
+SEED:
+©Frisbee in the air, a dog squatting looking up at it, and a man standing behind the dog watching it, on the grass with a tree.®
+GENERATED:
+A person sitting a came warechille with a stall womate hite are.
+---------------------------------------------------------------------------------------------
+EPOCH 7:
+
+SEED:
+©A vase full of red flowers sits in a room with red walls and red decorations.®
+GENERATED:
+A women has bear standing next to a show beer of down a be chir.
+---------------------------------------------------------------------------------------------
+EPOCH 8:
+
+SEED:
+©a young Asian woman model sitting on a folding chair in a sleeveless dress, high heels and holding an umbrella®
+GENERATED:
+A woman holding sitting a pic on the stand of a caite on ofroooplodoorerowoconctoverowatod arore ore or he walothashd he he she 
+---------------------------------------------------------------------------------------------
+EPOCH 9:
+
+SEED:
+©A stone street with bicycles and motor bikes parked on the side and people standing on the sidewalks in front of buildings.®
+GENERATED:
+A standiffeler with a she standing on the side of partatc ontrop.
+---------------------------------------------------------------------------------------------
+EPOCH 10:
+
+SEED:
+©The street signs for Gladys and Detroit streets are attached to a wooden pole.®
+GENERATED:
+A woman hat with sheepped with a pich on a top of a bilider ad.
+---------------------------------------------------------------------------------------------
+EPOCH 11:
+
+SEED:
+©A man standing in a grass field with a dog in front of him and frisbee type toys thrown in the air.®
+GENERATED:
+A chaill of cartange and a plate other with a banach whinderkirs.
+---------------------------------------------------------------------------------------------
+EPOCH 12:
+
+SEED:
+©Two laptops,computer,keyboard and other electrical gadgets are on the table.®
+GENERATED:
+A woman with a broccolate of holding a ball toothe on a coconder.
+---------------------------------------------------------------------------------------------
+EPOCH 13:
+
+SEED:
+©Three workers stand next to each other with their baked goods behind them.®
+GENERATED:
+A woman with a picture off dess sittands covere a banasebard res.
+---------------------------------------------------------------------------------------------
+EPOCH 14:
+
+SEED:
+©A vase full of red flowers sits in a room with red walls and red decorations.®
+GENERATED:
+A woman holding a benches of pizza on the beild a the background.
+---------------------------------------------------------------------------------------------
+EPOCH 15:
+
+SEED:
+©The goalkeeper in orange grabs the ball among a group of children playing soccer.®
+GENERATED:
+A tennis player with some with his drisple out of a bathid cous.
+---------------------------------------------------------------------------------------------
+EPOCH 16:
+
+SEED:
+©a young Asian woman model sitting on a folding chair in a sleeveless dress, high heels and holding an umbrella®
+GENERATED:
+A plastic of a toom with spritaws of a track and colat build cke.
+---------------------------------------------------------------------------------------------
+EPOCH 17:
+
+SEED:
+©A white boxy birthday cake with red flowers and blue accents on a decorated table with gray cover and candles.®
+GENERATED:
+A person is statunding a table with a che and on the background.
+---------------------------------------------------------------------------------------------
+EPOCH 18:
+
+SEED:
+©A ground of people sitting around a table holding wine glasses in their hands.®
+GENERATED:
+A woman is weanning a shirt a large fark on the other umbringhina.
+---------------------------------------------------------------------------------------------
+EPOCH 19:
+
+SEED:
+©A street pole with one ways, except deliveries, street and no walking signs.®
+GENERATED:
+A woman in a helmelled behirts on a beack white hand bashd dinar.
+---------------------------------------------------------------------------------------------
+EPOCH 20:
+
+SEED:
+©three different donuts one is pink one is brown and one has white sprinkles®
+GENERATED:
+A street sign the green rown the racket next to a tall bed irrophilacariluimichillllochedd owngrochindrigred chinchime ouechis o
+---------------------------------------------------------------------------------------------
+EPOCH 21:
+
+SEED:
+©A stone street with bicycles and motor bikes parked on the side and people standing on the sidewalks in front of buildings.®
+GENERATED:
+Two people sitting on a benchestroom sink the beifloored canaror.
+---------------------------------------------------------------------------------------------
+EPOCH 22:
+
+SEED:
+©A stone street with bicycles and motor bikes parked on the side and people standing on the sidewalks in front of buildings.®
+GENERATED:
+A plastic bed with remackets on toppes of a caperte on a tablomp.
+---------------------------------------------------------------------------------------------
+EPOCH 23:
+
+SEED:
+©A person holding a phone in each hand and wearing a head set in front  of a Christmas tree.®
+GENERATED:
+The player woman sitting on a trailley booke too on he rom thinlarigithillounitoung pthickishinack tountomomadotomowilactoud h t
+---------------------------------------------------------------------------------------------
+EPOCH 24:
+
+SEED:
+©A picture of a bathroom with a fern plant near the sink and a photo of a city above the toilet. ®
+GENERATED:
+A plastic bear of ped a cuplaying from with an an el chiphassing bitededoch ochamipiged brid winid octed chaiph.
+---------------------------------------------------------------------------------------------
+EPOCH 25:
+
+SEED:
+©One woman carrying a cake with candles and another woman in the background.®
+GENERATED:
+A man wearing hitting a tel balke, the beach in a sink at abot h.
+---------------------------------------------------------------------------------------------
+EPOCH 26:
+
+SEED:
+©Hotel room scene, efficiency, queen bed, sofa, table/desk, TV, in brown tone room.®
+GENERATED:
+The beirroon in a wooden baby while shily the mouthing overrre f isoulad alinginaderire ogenen f ten tenglis fus wis s d bona ff
+---------------------------------------------------------------------------------------------
+EPOCH 27:
+
+SEED:
+©A person leaning up against a metal rail while holding a rainbow colored umbrella.®
+GENERATED:
+A woman holding a wooden up ted using a red bed shower phos budererenarite, wenenerinene os werilerenersilalenedene ocy ochinale
+---------------------------------------------------------------------------------------------
+EPOCH 28:
+
+SEED:
+©A street pole with one ways, except deliveries, street and no walking signs.®
+GENERATED:
+A group of people standing oven another a white corater ind offfffffulycedowininerting frthed ng wine nessty athewinined ffffler
+---------------------------------------------------------------------------------------------
+EPOCH 29:
+
+SEED:
+©One woman carrying a cake with candles and another woman in the background.®
+GENERATED:
+A group of women wearing ball, enching and a beaches cera a TV th.
+---------------------------------------------------------------------------------------------
+EPOCH 30:
+
+SEED:
+©A lady holding a cake with candles on it while a lady near her is making gestures with her fingers.®
+GENERATED:
+A person is laying the side on a pappen sign frow bethroch byiggromanachind fig bilanchillandsigillanay biningeroning itsig wint
+---------------------------------------------------------------------------------------------
+EPOCH 31:
+
+SEED:
+©A little boy grips a soccer ball in his arms surrounded by other youth soccer players.®
+GENERATED:
+A woman wean a bather white deag horps with show cer inerone r.
+---------------------------------------------------------------------------------------------
+EPOCH 32:
+
+SEED:
+©A man holding a microphone in one hand while he holds a skateboard in the other.®
+GENERATED:
+A man in sitting a tennis baby, toilet a bather a bathrom mirnar.
+---------------------------------------------------------------------------------------------
+EPOCH 33:
+
+SEED:
+©The nomadic sheepherd walks behind a large group of livestock in their desert habitat.®
+GENERATED:
+A bathroom sink, sitting on top of a ten lapking tileve rootherer
+---------------------------------------------------------------------------------------------
+EPOCH 34:
+
+SEED:
+©A man standing in a grass field with a dog in front of him and frisbee type toys thrown in the air.®
+GENERATED:
+A woman wearing a pink, towers in the st with a kno exeat in iear.
+---------------------------------------------------------------------------------------------
+EPOCH 35:
+
+SEED:
+©A white with red striped bus drives down the slow lane on a freeway surrounded by several other cars.®
+GENERATED:
+A plastic tree with a tennis or dished behing abol orand bepph f sed fedindishaggited wotinditothtots nd ckedind at ared at froc
+---------------------------------------------------------------------------------------------
+EPOCH 36:
+
+SEED:
+©a tray of food on a wooden table with bread, carrots, sauce, nuts and a muffin.®
+GENERATED:
+A woman laying in a hospital bed hoors with her woen in his hind.
+---------------------------------------------------------------------------------------------
+EPOCH 37:
+
+SEED:
+©A woman sitting on ledge with three pigeons, with gate railing, trees, and base of the Eiffel Tower behind.®
+GENERATED:
+A woman kneel boxe with a book wated holding a hor holdris urdide chwhane hisec br h"B be htise wise whthcudse ane br bisewe han
+---------------------------------------------------------------------------------------------
+EPOCH 38:
+
+SEED:
+©A vase full of red flowers sits in a room with red walls and red decorations.®
+GENERATED:
+A couple of people sitting on a rown hilv street a train. thele.
+---------------------------------------------------------------------------------------------
+EPOCH 39:
+
+SEED:
+©A person holding a phone in each hand and wearing a head set in front  of a Christmas tree.®
+GENERATED:
+A woman with a tastaboard, with a front it of a tat his lagag louitou bave, feamble, be ftokeage, ok angarok ous fock laggagayse
+---------------------------------------------------------------------------------------------
+EPOCH 40:
+
+SEED:
+©A white with red striped bus drives down the slow lane on a freeway surrounded by several other cars.®
+GENERATED:
+A woman with a book bag leatooking at a pat ser hase.       
+---------------------------------------------------------------------------------------------
+EPOCH 41:
+
+SEED:
+©A dinner plate that has white steamed rice with stir fry vegetables and chicken.®
+GENERATED:
+A woman in a tennis court are lunch of aft toilet set side ous
+---------------------------------------------------------------------------------------------
+EPOCH 42:
+
+SEED:
+©A elephant drinks from a stream with several other elephants walking in the background.®
+GENERATED:
+A woman sitting on a bench next to a sterack wooden the whater.
+---------------------------------------------------------------------------------------------
+EPOCH 43:
+
+SEED:
+©A little boy grips a soccer ball in his arms surrounded by other youth soccer players.®
+GENERATED:
+A person weating her any rack, sitting on a kitchentend the woverseys br s heninis hehearatatwaitelis s rovend otte ock oplend h
+---------------------------------------------------------------------------------------------
+EPOCH 44:
+
+SEED:
+©The pitcher  on the mound has just let go of a baseball directed to the batter. ®
+GENERATED:
+A man wearing a hat while standing in front of a tiled window. 
+---------------------------------------------------------------------------------------------
+EPOCH 45:
+
+SEED:
+©A white boxy birthday cake with red flowers and blue accents on a decorated table with gray cover and candles.®
+GENERATED:
+A woman with ang her train tracks car wh his sowan baten wateren.
+---------------------------------------------------------------------------------------------
+EPOCH 46:
+
+SEED:
+©A woman is walking her dogs  on the city sidewalks through the newly fallen snow.®
+GENERATED:
+A large clock daring next to a the ground in front of the lustoce.
+---------------------------------------------------------------------------------------------
+EPOCH 47:
+
+SEED:
+©A Polar Bear walks toward water, while a large bird lands on the opposite bank.®
+GENERATED:
+A variety of desserts are being displayed for with a dry oug s.
+---------------------------------------------------------------------------------------------
+EPOCH 48:
+
+SEED:
+©A man, his arm across the woman next to him, stands in a blandly colored kitchen area,  in front of a black-rimmed  window, next to a counter with a microwave, plates, with and without food, and wine bottles.  ®
+GENERATED:
+A woman in brown shirt holding a hotdog by tables with umbrellasiteringges chitashinous as iteritereshres in dineng othe, inin d
+---------------------------------------------------------------------------------------------
+EPOCH 49:
+
+SEED:
+©Color corrected photograph of a person carrying a red, white and blue umbrella.®
+GENERATED:
+A person is near a row of luggage carts as one man pushes a cart.
+---------------------------------------------------------------------------------------------
+EPOCH 50:
+
+SEED:
+©One woman carrying a cake with candles and another woman in the background.®
+GENERATED:
+A woman is sitting being bench while sitt next to it the a and ondofa of he wof of is ply la wirise lybrise wisennd of nd ofis h
+---------------------------------------------------------------------------------------------
+EPOCH 51:
+
+SEED:
+©An elephant drinking water while the rest of the herd is walking in dry grass.®
+GENERATED:
+A woman is sitting in front of a paten of a wateroundy toun. 
+---------------------------------------------------------------------------------------------
+EPOCH 52:
+
+SEED:
+©a blue and yellow fire hydrant sitting on the sidewalk next to a quiet street®
+GENERATED:
+A row of toilets with broking a bathroccoli ald bag throm it.
+---------------------------------------------------------------------------------------------
+EPOCH 53:
+
+SEED:
+©A woman sitting on ledge with three pigeons, with gate railing, trees, and base of the Eiffel Tower behind.®
+GENERATED:
+A man with a led holding a har a tree, stickis.
+---------------------------------------------------------------------------------------------
+EPOCH 54:
+
+SEED:
+©A little league baseball player is getting ready hit the ball with his bat. ®
+GENERATED:
+A person holding up a chocolate doughnut with a face drawn on it.
+---------------------------------------------------------------------------------------------
+EPOCH 55:
+
+SEED:
+©A man on a piece of equipment resembling a bicycle that has very large wheels.®
+GENERATED:
+A woman sitting on a bench next to a statue sitting on a ofet.
+---------------------------------------------------------------------------------------------
+EPOCH 56:
+
+SEED:
+©A just married coule feed each other cake while a photographer takes photos.®
+GENERATED:
+A large brown pot of sking on a racket thail unitute toilethnet.
+---------------------------------------------------------------------------------------------
+EPOCH 57:
+
+SEED:
+©A Superman toy is lying face down on the table next to an empty plate of food.®
+GENERATED:
+A group of yoced mors standing on the motocycles of water chin.
+---------------------------------------------------------------------------------------------
+EPOCH 58:
+
+SEED:
+©A little league baseball player is getting ready hit the ball with his bat. ®
+GENERATED:
+A woman walks out of the ocean towards a beach chair and umbrella.
+---------------------------------------------------------------------------------------------
+EPOCH 59:
+
+SEED:
+©Three zebra in the middle of a field with a body of water in the distance.®
+GENERATED:
+A woman holding a red barge sitting up on a reain taking inderooumin withethethendeth hempaththetheg wone watheme wathin, be tet
+---------------------------------------------------------------------------------------------
+EPOCH 60:
+
+SEED:
+©A deep dish style pizza with a slice cut out of it next to a glass of white wine.®
+GENERATED:
+The signs give the street names spard out the the wo ban esinget.
+---------------------------------------------------------------------------------------------
+EPOCH 61:
+
+SEED:
+©A vintage closeup shows a chair with a toddler with a big smile and a big toy bear seated right  next to a second toddler with a semi-smile, holding what appears to be a coin purse.®
+GENERATED:
+A woman sitting on a pints while a sone with a pencle ofence. 
+---------------------------------------------------------------------------------------------
+EPOCH 62:
+
+SEED:
+©A street sign showing the intersection with Avenue of  the Americas, 6th Avenue and Charlton St.®
+GENERATED:
+A group of stuffed animals sitting next to each other in brom.
+---------------------------------------------------------------------------------------------
+EPOCH 63:
+
+SEED:
+©a homeless man holding a cup and standing next to a shopping cart on a street®
+GENERATED:
+A lunch box with a televiced of people food a cove it a skare i .
+---------------------------------------------------------------------------------------------
+EPOCH 64:
+
+SEED:
+©a white and black cat looking up in the air in front of a desktop computer.®
+GENERATED:
+A bathroom looks clean but in the sing a train in it's ano and t.
+---------------------------------------------------------------------------------------------
+EPOCH 65:
+
+SEED:
+©A small black and orange bird is perched on a table with banana peels in it.®
+GENERATED:
+A little boy that is standing on a sidewalk with a televen tabon.
+---------------------------------------------------------------------------------------------
+EPOCH 66:
+
+SEED:
+©a young Asian woman model sitting on a folding chair in a sleeveless dress, high heels and holding an umbrella®
+GENERATED:
+A woman is wearing a box bananas in front of a front of a talle.
+---------------------------------------------------------------------------------------------
+EPOCH 67:
+
+SEED:
+©Person holding on to a video game remote while using a computer mouse with other hand®
+GENERATED:
+A plastic tree with a cub pasture sitting in the televisins in 
+---------------------------------------------------------------------------------------------
+EPOCH 68:
+
+SEED:
+©A person leaning up against a metal rail while holding a rainbow colored umbrella.®
+GENERATED:
+A person is near a row of luggage carts are seraunding of porter.
+---------------------------------------------------------------------------------------------
+EPOCH 69:
+
+SEED:
+©A well-lit and well-decorated living room shows a glimpse of a glass front door through the corridor. ®
+GENERATED:
+a blue pot taking of to a train tracks with a to on a teve lowit.
+---------------------------------------------------------------------------------------------
+EPOCH 70:
+
+SEED:
+©The vanity is decorated with a red flower arrangement and glass candles and perfume bottles. ®
+GENERATED:
+A ham pizza with grated a with hills pa on a ptable is balkgrond.
+---------------------------------------------------------------------------------------------
+EPOCH 71:
+
+SEED:
+©a homeless man holding a cup and standing next to a shopping cart on a street®
+GENERATED:
+A man walking with an umbrella near a railing area temest ponts.
+---------------------------------------------------------------------------------------------
+EPOCH 72:
+
+SEED:
+©A dinner plate that has white steamed rice with stir fry vegetables and chicken.®
+GENERATED:
+A table with a napkin, couch, and a cumbree, with pminess overt it 
+---------------------------------------------------------------------------------------------
+EPOCH 73:
+
+SEED:
+©Donuts with frosting and glazed toppings sit on table next to coffee maker®
+GENERATED:
+A man with a sink with some vegetables and yellear the bron th s. 
+---------------------------------------------------------------------------------------------
+EPOCH 74:
+
+SEED:
+©Color corrected photograph of a person carrying a red, white and blue umbrella.®
+GENERATED:
+A large silver refrigerator with two doors and a rocd of buskes.
+---------------------------------------------------------------------------------------------
+EPOCH 75:
+
+SEED:
+©A bowl full of food sitting on a table next to a fork that rests on top of a circular disk.®
+GENERATED:
+A man wearing a hat while standing in front of a bathroom mirror.
+---------------------------------------------------------------------------------------------
+EPOCH 76:
+
+SEED:
+©Several people waiting on the side of train tracks as a train with it;s lights on comes down the track.®
+GENERATED:
+A woman in brown shirt holding a hotdog by tables with umbrellas.
+---------------------------------------------------------------------------------------------
+EPOCH 77:
+
+SEED:
+©A pastel green room with pictures mounted on the wall and a red chair near a large window.®
+GENERATED:
+A person is laying on their back on the floor of a ten brown dom
+---------------------------------------------------------------------------------------------
+EPOCH 78:
+
+SEED:
+©A black stuffed animal sitting on top of a toilet in a bathroom stall with blue floor tile. ®
+GENERATED:
+A woman laying in a hospital bed hooked up to an IV and monitors.
+---------------------------------------------------------------------------------------------
+EPOCH 79:
+
+SEED:
+©A little boy grips a soccer ball in his arms surrounded by other youth soccer players.®
+GENERATED:
+A woman laying in a hospital bed hooked upse wing in a in x fowhidon fofola fon a thidoren 
+---------------------------------------------------------------------------------------------
+EPOCH 80:
+
+SEED:
+©A picture of a bathroom with a fern plant near the sink and a photo of a city above the toilet. ®
+GENERATED:
+A man with glasses and wearis stie giraffe train loory patercing.
+---------------------------------------------------------------------------------------------
+EPOCH 81:
+
+SEED:
+©The pitcher  on the mound has just let go of a baseball directed to the batter. ®
+GENERATED:
+A woman with a book bag sits pitchn front of a besto the on ther.
+---------------------------------------------------------------------------------------------
+EPOCH 82:
+
+SEED:
+©three different donuts one is pink one is brown and one has white sprinkles®
+GENERATED:
+A woman with a book bag sitting on himals standing over a staloitrit sett tangetat tandet t tatandinderat t tchetwidinget t inch
+---------------------------------------------------------------------------------------------
+EPOCH 83:
+
+SEED:
+©Donuts with frosting and glazed toppings sit on table next to coffee maker®
+GENERATED:
+The shirtles gray histe by sitting nextte to a bathron a bokny bompoove stoooofous wiatollllondorond at ay wboorondondous ws jve
+---------------------------------------------------------------------------------------------
+EPOCH 84:
+
+SEED:
+©A black stuffed animal sitting on top of a toilet in a bathroom stall with blue floor tile. ®
+GENERATED:
+A person holding up a chocolate doughnut with a face drawn on it.
+---------------------------------------------------------------------------------------------
+EPOCH 85:
+
+SEED:
+©A street pole with one ways, except deliveries, street and no walking signs.®
+GENERATED:
+A table with two shelef, sizew, ute, and brown of water onglaithit ped, wined f red, uned flan rkigandrin inin itowin it ithith 
+---------------------------------------------------------------------------------------------
+EPOCH 86:
+
+SEED:
+©A vintage closeup shows a chair with a toddler with a big smile and a big toy bear seated right  next to a second toddler with a semi-smile, holding what appears to be a coin purse.®
+GENERATED:
+A very green hillicy an hat glife standing on the tramest whinchatelowirindinginalelalkicks hin bathinint t plsindes f us bonont
+---------------------------------------------------------------------------------------------
+EPOCH 87:
+
+SEED:
+©Two laptops,computer,keyboard and other electrical gadgets are on the table.®
+GENERATED:
+A woman with a book bag sits on a le, meleat tir hel plant on t.
+---------------------------------------------------------------------------------------------
+EPOCH 88:
+
+SEED:
+©Three workers stand next to each other with their baked goods behind them.®
+GENERATED:
+A person is near a row of luggage carts as one man pushes a cart.
+---------------------------------------------------------------------------------------------
+EPOCH 89:
+
+SEED:
+©Truck viewed from the back with vans and trucks visible in the background of the image.®
+GENERATED:
+A woman with a book bag sits on a late be ists in the waterids t.
+---------------------------------------------------------------------------------------------
+EPOCH 90:
+
+SEED:
+©A Superman toy is lying face down on the table next to an empty plate of food.®
+GENERATED:
+A woman on her cellphone standing on the sidewalk int in ap. 
+---------------------------------------------------------------------------------------------
+EPOCH 91:
+
+SEED:
+©A street sign showing the intersection with Avenue of  the Americas, 6th Avenue and Charlton St.®
+GENERATED:
+A bench way leaking at tie sitting next to to a fence two plat 
+---------------------------------------------------------------------------------------------
+EPOCH 92:
+
+SEED:
+©A piece of pizza with thousand island dressing and a Coke Zero on the side.®
+GENERATED:
+A man and woman in ski gear standing in front of a tablech kana.
+---------------------------------------------------------------------------------------------
+EPOCH 93:
+
+SEED:
+©A black cat with white paws is standing among some wooden boards and a toy.®
+GENERATED:
+A woman poses for a photo as she sits on a chair with an umbrella
+---------------------------------------------------------------------------------------------
+EPOCH 94:
+
+SEED:
+©a blue and yellow fire hydrant sitting on the sidewalk next to a quiet street®
+GENERATED:
+A woman with a book bag sits on a ledge with hat ce rining room.
+---------------------------------------------------------------------------------------------
+EPOCH 95:
+
+SEED:
+©Camera equipment is set up in a room with vending machines in the background.®
+GENERATED:
+A plane flying in the sky with a trail of white shelf phones.
+---------------------------------------------------------------------------------------------
+EPOCH 96:
+
+SEED:
+©A sliced pizza sitting on a table next to a glass of water and a glass of wine. ®
+GENERATED:
+A plane flying in ood is a littly with somele tale sinki whinglatomowndowwingingith flplowitthindong ong wingleath ondowindowing
+---------------------------------------------------------------------------------------------
+EPOCH 97:
+
+SEED:
+©An elephant drinking water while the rest of the herd is walking in dry grass.®
+GENERATED:
+A person is parked at the pare sitting by and a ba glampullaste.
+---------------------------------------------------------------------------------------------
+EPOCH 98:
+
+SEED:
+©Someone ordered a piece of pizza for dinner that does not have much cheese on it®
+GENERATED:
+A couple of little girls sitting next to each other in a bathroom.
+---------------------------------------------------------------------------------------------
+EPOCH 99:
+
+SEED:
+©A soccer game where a girl in white is dribbling ahead of the girl in blue.®
+GENERATED:
+A woman with bach are computer throod while sing on a dog bus.
+---------------------------------------------------------------------------------------------
+EPOCH 100:
+
+SEED:
+©A man on a piece of equipment resembling a bicycle that has very large wheels.®
+GENERATED:
+A plastic tree with a doughnut hanging by a strip of red ribbon. 
