@@ -61,7 +61,7 @@ conda activate former
 
 ---
 
-To log tensorboards and text generation, include `—log True` in the command:
+To log tensorboards and text generation, include `—-log True` in the command:
 
 ```python
 python experiments/generate.py --log True
