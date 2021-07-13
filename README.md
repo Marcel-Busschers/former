@@ -1,5 +1,3 @@
-# GitHub README - FVAE
-
 Bachelor Thesis implementation. Vrije Universiteit Amsterdam. BSc Computer Science. 2018-2021
 
 **Supervisor**: [Peter Bloem](https://github.com/pbloem)
@@ -84,13 +82,13 @@ python experiments/generate.py --log True -m "Some description here"
 To see the tensorboard logs, for example, the run of `2021-06-22_15:28` - run the command:
 
 ```python
-tensorboard --logdir 2021-06-22_15:28
+tensorboard --logdir runs/2021-06-22_15:28
 ```
 
 If you are running this on a server instance, you might have to bind it to a port:
 
 ```python
-tensorboard --logdir 2021-06-22_15:28 --bind_all
+tensorboard --logdir runs/2021-06-22_15:28 --bind_all
 ```
 
 # Extra Hyperparameters
@@ -111,7 +109,7 @@ The `experiments/latent.py` allows you to visualise the latent space for any giv
 To run the file, the directory of the model needs to be passed in with a direct path to the `model.pt` file, as well as which sequences you want to see in latent space, for example, the run of `2021-06-16_14:00` - run the command:
 
 ```python
-python experiments/latent.py --model-dir 2021-06-16_14:00 --from-sequence 1 4 6
+python experiments/latent.py --model-dir runs/2021-06-16_14:00/checkpoint_saves/model.pt --from-sequence 1 4 6
 ```
 
 Running `--from-sequence 0` will allow you to visualise the latent space of all sequences within the data.
@@ -119,7 +117,7 @@ Running `--from-sequence 0` will allow you to visualise the latent space of all 
 This will create a pdf file within the run's directory. You can add a description via `-d` that will get added to the pdf:
 
 ```python
-python experiments/latent.py --model-dir 2021-06-16_14:00 --from-sequence 0 -d "All sequences"
+python experiments/latent.py --model-dir runs/2021-06-16_14:00/checkpoint_saves/model.pt --from-sequence 0 -d "All sequences"
 ```
 
 Visualisation gets done using [tSNE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html).
