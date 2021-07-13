@@ -79,7 +79,7 @@ You can add a description message via `-m` that will get added to the generated 
 python experiments/generate.py --log True -m "Some description here"
 ```
 
-To see the tensorboard logs, for example, the run of `[2021-06-22_15:28](https://github.com/Marcel-Busschers/former/tree/master/runs/2021-06-22_15:28)` - run the command:
+To see the tensorboard logs, for example, the run of `2021-06-22_15:28` - run the command:
 
 ```python
 tensorboard --logdir 2021-06-22_15:28
