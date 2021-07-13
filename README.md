@@ -1,3 +1,5 @@
+# GitHub README - master
+
 Bachelor Thesis implementation. Vrije Universiteit Amsterdam. BSc Computer Science. 2018-2021
 
 **Supervisor**: [Peter Bloem](https://github.com/pbloem)
@@ -90,3 +92,5 @@ If you are running this on a server instance, you might have to bind it to a por
 ```python
 tensorboard --logdir runs/2021-06-22_15:28 --bind_all
 ```
+
+**NOTE**: the gitignore will ignore all any model checkpoint files and tensorboard logging files, therefore these commands won't work on any existing runs.
