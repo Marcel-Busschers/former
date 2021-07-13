@@ -82,11 +82,11 @@ python experiments/generate.py --log True -m "Some description here"
 To see the tensorboard logs, for example, the run of `2021-06-22_15:28` - run the command:
 
 ```python
-tensorboard --logdir 2021-06-22_15:28
+tensorboard --logdir runs/2021-06-22_15:28
 ```
 
 If you are running this on a server instance, you might have to bind it to a port:
 
 ```python
-tensorboard --logdir 2021-06-22_15:28 --bind_all
+tensorboard --logdir runs/2021-06-22_15:28 --bind_all
 ```
